@@ -1,0 +1,48 @@
+{
+  "name": "Questionnaire",
+  "type": "object",
+  "properties": {
+    "client_id": {
+      "type": "string",
+      "description": "Null for templates, set when assigned to a client"
+    },
+    "client_name": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "questions": {
+      "type": "string",
+      "description": "JSON-encoded array of question objects"
+    },
+    "responses": {
+      "type": "string",
+      "description": "JSON-encoded array of response objects, null until completed"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "template",
+        "assigned",
+        "completed"
+      ],
+      "default": "assigned"
+    },
+    "assigned_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "completed_date": {
+      "type": "string",
+      "format": "date"
+    }
+  },
+  "required": [
+    "title",
+    "questions"
+  ]
+}

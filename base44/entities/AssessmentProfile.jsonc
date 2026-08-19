@@ -1,0 +1,47 @@
+{
+  "name": "AssessmentProfile",
+  "type": "object",
+  "properties": {
+    "profile_key": {
+      "type": "string",
+      "description": "Unique identifier used in answer weights"
+    },
+    "title": {
+      "type": "string",
+      "description": "Headline shown to the visitor"
+    },
+    "reflection": {
+      "type": "string"
+    },
+    "recognition": {
+      "type": "string"
+    },
+    "encouragement": {
+      "type": "string"
+    },
+    "how_debora_helps": {
+      "type": "string"
+    },
+    "invitation": {
+      "type": "string"
+    },
+    "related_slug": {
+      "type": "string",
+      "description": "Slug of the related zorgvraag (struggle) page the result links to"
+    },
+    "priority": {
+      "type": "number",
+      "default": 10,
+      "description": "Lower number wins ties"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "required": [
+    "profile_key",
+    "title",
+    "reflection"
+  ]
+}

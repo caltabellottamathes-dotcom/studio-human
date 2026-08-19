@@ -1,0 +1,35 @@
+{
+  "name": "MoodEntry",
+  "type": "object",
+  "properties": {
+    "client_id": {
+      "type": "string"
+    },
+    "mood_score": {
+      "type": "number",
+      "description": "1 (very low) to 5 (very good)"
+    },
+    "mood_label": {
+      "type": "string",
+      "enum": [
+        "very_low",
+        "low",
+        "neutral",
+        "good",
+        "very_good"
+      ]
+    },
+    "note": {
+      "type": "string"
+    },
+    "entry_date": {
+      "type": "string",
+      "format": "date"
+    }
+  },
+  "required": [
+    "client_id",
+    "mood_score",
+    "entry_date"
+  ]
+}

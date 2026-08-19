@@ -1,0 +1,50 @@
+{
+  "name": "Assignment",
+  "type": "object",
+  "properties": {
+    "client_id": {
+      "type": "string"
+    },
+    "client_name": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "homework",
+        "reflection",
+        "exercise",
+        "reading"
+      ],
+      "default": "homework"
+    },
+    "instructions": {
+      "type": "string"
+    },
+    "due_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "assigned",
+        "in_progress",
+        "submitted",
+        "reviewed"
+      ],
+      "default": "assigned"
+    }
+  },
+  "required": [
+    "client_id",
+    "client_name",
+    "title"
+  ]
+}

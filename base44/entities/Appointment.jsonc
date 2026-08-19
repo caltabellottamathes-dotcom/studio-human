@@ -1,0 +1,61 @@
+{
+  "name": "Appointment",
+  "type": "object",
+  "properties": {
+    "client_id": {
+      "type": "string",
+      "description": "User ID of the client"
+    },
+    "client_name": {
+      "type": "string"
+    },
+    "date": {
+      "type": "string",
+      "format": "date"
+    },
+    "start_time": {
+      "type": "string"
+    },
+    "duration_minutes": {
+      "type": "number",
+      "default": 60
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "intake",
+        "session",
+        "online",
+        "physical",
+        "phone"
+      ],
+      "default": "session"
+    },
+    "location": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "scheduled",
+        "completed",
+        "cancelled",
+        "no_show"
+      ],
+      "default": "scheduled"
+    },
+    "client_visible_notes": {
+      "type": "string",
+      "description": "Notes visible to the client"
+    },
+    "price": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "client_id",
+    "client_name",
+    "date",
+    "start_time"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "name": "AuditLog",
+  "type": "object",
+  "properties": {
+    "actor_id": {
+      "type": "string"
+    },
+    "actor_name": {
+      "type": "string"
+    },
+    "actor_role": {
+      "type": "string",
+      "enum": [
+        "admin",
+        "client",
+        "system"
+      ]
+    },
+    "action": {
+      "type": "string",
+      "description": "e.g. client_created, appointment_scheduled, message_sent"
+    },
+    "entity_type": {
+      "type": "string"
+    },
+    "entity_id": {
+      "type": "string"
+    },
+    "details": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "actor_id",
+    "actor_name",
+    "action"
+  ]
+}

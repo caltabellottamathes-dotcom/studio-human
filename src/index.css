@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Lekton:ital,wght@0,400;0,700;1,400&family=Albert+Sans:wght@300;400;500;600;700&display=swap');
+/* base44-workspace-fonts:start */
+@font-face {
+  font-family: 'FONTSPRING DEMO - The Seasons';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url('./assets/fonts/fontspring-demo-the-seasons-383ed1f8-400-normal.woff2') format('woff2');
+  unicode-range: U+0041-005A, U+0061-007A, U+00C0-00FF, U+0100-017F, U+0180-024F, U+0250-02AF, U+1E00-1EFF;
+}
+@font-face {
+  font-family: 'FONTSPRING DEMO - The Seasons';
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+  src: url('./assets/fonts/fontspring-demo-the-seasons-383ed1f8-400-italic.woff2') format('woff2');
+  unicode-range: U+0041-005A, U+0061-007A, U+00C0-00FF, U+0100-017F, U+0180-024F, U+0250-02AF, U+1E00-1EFF;
+}
+@font-face {
+  font-family: 'FONTSPRING DEMO - The Seasons';
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url('./assets/fonts/fontspring-demo-the-seasons-383ed1f8-700-normal.woff2') format('woff2');
+  unicode-range: U+0041-005A, U+0061-007A, U+00C0-00FF, U+0100-017F, U+0180-024F, U+0250-02AF, U+1E00-1EFF;
+}
+@font-face {
+  font-family: 'FONTSPRING DEMO - The Seasons Light';
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+  src: url('./assets/fonts/fontspring-demo-the-seasons-light-6bb6be79-300-italic.woff2') format('woff2');
+  unicode-range: U+0041-005A, U+0061-007A, U+00C0-00FF, U+0100-017F, U+0180-024F, U+0250-02AF, U+1E00-1EFF;
+}
+@font-face {
+  font-family: 'FONTSPRING DEMO - The Seasons Light';
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+  src: url('./assets/fonts/fontspring-demo-the-seasons-light-6bb6be79-300-normal.woff2') format('woff2');
+  unicode-range: U+0041-005A, U+0061-007A, U+00C0-00FF, U+0100-017F, U+0180-024F, U+0250-02AF, U+1E00-1EFF;
+}
+@font-face {
+  font-family: 'The Seasons';
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url('./assets/fonts/the-seasons-705043c9-700-normal.woff2') format('woff2');
+  unicode-range: U+0041-005A, U+0061-007A, U+00C0-00FF, U+0100-017F, U+0180-024F, U+0250-02AF, U+1E00-1EFF;
+}
+/* base44-workspace-fonts:end */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 98%;
+    --foreground: 0 0% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+    --primary: 2 100% 38%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+    --accent: 0 0% 96%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 2 100% 38%;
+    --chart-1: 2 100% 38%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.75rem;
+    --font-heading: 'FONTSPRING DEMO - The Seasons', 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'Lekton', ui-monospace, monospace;
+    --font-display: 'FONTSPRING DEMO - The Seasons Light', 'Cormorant Garamond', Georgia, serif;
+    --font-mono: 'Lekton', ui-monospace, monospace;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 2 100% 38%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 2 100% 38%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+    font-feature-settings: 'kern' 1, 'liga' 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    touch-action: manipulation;
+  }
+
+  ::selection {
+    background: hsl(2 100% 92%);
+    color: hsl(2 100% 25%);
+  }
+
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(0 0% 85%);
+    border-radius: 100px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(2 100% 78%);
+  }
+
+  .font-serif {
+    font-family: var(--font-heading);
+    letter-spacing: -0.01em;
+  }
+
+  .font-display {
+    letter-spacing: -0.02em;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.015);
+  }
+
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 9997;
+    pointer-events: none;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+}
+
+@keyframes cursor-gradient {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@media (max-width: 767px) {
+  .mobile-h-xs { height: 34vh !important; }
+  .mobile-h-sm { height: 40vh !important; }
+  .mobile-h-md { height: 46vh !important; }
+  .mobile-h-lg { height: 52vh !important; }
+  .mobile-h-closing { height: 44vh !important; }
+  .mobile-h-tall { height: 60vh !important; }
+
+  p:not([class*="font-display"]):not([class*="font-serif"]) {
+    font-size: 0.875rem !important;
+    line-height: 1.3 !important;
+  }
+
+  header[role="banner"] {
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
+
+.premium-image img {
+  will-change: transform;
+}
+
+.premium-image {
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.03);
+}
+
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  :focus-visible {
+    outline: 2px solid hsl(2 100% 38% / 0.3);
+    outline-offset: 3px;
+    border-radius: 1px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@layer components {
+  .label-line::before {
+    content: '';
+    display: inline-block;
+    width: 1rem;
+    height: 1px;
+    background: currentColor;
+    opacity: 0.4;
+    margin-right: 0.5rem;
+    vertical-align: middle;
+  }
+}

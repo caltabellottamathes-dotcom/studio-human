@@ -1,0 +1,44 @@
+{
+  "name": "SharedDocument",
+  "type": "object",
+  "properties": {
+    "client_id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "file_url": {
+      "type": "string"
+    },
+    "file_type": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "intake",
+        "report",
+        "exercise",
+        "invoice",
+        "other"
+      ],
+      "default": "other"
+    },
+    "visible_to_client": {
+      "type": "boolean",
+      "default": true
+    },
+    "uploaded_by": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "client_id",
+    "title",
+    "file_url"
+  ]
+}

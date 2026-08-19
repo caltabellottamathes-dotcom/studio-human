@@ -1,0 +1,43 @@
+{
+  "name": "SessionNote",
+  "type": "object",
+  "properties": {
+    "client_id": {
+      "type": "string"
+    },
+    "client_name": {
+      "type": "string"
+    },
+    "appointment_id": {
+      "type": "string"
+    },
+    "session_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "observations": {
+      "type": "string"
+    },
+    "interventions": {
+      "type": "string"
+    },
+    "treatment_plan": {
+      "type": "string"
+    },
+    "risk_assessment": {
+      "type": "string"
+    },
+    "private_notes": {
+      "type": "string",
+      "description": "Strictly private \u2014 never exposed to clients"
+    }
+  },
+  "required": [
+    "client_id",
+    "client_name",
+    "session_date"
+  ]
+}

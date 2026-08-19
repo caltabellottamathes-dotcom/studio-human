@@ -1,0 +1,35 @@
+{
+  "name": "AssignmentSubmission",
+  "type": "object",
+  "properties": {
+    "assignment_id": {
+      "type": "string"
+    },
+    "client_id": {
+      "type": "string"
+    },
+    "content": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "submitted",
+        "reviewed"
+      ],
+      "default": "submitted"
+    },
+    "admin_feedback": {
+      "type": "string"
+    },
+    "submitted_date": {
+      "type": "string",
+      "format": "date"
+    }
+  },
+  "required": [
+    "assignment_id",
+    "client_id",
+    "content"
+  ]
+}

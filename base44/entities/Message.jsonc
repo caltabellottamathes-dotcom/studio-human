@@ -1,0 +1,35 @@
+{
+  "name": "Message",
+  "type": "object",
+  "properties": {
+    "client_id": {
+      "type": "string",
+      "description": "Client user ID \u2014 defines the conversation thread"
+    },
+    "client_name": {
+      "type": "string"
+    },
+    "sender": {
+      "type": "string",
+      "enum": [
+        "client",
+        "admin"
+      ]
+    },
+    "sender_id": {
+      "type": "string"
+    },
+    "content": {
+      "type": "string"
+    },
+    "read": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "required": [
+    "client_id",
+    "sender",
+    "content"
+  ]
+}

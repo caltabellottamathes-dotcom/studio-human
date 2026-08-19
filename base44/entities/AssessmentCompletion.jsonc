@@ -1,0 +1,20 @@
+{
+  "name": "AssessmentCompletion",
+  "type": "object",
+  "properties": {
+    "profile_key": {
+      "type": "string"
+    },
+    "answers_summary": {
+      "type": "string",
+      "description": "JSON-encoded summary of selected answer texts"
+    },
+    "completed_date": {
+      "type": "string",
+      "format": "date"
+    }
+  },
+  "required": [
+    "profile_key"
+  ]
+}

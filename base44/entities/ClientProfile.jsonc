@@ -1,0 +1,74 @@
+{
+  "name": "ClientProfile",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string",
+      "description": "Linked User entity ID"
+    },
+    "first_name": {
+      "type": "string"
+    },
+    "last_name": {
+      "type": "string"
+    },
+    "date_of_birth": {
+      "type": "string",
+      "format": "date"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "postal_code": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "emergency_contact_name": {
+      "type": "string"
+    },
+    "emergency_contact_phone": {
+      "type": "string"
+    },
+    "emergency_contact_relation": {
+      "type": "string"
+    },
+    "consent_treatment": {
+      "type": "boolean",
+      "default": false
+    },
+    "consent_data_processing": {
+      "type": "boolean",
+      "default": false
+    },
+    "consent_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "archived"
+      ],
+      "default": "active"
+    },
+    "intake_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "admin_notes": {
+      "type": "string",
+      "description": "Private notes visible to admin only"
+    }
+  },
+  "required": [
+    "user_id",
+    "first_name",
+    "last_name"
+  ]
+}
