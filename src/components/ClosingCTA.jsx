@@ -27,8 +27,8 @@ export default function ClosingCTA({
         <h2 className="font-display text-3xl md:text-5xl lg:text-6xl text-neutral-800 leading-[1.05] tracking-tight mb-6">
           {headline || (
             <>
-              You don't have to do this{' '}
-              <span className="italic font-light text-red-600/90">alone</span>.
+              You don't need to have it all{' '}
+              <span className="italic font-light text-red-600/90">figured out</span>.
             </>
           )}
         </h2>
@@ -39,7 +39,7 @@ export default function ClosingCTA({
         )}
         {!sub && (
           <p className="text-neutral-500 text-base md:text-lg font-light leading-relaxed max-w-[52ch] mx-auto mb-10">
-            A first conversation is always free of obligation. Whenever you're ready, we'll begin — at your pace.
+            A first conversation carries no obligation. Whenever you're ready, we'll begin — at your pace.
           </p>
         )}
         <div className="flex justify-center">

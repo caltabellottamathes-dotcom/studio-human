@@ -5,13 +5,11 @@ import { ArrowRight } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import FadeSection from '@/components/FadeSection';
-import BrandedButton from '@/components/BrandedButton';
 import Marquee from '@/components/motion/Marquee';
-import PremiumImage from '@/components/motion/PremiumImage';
-import AnimatedCounter from '@/components/motion/AnimatedCounter';
+import CalmPanel from '@/components/CalmPanel';
 import { StaggerGroup, StaggerItem } from '@/components/motion/Stagger';
 import ClosingCTA from '@/components/ClosingCTA';
-import { heroVideo, deboraCurtainImg, doorFrameImg, handsWritingImg, preparingSpaceImg } from '@/data/content';
+import { principles } from '@/data/content';
 
 const ease = [0.25, 0.1, 0.25, 1];
 
@@ -22,7 +20,6 @@ const heroItem = {
 
 export default function Home() {
   const { scrollY } = useScroll();
-  const heroImageY = useTransform(scrollY, [0, 800], [0, 30]);
   const heroTextY = useTransform(scrollY, [0, 600], [0, 80]);
 
   useEffect(() => {
@@ -42,18 +39,13 @@ export default function Home() {
       <Header />
 
       <section className="relative min-h-screen flex flex-col pt-32 md:pt-36 pb-16 px-6 md:px-12 max-w-[120rem] mx-auto">
-        {/* Video: tall vertical, bottom-right corner */}
         <motion.div
           initial={{ clipPath: 'inset(6% 0 0 6% round 0px)', opacity: 0 }}
           animate={{ clipPath: 'inset(0 0 0 0 round 0px)', opacity: 1 }}
           transition={{ duration: 1.2, delay: 0.15, ease }}
-          className="absolute bottom-0 right-0 w-[44%] h-[48vh] md:w-[38%] md:h-screen overflow-hidden rounded-tl-[3rem] md:rounded-tl-none md:rounded-bl-[12rem] pointer-events-none z-0"
+          className="absolute bottom-0 right-0 w-[44%] h-[48vh] md:w-[38%] md:h-screen overflow-hidden rounded-tl-[3rem] md:rounded-bl-[12rem] pointer-events-none z-0"
           aria-hidden>
-          
-          <motion.div style={{ y: heroImageY }} className="w-full h-full">
-            <video src={heroVideo} autoPlay loop muted playsInline className="w-full h-full object-cover opacity-90 scale-110" />
-          </motion.div>
-          <div className="absolute inset-0 bg-gradient-to-tl from-transparent via-transparent to-neutral-50/50" />
+          <CalmPanel height="100%" rounded="bl" tone="glacier" className="h-full" />
         </motion.div>
 
         <motion.div
@@ -62,11 +54,11 @@ export default function Home() {
           initial="hidden"
           animate="visible"
           variants={{ visible: { transition: { staggerChildren: 0.12, delayChildren: 0.15 } } }}>
-          
+
           <motion.div variants={heroItem} className="mb-10">
             <div className="flex items-center gap-4">
               <span className="text-xs uppercase tracking-[0.25em] text-red-600/80 font-medium">
-                Psychosocial Counseling
+                A psychological practice
               </span>
               <span className="h-px w-12 bg-neutral-300" />
             </div>
@@ -75,35 +67,35 @@ export default function Home() {
             </p>
           </motion.div>
 
-          <motion.h1 variants={heroItem} className="font-display text-5xl md:text-7xl lg:text-[7.5rem] text-neutral-800 leading-[0.92] md:leading-[0.82] tracking-tight max-w-[15ch]">
-            You don't have to<br className="hidden md:inline" /> carry it{' '}
-            <span className="italic text-red-600/90 font-light">alone</span>.
+          <motion.h1 variants={heroItem} className="font-display text-5xl md:text-7xl lg:text-[7rem] text-neutral-800 leading-[0.92] md:leading-[0.82] tracking-tight max-w-[16ch]">
+            Understand yourself.<br className="hidden md:inline" /> Explore what shapes you.{' '}
+            <span className="italic text-red-600/90 font-light">Move forward</span>.
           </motion.h1>
 
-          <motion.div variants={heroItem} className="mt-10 md:mt-12 md:pl-0 md:max-w-[42ch] pr-[48%] md:pr-0">
-            <p className="text-neutral-600 text-base md:text-lg font-light leading-normal max-w-[40ch] normal-case text-left">
-              Psychosocial counseling in Portland. For moments when life asks more of you than you should have to carry alone.
+          <motion.div variants={heroItem} className="mt-10 md:mt-12 md:max-w-[42ch] pr-[48%] md:pr-0">
+            <p className="text-neutral-600 text-base md:text-lg font-light leading-normal max-w-[40ch] text-left">
+              A calm, considered space for reflection, conversation and psychological growth — not a clinical interface.
             </p>
           </motion.div>
         </motion.div>
 
         <Marquee className="absolute bottom-16 md:bottom-0 left-0 w-full z-20 py-3 bg-neutral-50/85 backdrop-blur-sm border-t border-neutral-200/60" speed={12}>
-          <span className="font-body uppercase tracking-widest text-sm md:text-base px-10 text-neutral-500">Love for life</span>
-          <span className="text-red-600/30 text-xs">✦</span>
-          <span className="font-body uppercase tracking-widest text-sm md:text-base px-10 text-neutral-500">Care for the soul</span>
-          <span className="text-red-600/30 text-xs">✦</span>
-          <span className="font-body uppercase tracking-widest text-sm md:text-base px-10 text-neutral-500">Psychosocial counseling</span>
-          <span className="text-red-600/30 text-xs">✦</span>
-          <span className="font-body uppercase tracking-widest text-sm md:text-base px-10 text-neutral-500">Portland & at home</span>
-          <span className="text-red-600/30 text-xs">✦</span>
+          <span className="font-body uppercase tracking-widest text-sm md:text-base px-10 text-neutral-500">Understand</span>
+          <span className="text-red-600/40 text-xs">✦</span>
+          <span className="font-body uppercase tracking-widest text-sm md:text-base px-10 text-neutral-500">Explore</span>
+          <span className="text-red-600/40 text-xs">✦</span>
+          <span className="font-body uppercase tracking-widest text-sm md:text-base px-10 text-neutral-500">Move</span>
+          <span className="text-red-600/40 text-xs">✦</span>
+          <span className="font-body uppercase tracking-widest text-sm md:text-base px-10 text-neutral-500">A thoughtful space for psychological wellbeing</span>
+          <span className="text-red-600/40 text-xs">✦</span>
         </Marquee>
       </section>
 
-      {/* Editorial intro — tall portrait with parallax, no rounded corners */}
+      {/* Manifesto */}
       <section className="pb-16 md:pb-24 px-6 md:px-12 max-w-[120rem] mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-16 items-center">
           <div className="md:col-span-5 md:col-start-1 -ml-6 md:-ml-12">
-            <PremiumImage src={deboraCurtainImg} alt="A studioHuman counselor" height="85vh" rounded="br" className="w-[54vw] md:w-full mobile-h-xs" />
+            <CalmPanel height="85vh" rounded="br" tone="cliff" className="w-[54vw] md:w-full mobile-h-xs" />
           </div>
           <StaggerGroup className="col-span-1 md:col-span-6 md:col-start-7" stagger={0.15}>
             <StaggerItem>
@@ -111,82 +103,76 @@ export default function Home() {
             </StaggerItem>
             <StaggerItem>
               <p className="font-display text-3xl md:text-5xl text-neutral-800 tracking-tight leading-tight mb-6">
-                Love for life,<br className="hidden md:inline" /> <span className="italic font-light text-red-600/90">care for the soul</span>.
+                A thoughtful space for <span className="italic font-light text-red-600/90">psychological wellbeing</span>.
               </p>
             </StaggerItem>
             <StaggerItem>
               <p className="text-neutral-600 text-base md:text-lg font-light leading-relaxed max-w-[52ch]">
-                Sometimes life brings you to a point where everything becomes too much. You carry a lot, think a lot, feel a lot. Perhaps you care for others and lose yourself a little along the way. Perhaps you stand at a crossroads, sensing that something needs to change, but you're not quite sure how or where to begin.
+                Psychology is rarely about finding a single answer. It is an ongoing process of understanding patterns, emotions, behaviour, relationships and the circumstances that shape us.
               </p>
             </StaggerItem>
             <StaggerItem>
               <p className="text-neutral-600 text-base md:text-lg font-light leading-relaxed max-w-[52ch] mt-4">
-                In such moments it can make a difference not to go through it alone. Someone who listens without judgment, helps carry what feels heavy, and searches with you for a new direction — step by step.
+                Before anything else, there is a person — with a history, a particular way of experiencing the world, strengths, vulnerabilities and the capacity to change.
               </p>
             </StaggerItem>
           </StaggerGroup>
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="py-16 md:py-20 px-6 md:px-12 relative overflow-hidden border-y border-neutral-100">
-        <div className="absolute inset-0 -z-10 pointer-events-none">
-          <img src={preparingSpaceImg} alt="" className="w-full h-full object-cover opacity-[0.07]" />
-        </div>
+      {/* Principles */}
+      <section className="py-16 md:py-20 px-6 md:px-12 border-y border-neutral-200">
         <div className="max-w-[112rem] mx-auto">
-          <StaggerGroup className="grid grid-cols-2 md:grid-cols-4 gap-y-14 gap-x-6 md:gap-8" stagger={0.12}>
-            <StaggerItem className="text-center">
-              <AnimatedCounter to={10} suffix="+" className="[font-family:'Lekton',_ui-monospace,_monospace] font-normal text-4xl md:text-6xl text-red-600 block" />
-              <span className="text-xs uppercase tracking-widest text-neutral-500 mt-2 block">Years of experience</span>
-            </StaggerItem>
-            <StaggerItem className="text-center">
-              <AnimatedCounter to={100} suffix="%" className="[font-family:'Lekton',_ui-monospace,_monospace] font-normal text-4xl md:text-6xl text-red-600 block" />
-              <span className="text-xs uppercase tracking-widest text-neutral-500 mt-2 block">Confidential</span>
-            </StaggerItem>
-            <StaggerItem className="text-center">
-              <AnimatedCounter to={15} suffix=" min" className="[font-family:'Lekton',_ui-monospace,_monospace] font-normal text-4xl md:text-6xl text-red-600 block" />
-              <span className="text-xs uppercase tracking-widest text-neutral-500 mt-2 block">Free intro call</span>
-            </StaggerItem>
-            <StaggerItem className="text-center">
-              <span className="text-4xl md:text-6xl text-red-600 block font-normal [font-family:'Lekton',_ui-monospace,_monospace]">Portland</span>
-              <span className="text-xs uppercase tracking-widest text-neutral-500 mt-2 block">and beyond</span>
-            </StaggerItem>
+          <FadeSection className="max-w-2xl mb-12 md:mb-16">
+            <span className="text-xs uppercase tracking-[0.2em] text-red-600/80 block label-line mb-4">Three principles</span>
+            <h2 className="font-display text-3xl md:text-5xl text-neutral-800 tracking-tight">One ongoing <span className="italic font-light text-red-600/90">process</span>.</h2>
+          </FadeSection>
+          <StaggerGroup className="grid grid-cols-1 md:grid-cols-3 gap-px bg-neutral-200" stagger={0.12}>
+            {principles.map((p) => (
+              <StaggerItem key={p.num}>
+                <div className="group bg-neutral-50 hover:bg-white h-full p-8 md:p-10 transition-colors duration-300">
+                  <span className="font-display text-3xl md:text-4xl text-ember-500 leading-none block mb-4">{p.num}</span>
+                  <h3 className="font-display text-2xl text-neutral-800 mb-3">{p.title}</h3>
+                  <p className="text-neutral-500 text-base font-light leading-relaxed">{p.desc}</p>
+                </div>
+              </StaggerItem>
+            ))}
           </StaggerGroup>
         </div>
       </section>
 
-      {/* Over mij section — same text style as closing, links to Over */}
+      {/* About teaser */}
       <section className="py-12 md:py-20 px-6 md:px-12 max-w-[120rem] mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 items-center">
           <div className="col-span-1 md:col-span-4 md:col-start-1">
             <FadeSection>
-              <span className="text-xs uppercase tracking-[0.2em] text-red-600/80 block label-line mb-4">About the studio</span>
+              <span className="text-xs uppercase tracking-[0.2em] text-red-600/80 block label-line mb-4">The practice</span>
               <p className="font-display text-2xl md:text-4xl text-neutral-800 leading-snug mb-8">
-                At studioHuman you find space to <span className="font-light text-red-600/90">pause</span>, to breathe, and to find direction again.
+                A quiet psychological space — where you can arrive without needing to have everything <span className="font-light text-red-600/90">figured out</span>.
               </p>
               <Link to="/about" className="group inline-flex items-center gap-2 text-xs uppercase tracking-widest text-neutral-800 border-b border-neutral-400 py-2 hover:gap-3 hover:border-red-600 hover:text-red-600 transition-all duration-300">
-                Meet the studio
+                About the studio
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </FadeSection>
           </div>
           <div className="md:col-span-7 md:col-start-6 md:-mr-12">
-            <PremiumImage src={doorFrameImg} alt="" height="58vh" rounded="bl" className="w-full -mr-6 md:mx-0 mobile-h-xs" />
+            <CalmPanel height="58vh" rounded="bl" tone="glacier" className="w-full -mr-6 md:mx-0 mobile-h-xs" />
           </div>
         </div>
       </section>
 
-      {/* Closing text + vertical image behind footer */}
+      {/* Approach teaser */}
       <section className="relative px-6 md:px-12 max-w-[120rem] mx-auto z-0">
         <div className="flex flex-col md:flex-row gap-8 md:gap-12">
           <div className="md:w-[42%] relative md:-ml-12 -mb-32 md:-mb-72 z-0 w-[60vw] -ml-6 order-2 md:order-1">
-            <PremiumImage src={handsWritingImg} alt="" height="90vh" rounded="tr" className="w-full mobile-h-closing" />
+            <CalmPanel height="90vh" rounded="tr" tone="cliff" className="w-full mobile-h-closing" />
           </div>
           <div className="md:w-[55%] flex items-center pb-12 md:pb-16 order-1 md:order-2">
             <FadeSection>
               <span className="text-xs uppercase tracking-[0.2em] text-red-600/80 block label-line mb-4">Our approach</span>
               <p className="font-display text-2xl md:text-4xl text-neutral-800 leading-snug mb-8">
-                Guidance that adapts to <span className="font-light text-red-600/90">your needs</span> — personal, accessible, and tailored.
+                Focus not only on what is <span className="font-light text-red-600/90">wrong</span> — but on what is happening, why, and what might help.
               </p>
               <Link to="/approach" className="group inline-flex items-center gap-2 text-xs uppercase tracking-widest text-neutral-800 border-b border-neutral-400 py-2 hover:gap-3 hover:border-red-600 hover:text-red-600 transition-all duration-300">
                 Explore the approach
@@ -201,5 +187,4 @@ export default function Home() {
 
       <Footer />
     </div>);
-
 }

@@ -7,9 +7,9 @@ import FadeSection from '@/components/FadeSection';
 import PageHeader from '@/components/PageHeader';
 import FAQItem from '@/components/FAQItem';
 import BrandedButton from '@/components/BrandedButton';
-import PremiumImage from '@/components/motion/PremiumImage';
 import { StaggerGroup, StaggerItem } from '@/components/motion/Stagger';
-import { faqs, contactConversationImg } from '@/data/content';
+import { faqs } from '@/data/content';
+import CalmPanel from '@/components/CalmPanel';
 import { base44 } from '@/api/base44Client';
 
 function ContactForm() {
@@ -119,8 +119,8 @@ export default function Contact() {
 
       <PageHeader
         label="Start the conversation"
-        title={<>Take your first <span className="italic font-light text-red-600/90">gentle</span> step.</>}
-        intro="Fill in the form and we'll get back to you within two business days to schedule a no-obligation introductory call."
+        title={<>Take a first, <span className="italic font-light text-red-600/90">quiet</span> step.</>}
+        intro="Fill in the form and we'll get back to you within two business days to arrange a no-obligation introductory call."
       />
 
       <section className="px-6 md:px-12 max-w-[120rem] mx-auto pb-24">
@@ -147,8 +147,7 @@ export default function Contact() {
               </StaggerItem>
             </StaggerGroup>
             <div className="mt-12 pt-8 border-t border-neutral-200 space-y-2 text-sm font-light text-neutral-500">
-              <p>14 Linden Walk, Portland</p>
-              <p><a href="tel:+15035550142" className="hover:text-red-600 transition-colors">+1 (503) 555 0142</a></p>
+              <p>In person &amp; online</p>
               <p><a href="mailto:hello@studiohuman.com" className="hover:text-red-600 transition-colors">hello@studiohuman.com</a></p>
             </div>
           </FadeSection>
@@ -191,7 +190,7 @@ export default function Contact() {
             </FadeSection>
           </div>
           <div className="md:w-[42%] relative md:-mr-12 -mb-32 md:-mb-72 z-0 w-[50vw] -mr-6 ml-auto md:ml-0">
-            <PremiumImage src={contactConversationImg} alt="" height="85vh" rounded="tl" className="w-full mobile-h-closing" />
+            <CalmPanel height="85vh" rounded="tl" tone="glacier" className="w-full mobile-h-closing" />
           </div>
         </div>
       </section>

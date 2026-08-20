@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '@/lib/AuthContext';
-import { wordmarkImg } from '@/data/content';
 import {
   LayoutDashboard, Calendar, FileText, ClipboardList,
   MessageSquare, Heart, User, Users, Settings, LogOut, Menu, X, Sparkles, Inbox, Receipt

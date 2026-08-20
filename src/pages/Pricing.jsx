@@ -5,16 +5,15 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ClosingCTA from '@/components/ClosingCTA';
 import FadeSection from '@/components/FadeSection';
-import PremiumImage from '@/components/motion/PremiumImage';
+import CalmPanel from '@/components/CalmPanel';
 import { StaggerGroup, StaggerItem } from '@/components/motion/Stagger';
-import { tarievenImg } from '@/data/content';
 
 const tiers = [
   {
     category: 'Individual Guidance',
     tagline: 'Personalized one-on-one sessions, at your pace.',
     items: [
-      { label: 'Practice session (60 min)', price: '$60' },
+      { label: 'Studio session (60 min)', price: '$60' },
       { label: 'Home visit session (60 min)', price: '$65' },
       { label: 'Evening session (after 8pm), Sunday or holiday', price: '+$15 supplement' },
     ],
@@ -43,8 +42,8 @@ const tiers = [
     category: 'Home Visit Travel Costs',
     tagline: 'Travel included within the local region.',
     items: [
-      { label: 'Within Portland / Lakeview', price: 'Included' },
-      { label: 'Outside this area', price: 'On request' },
+      { label: 'Within the local area', price: 'Included' },
+      { label: 'Beyond the local area', price: 'On request' },
     ],
   },
 ];
@@ -65,7 +64,7 @@ export default function Pricing() {
             Rates & <span className="italic font-light text-red-600/90">pricing</span>.
           </h1>
           <p className="text-neutral-600 text-base md:text-lg font-light max-w-[44ch] leading-normal">
-            Care should be clear — including when it comes to cost. Below you'll find the different options and rates of the studio. Guidance can take place at the studio or at your home. Questions or want to align on something? Reach out — together we'll find what fits your situation.
+            Sessions should be clear — including when it comes to cost. Below are the options and rates. Sessions take place at the studio or online. Questions? Reach out, and we'll find what fits your situation.
           </p>
         </FadeSection>
       </section>
@@ -110,7 +109,7 @@ export default function Pricing() {
             </FadeSection>
           </div>
           <div className="md:w-[42%] relative md:-mr-12 -mb-32 md:-mb-72 z-0 w-[52vw] -mr-6 ml-auto md:ml-0">
-            <PremiumImage src={tarievenImg} alt="" height="85vh" rounded="tl" className="w-full mobile-h-closing" />
+            <CalmPanel height="85vh" rounded="tl" tone="glacier" className="w-full mobile-h-closing" />
           </div>
         </div>
       </section>

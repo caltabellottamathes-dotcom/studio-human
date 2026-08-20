@@ -6,8 +6,8 @@ import Footer from '@/components/Footer';
 import FadeSection from '@/components/FadeSection';
 import StruggleCard from '@/components/StruggleCard';
 import ClosingCTA from '@/components/ClosingCTA';
-import { struggles, counselingImg } from '@/data/content';
-import PremiumImage from '@/components/motion/PremiumImage';
+import CalmPanel from '@/components/CalmPanel';
+import { struggles } from '@/data/content';
 
 export default function Zorgvragen() {
   useEffect(() => {
@@ -33,10 +33,10 @@ export default function Zorgvragen() {
           </Link>
           <span className="text-xs uppercase tracking-[0.25em] text-red-600/80 block label-line mb-6 font-medium">Concerns</span>
           <h1 className="font-display text-5xl md:text-7xl text-neutral-800 leading-[1.1] tracking-tight mb-6 max-w-[18ch]">
-            Recognize your current <span className="italic font-light text-red-600/90">landscape</span>.
+            What brings you <span className="italic font-light text-red-600/90">here</span>.
           </h1>
           <p className="text-neutral-600 text-base md:text-lg font-light max-w-[44ch] leading-normal">
-            We guide people who struggle with stress, loss, overload, emotional difficulties, or life questions. People who feel it can't go on like this, but don't yet know how else.
+            You don't need to name it precisely. These are common themes — not a checklist. Whatever you are carrying is welcome.
           </p>
           <button
             onClick={() => window.dispatchEvent(new CustomEvent('open-zelfreflectie'))}
@@ -51,7 +51,7 @@ export default function Zorgvragen() {
       {/* Photo floating right with struggles flowing around */}
       <section className="px-6 md:px-12 max-w-[120rem] mx-auto pb-0 md:pb-16 relative z-0 flex flex-col md:block">
         <div className="md:float-right md:ml-8 lg:ml-12 md:-mr-12 md:w-[42%] lg:w-[38%] order-2 md:order-none -mb-40 md:-mb-72 relative z-0">
-          <PremiumImage src={counselingImg} alt="Guidance in conversation" height="90vh" rounded="bl" className="w-[60vw] ml-auto -mr-6 md:w-full md:ml-0 md:mx-0 mobile-h-tall" />
+          <CalmPanel height="90vh" rounded="bl" tone="glacier" className="w-[60vw] ml-auto -mr-6 md:w-full md:ml-0 md:mx-0 mobile-h-tall" />
         </div>
         <div className="border-t border-neutral-200 order-1 md:order-none">
           {struggles.map((item, i) => (

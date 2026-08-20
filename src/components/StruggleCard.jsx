@@ -17,7 +17,7 @@ export default function StruggleCard({ item, index }) {
       transition={{ duration: 0.6, delay: index * 0.08, ease }}
     >
       <Link
-        to={`/zorgvragen/${item.slug}`}
+        to={`/concerns/${item.slug}`}
         className="group flex items-start gap-5 md:gap-8 py-7 md:py-8 border-b border-neutral-200 transition-colors duration-300 hover:border-neutral-300"
       >
         <span className="font-display italic text-red-600/30 text-xl md:text-2xl pt-1 tabular-nums group-hover:text-red-600/60 transition-colors duration-300 flex-shrink-0">

@@ -6,7 +6,6 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Mail, Lock, Loader2, ArrowLeft } from 'lucide-react';
 import PortalAuthLayout from '@/components/PortalAuthLayout';
-import { doorFrameImg } from '@/data/content';
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -34,7 +33,7 @@ export default function Login() {
   };
 
   return (
-    <PortalAuthLayout variant="client" image={doorFrameImg}>
+    <PortalAuthLayout variant="client">
       <h1 className="font-serif text-3xl text-neutral-900 mb-2">Welcome back</h1>
       <p className="text-sm text-neutral-500 mb-8">Sign in to your client portal</p>
 

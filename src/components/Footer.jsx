@@ -30,7 +30,7 @@ export default function Footer() {
         <div className="mb-6 md:mb-10">
           <span className="text-xs uppercase tracking-[0.25em] text-red-600/80 block label-line mb-4 font-medium">studioHuman</span>
           <p className="font-display text-xl md:text-2xl text-neutral-800 leading-[1.1] tracking-tight max-w-[24ch]">
-            Love for life, <span className="italic font-light text-red-600/90">care for the soul</span>.
+            A thoughtful space for <span className="italic font-light text-red-600/90">psychological wellbeing</span>.
           </p>
           <div className="mt-3 md:mt-4 flex flex-col gap-1 md:gap-2">
             <button
@@ -62,8 +62,7 @@ export default function Footer() {
             ))}
           </nav>
           <div className="flex flex-col gap-1 text-sm text-neutral-500 font-light md:text-right">
-            <p className="text-neutral-700">14 Linden Walk, Portland</p>
-            <a href="tel:+15035550142" className="hover:text-red-600 transition-colors py-1">+1 (503) 555 0142</a>
+            <p className="text-neutral-700">In person &amp; online</p>
             <a href="mailto:hello@studiohuman.com" className="hover:text-red-600 transition-colors py-1">hello@studiohuman.com</a>
           </div>
         </div>

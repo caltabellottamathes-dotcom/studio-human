@@ -62,21 +62,21 @@
     --card-foreground: 204 7% 16%;
     --popover: 60 14% 97%;
     --popover-foreground: 204 7% 16%;
-    --primary: 18 66% 59%;
+    --primary: 214 28% 53%;
     --primary-foreground: 60 14% 97%;
     --secondary: 40 26% 72%;
     --secondary-foreground: 204 7% 16%;
     --muted: 40 14% 93%;
     --muted-foreground: 204 5% 42%;
-    --accent: 217 35% 69%;
-    --accent-foreground: 204 7% 16%;
+    --accent: 18 66% 59%;
+    --accent-foreground: 60 14% 97%;
     --destructive: 18 60% 45%;
     --destructive-foreground: 60 14% 97%;
     --border: 200 5% 82%;
     --input: 200 5% 82%;
-    --ring: 18 66% 59%;
-    --chart-1: 18 66% 59%;
-    --chart-2: 217 35% 69%;
+    --ring: 214 28% 53%;
+    --chart-1: 214 28% 53%;
+    --chart-2: 18 66% 59%;
     --chart-3: 40 26% 72%;
     --chart-4: 200 5% 55%;
     --chart-5: 204 7% 16%;
@@ -87,12 +87,12 @@
     --font-mono: 'Lekton', ui-monospace, monospace;
     --sidebar-background: 60 13% 96%;
     --sidebar-foreground: 204 7% 16%;
-    --sidebar-primary: 18 66% 59%;
+    --sidebar-primary: 214 28% 53%;
     --sidebar-primary-foreground: 60 14% 97%;
     --sidebar-accent: 40 26% 72%;
     --sidebar-accent-foreground: 204 7% 16%;
     --sidebar-border: 200 5% 82%;
-    --sidebar-ring: 18 66% 59%;
+    --sidebar-ring: 214 28% 53%;
   }
 }
 
@@ -117,8 +117,8 @@
   }
 
   ::selection {
-    background: hsl(22 60% 90%);
-    color: hsl(22 60% 28%);
+    background: hsl(214 28% 88%);
+    color: hsl(214 28% 25%);
   }
 
   ::-webkit-scrollbar {
@@ -135,7 +135,7 @@
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: hsl(22 50% 60%);
+    background: hsl(214 28% 53%);
   }
 
   .font-serif {
