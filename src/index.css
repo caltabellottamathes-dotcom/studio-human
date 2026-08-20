@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Lekton:ital,wght@0,400;0,700;1,400&family=Albert+Sans:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Lekton:ital,wght@0,400;0,700;1,400&display=swap');
 /* base44-workspace-fonts:start */
 @font-face {
   font-family: 'FONTSPRING DEMO - The Seasons';
@@ -62,7 +62,7 @@
     --card-foreground: 20 8% 17%;
     --popover: 40 30% 96%;
     --popover-foreground: 20 8% 17%;
-    --primary: 22 50% 49%;
+    --primary: 63 50% 49%;
     --primary-foreground: 40 30% 97%;
     --secondary: 38 18% 90%;
     --secondary-foreground: 20 8% 20%;
