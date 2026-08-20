@@ -16,8 +16,8 @@ export default function Aanpak() {
 
       <PageHeader
         label="Our approach"
-        title={<>Three principles. One ongoing <span className="italic font-light text-red-600/90">process</span>.</>}
-        intro="Understanding yourself is rarely about a single answer. It is an ongoing process — of seeing patterns, examining what shapes you, and moving toward meaningful change." />
+        title={<>Sit. Blur. <span className="italic font-light text-red-600/90">Move</span>.</>}
+        intro="At the heart of our method lies a simple dialectic: to move forward, you first need to sit down. From stillness, through the blur, toward deliberate momentum — at your own pace." />
 
       <section className="px-6 md:px-12 max-w-[120rem] mx-auto pb-20 md:pb-32">
         <StaggerGroup className="grid grid-cols-1 md:grid-cols-3 gap-px bg-neutral-200" stagger={0.1}>
@@ -38,7 +38,7 @@ export default function Aanpak() {
           <div className="col-span-1 md:col-span-5 md:col-start-1 order-2 md:order-1">
             <FadeSection>
               <p className="font-display text-2xl md:text-4xl text-neutral-800 leading-tight tracking-tight">
-                Sometimes it is a clarifying conversation, sometimes practical support, sometimes simply <span className="italic font-light text-red-600/90">pausing</span> together.
+                Sometimes it is a clarifying conversation, sometimes practical support, sometimes simply <span className="italic font-light text-red-600/90">sitting down</span> together.
               </p>
             </FadeSection>
           </div>
@@ -52,9 +52,9 @@ export default function Aanpak() {
         <FadeSection className="max-w-2xl mx-auto mb-16 md:mb-24 text-center">
           <span className="text-xs uppercase tracking-[0.2em] text-red-600/80 block label-line mb-4">The process</span>
           <h2 className="font-display text-3xl md:text-5xl text-neutral-800 tracking-tight">
-            How we move forward <span className="italic font-light text-red-600/90">together</span>.
+            How we move <span className="italic font-light text-red-600/90">together</span>.
           </h2>
-          <p className="text-neutral-500 text-base md:text-lg font-light mt-4">Four clear, unhurried steps to begin.</p>
+          <p className="text-neutral-500 text-base md:text-lg font-light mt-4">Four unhurried steps — from sitting down to moving forward.</p>
         </FadeSection>
 
         <div className="relative max-w-3xl mx-auto">
@@ -91,9 +91,9 @@ export default function Aanpak() {
           </div>
           <div className="md:w-[55%] flex items-center pb-12 md:pb-16 order-1 md:order-2">
             <FadeSection>
-              <span className="text-xs uppercase tracking-[0.2em] text-red-600/80 block label-line mb-4">Resilience</span>
+              <span className="text-xs uppercase tracking-[0.2em] text-red-600/80 block label-line mb-4">Momentum</span>
               <p className="font-display text-2xl md:text-4xl text-neutral-800 leading-snug">
-                Resilience doesn't mean holding everything together. It means learning to shift, to choose, and to move again — <span className="font-light text-red-600/90">with gentleness, and with realism</span>.
+                Momentum cannot be forced from exhaustion. We gather the strength and clarity in the pause — so that when you stand back up, you move with <span className="font-light text-red-600/90">deliberate, sustainable pace</span>.
               </p>
             </FadeSection>
           </div>

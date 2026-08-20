@@ -10,7 +10,7 @@ export default function ClosingCTA({
   label = 'Begin here',
   headline,
   sub,
-  buttonText = 'Book a session',
+  buttonText = 'Have a seat',
 }) {
   return (
     <section className="relative px-6 md:px-12 max-w-[120rem] mx-auto py-20 md:py-32 z-10">
@@ -39,7 +39,7 @@ export default function ClosingCTA({
         )}
         {!sub && (
           <p className="text-neutral-500 text-base md:text-lg font-light leading-relaxed max-w-[52ch] mx-auto mb-10">
-            A first conversation carries no obligation. Whenever you're ready, we'll begin — at your pace.
+            Have a seat. A first conversation carries no obligation — whenever you’re ready, we begin, at your pace.
           </p>
         )}
         <div className="flex justify-center">

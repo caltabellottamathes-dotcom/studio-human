@@ -123,7 +123,7 @@ export default function Contact() {
       <PageHeader
         label="Start the conversation"
         title={<>Take a first, <span className="italic font-light text-red-600/90">quiet</span> step.</>}
-        intro="Fill in the form and we'll get back to you within two business days to arrange a no-obligation introductory call."
+        intro="Fill in the form and we'll get back to you within two business days to arrange a no-obligation first conversation."
       />
 
       <section className="px-6 md:px-12 max-w-[120rem] mx-auto pb-24">
@@ -188,7 +188,7 @@ export default function Contact() {
             <FadeSection>
               <span className="text-xs uppercase tracking-[0.2em] text-red-600/80 block label-line mb-4">Contact</span>
               <p className="font-display text-2xl md:text-4xl text-neutral-800 leading-snug">
-                <span className="font-light text-red-600/90">You don't need to know what you'll say.</span> You only need to begin.
+                <span className="font-light text-red-600/90">You don't need to know what you'll say.</span> You only need to sit down.
               </p>
             </FadeSection>
           </div>

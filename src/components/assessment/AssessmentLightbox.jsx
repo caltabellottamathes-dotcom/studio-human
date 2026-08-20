@@ -54,8 +54,8 @@ export default function AssessmentLightbox() {
             </button>
             <div className="p-6 md:p-10 pt-14 md:pt-16">
               <AssessmentFlow
-                title={<>Gentle <span className="italic font-light text-red-600/90">self-reflection</span></>}
-                description="Not sure where you stand? Take a few minutes for this gentle self-reflection — not a diagnosis, just a mirror for what you feel."
+                title={<>A quiet <span className="italic font-light text-red-600/90">self-reflection</span></>}
+                description="Not sure where you stand? Take a few minutes to sit with this gentle reflection — not a diagnosis, just a mirror for what you feel."
               />
             </div>
           </motion.div>

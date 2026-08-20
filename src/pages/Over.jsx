@@ -17,8 +17,8 @@ export default function Over() {
 
       <PageHeader
         label="The practice"
-        title={<>A thoughtful space for <span className="font-light text-red-600/90">psychological wellbeing</span>.</>}
-        intro="studioHuman is a contemporary psychology practice built around the belief that understanding yourself is an essential part of psychological wellbeing."
+        title={<>A considered space for <span className="font-light text-red-600/90">the work of being human</span>.</>}
+        intro="studioHuman is a collective of qualified psychologists offering a contemporary approach to mental wellbeing — a deliberate departure from clinical language and sterile spaces."
         hideIntroMobile />
 
       <section className="px-6 md:px-12 max-w-[120rem] mx-auto pb-16">
@@ -37,19 +37,19 @@ export default function Over() {
             <FadeSection>
               <div className="space-y-6 text-neutral-600 text-base md:text-lg font-light leading-normal max-w-[72ch]">
                 <p>
-                  Rather than presenting psychology as something clinical, distant or problem-focused, studioHuman creates a calm and considered environment for reflection, conversation and psychological growth.
+                  Rather than presenting psychology as something clinical or problem-focused, studioHuman creates a calm, considered environment for reflection, conversation and growth — a quiet architecture for the mind.
                 </p>
                 <p>
-                  <span className="font-display text-neutral-800">Studio</span> suggests a place where things are explored — a space for observation, experimentation and change. Psychological work is rarely about finding a single answer.
+                  <span className="font-display text-neutral-800">Studio</span> suggests a place where things are explored — a space for observation, experimentation and change. We have stepped away from sterile facilities and pathologizing language, toward human connection and deep understanding.
                 </p>
                 <p>
-                  <span className="font-display text-neutral-800">Human</span> keeps that process grounded in the individual. Before anything else, there is a person: with a history, a particular way of experiencing the world, strengths, vulnerabilities and the capacity to change.
+                  <span className="font-display text-neutral-800">Human</span> keeps that process grounded in the person. Before anything else, there is someone with a history, a particular way of experiencing the world, and the capacity to change.
                 </p>
                 <p className="font-display text-red-600 text-lg md:text-xl my-8 leading-normal">
-                  &ldquo;The practice focuses not only on what is wrong, but on what is happening, why it is happening, and what might help.&rdquo;
+                  &ldquo;To move forward, you first need to sit down. Genuine momentum cannot be forced from a place of exhaustion.&rdquo;
                 </p>
                 <p>
-                  The website is an extension of the practice itself: a quiet psychological space rather than a clinical interface. A place where someone can arrive without needing to have everything figured out.
+                  The website is an extension of the practice itself: a quiet space rather than a clinical interface. A place where you can arrive exactly as you are — and let the dust settle before the real work begins.
                 </p>
               </div>
             </FadeSection>
@@ -94,7 +94,7 @@ export default function Over() {
             <FadeSection>
               <span className="text-xs uppercase tracking-[0.2em] text-red-600/80 block label-line mb-4">Our vision</span>
               <p className="font-display text-2xl md:text-4xl text-neutral-800 leading-snug max-w-[48ch]">
-                Soft architectural tones, muted colours and generous whitespace — an atmosphere that feels <span className="font-light text-red-600/90">safe, intelligent and contemporary</span>, without relying on the visual language of clinical healthcare.
+                Muted tones, soft architecture and generous whitespace — a space that feels <span className="font-light text-red-600/90">safe, intelligent and human</span>, without the visual language of clinical healthcare.
               </p>
             </FadeSection>
           </div>

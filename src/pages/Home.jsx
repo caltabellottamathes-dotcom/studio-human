@@ -58,7 +58,7 @@ export default function Home() {
           <motion.div variants={heroItem} className="mb-10">
             <div className="flex items-center gap-4">
               <span className="text-xs uppercase tracking-[0.25em] text-red-600/80 font-medium">
-                A psychological practice
+                A considered space
               </span>
               <span className="h-px w-12 bg-neutral-300" />
             </div>
@@ -68,25 +68,24 @@ export default function Home() {
           </motion.div>
 
           <motion.h1 variants={heroItem} className="font-display text-5xl md:text-6xl lg:text-[5.5rem] text-neutral-800 leading-[0.98] md:leading-[0.9] tracking-tight max-w-[26ch]">
-            Understand yourself.<br className="hidden md:inline" /> Explore what shapes you.<br className="hidden md:inline" />{' '}
-            <span className="italic text-red-600/90 font-light">Move forward</span>.
+            To move forward,<br className="hidden md:inline" /> first <span className="italic text-red-600/90 font-light">sit down</span>.
           </motion.h1>
 
           <motion.div variants={heroItem} className="mt-10 md:mt-12 md:max-w-[42ch] pr-[48%] md:pr-0">
             <p className="text-neutral-600 text-base md:text-lg font-light leading-normal max-w-[40ch] text-left">
-              A calm, considered space for reflection, conversation and psychological growth — not a clinical interface.
+              A quiet architecture for the mind. A considered space where you can arrive exactly as you are — not a clinical interface.
             </p>
           </motion.div>
         </motion.div>
 
         <Marquee className="absolute bottom-16 md:bottom-0 left-0 w-full z-20 py-3 bg-neutral-50/85 backdrop-blur-sm border-t border-neutral-200/60" speed={12}>
-          <span className="font-body uppercase tracking-widest text-sm md:text-base px-10 text-neutral-500">Understand</span>
+          <span className="font-body uppercase tracking-widest text-sm md:text-base px-10 text-neutral-500">Sit</span>
           <span className="text-red-600/40 text-xs">✦</span>
-          <span className="font-body uppercase tracking-widest text-sm md:text-base px-10 text-neutral-500">Explore</span>
+          <span className="font-body uppercase tracking-widest text-sm md:text-base px-10 text-neutral-500">Blur</span>
           <span className="text-red-600/40 text-xs">✦</span>
           <span className="font-body uppercase tracking-widest text-sm md:text-base px-10 text-neutral-500">Move</span>
           <span className="text-red-600/40 text-xs">✦</span>
-          <span className="font-body uppercase tracking-widest text-sm md:text-base px-10 text-neutral-500">A thoughtful space for psychological wellbeing</span>
+          <span className="font-body uppercase tracking-widest text-sm md:text-base px-10 text-neutral-500">Soft confusion, deliberate pace</span>
           <span className="text-red-600/40 text-xs">✦</span>
         </Marquee>
       </section>
@@ -103,17 +102,17 @@ export default function Home() {
             </StaggerItem>
             <StaggerItem>
               <p className="font-display text-3xl md:text-5xl text-neutral-800 tracking-tight leading-tight mb-6">
-                A thoughtful space for <span className="italic font-light text-red-600/90">psychological wellbeing</span>.
+                A considered space for <span className="italic font-light text-red-600/90">the work of being human</span>.
               </p>
             </StaggerItem>
             <StaggerItem>
               <p className="text-neutral-600 text-base md:text-lg font-light leading-relaxed max-w-[52ch]">
-                Psychology is rarely about finding a single answer. It is an ongoing process of understanding patterns, emotions, behaviour, relationships and the circumstances that shape us.
+                studioHuman is a collective of qualified psychologists offering a contemporary approach to mental wellbeing — a deliberate step away from sterile facilities and pathologizing language.
               </p>
             </StaggerItem>
             <StaggerItem>
               <p className="text-neutral-600 text-base md:text-lg font-light leading-relaxed max-w-[52ch] mt-4">
-                Before anything else, there is a person — with a history, a particular way of experiencing the world, strengths, vulnerabilities and the capacity to change.
+                We operate as a thoughtful studio: a grounded, minimalist environment where human connection and deep understanding take precedence over rigid protocols.
               </p>
             </StaggerItem>
           </StaggerGroup>
@@ -124,8 +123,8 @@ export default function Home() {
       <section className="py-16 md:py-20 px-6 md:px-12 border-y border-neutral-200">
         <div className="max-w-[112rem] mx-auto">
           <FadeSection className="max-w-2xl mb-12 md:mb-16">
-            <span className="text-xs uppercase tracking-[0.2em] text-red-600/80 block label-line mb-4">Three principles</span>
-            <h2 className="font-display text-3xl md:text-5xl text-neutral-800 tracking-tight">One ongoing <span className="italic font-light text-red-600/90">process</span>.</h2>
+            <span className="text-xs uppercase tracking-[0.2em] text-red-600/80 block label-line mb-4">The method</span>
+            <h2 className="font-display text-3xl md:text-5xl text-neutral-800 tracking-tight">Sit down to <span className="italic font-light text-red-600/90">move forward</span>.</h2>
           </FadeSection>
           <StaggerGroup className="grid grid-cols-1 md:grid-cols-3 gap-px bg-neutral-200" stagger={0.12}>
             {principles.map((p) => (
@@ -148,7 +147,7 @@ export default function Home() {
             <FadeSection>
               <span className="text-xs uppercase tracking-[0.2em] text-red-600/80 block label-line mb-4">The practice</span>
               <p className="font-display text-2xl md:text-4xl text-neutral-800 leading-snug mb-8">
-                A quiet psychological space — where you can arrive without needing to have everything <span className="font-light text-red-600/90">figured out</span>.
+                A quiet architecture for the mind — where you arrive as you are, and the <span className="font-light text-red-600/90">dust is allowed to settle</span>.
               </p>
               <Link to="/about" className="group inline-flex items-center gap-2 text-xs uppercase tracking-widest text-neutral-800 border-b border-neutral-400 py-2 hover:gap-3 hover:border-red-600 hover:text-red-600 transition-all duration-300">
                 About the studio
@@ -172,7 +171,7 @@ export default function Home() {
             <FadeSection>
               <span className="text-xs uppercase tracking-[0.2em] text-red-600/80 block label-line mb-4">Our approach</span>
               <p className="font-display text-2xl md:text-4xl text-neutral-800 leading-snug mb-8">
-                Focus not only on what is <span className="font-light text-red-600/90">wrong</span> — but on what is happening, why, and what might help.
+                We do not push; we <span className="font-light text-red-600/90">invite</span>. We help you map what feels heavy — without rushing toward an artificial finish line.
               </p>
               <Link to="/approach" className="group inline-flex items-center gap-2 text-xs uppercase tracking-widest text-neutral-800 border-b border-neutral-400 py-2 hover:gap-3 hover:border-red-600 hover:text-red-600 transition-all duration-300">
                 Explore the approach

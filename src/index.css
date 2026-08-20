@@ -56,43 +56,43 @@
 
 @layer base {
   :root {
-    --background: 60 13% 96%;
-    --foreground: 204 7% 16%;
-    --card: 60 14% 97%;
-    --card-foreground: 204 7% 16%;
-    --popover: 60 14% 97%;
-    --popover-foreground: 204 7% 16%;
-    --primary: 214 28% 53%;
-    --primary-foreground: 60 14% 97%;
-    --secondary: 40 26% 72%;
-    --secondary-foreground: 204 7% 16%;
-    --muted: 40 14% 93%;
-    --muted-foreground: 204 5% 42%;
-    --accent: 18 66% 59%;
-    --accent-foreground: 60 14% 97%;
-    --destructive: 18 60% 45%;
-    --destructive-foreground: 60 14% 97%;
-    --border: 200 5% 82%;
-    --input: 200 5% 82%;
-    --ring: 214 28% 53%;
-    --chart-1: 214 28% 53%;
-    --chart-2: 18 66% 59%;
-    --chart-3: 40 26% 72%;
-    --chart-4: 200 5% 55%;
-    --chart-5: 204 7% 16%;
+    --background: 197 17% 84%;
+    --foreground: 59 86% 14%;
+    --card: 197 22% 88%;
+    --card-foreground: 59 86% 14%;
+    --popover: 197 22% 88%;
+    --popover-foreground: 59 86% 14%;
+    --primary: 56 52% 44%;
+    --primary-foreground: 197 30% 94%;
+    --secondary: 58 27% 78%;
+    --secondary-foreground: 59 86% 14%;
+    --muted: 58 18% 80%;
+    --muted-foreground: 59 30% 30%;
+    --accent: 319 35% 14%;
+    --accent-foreground: 58 27% 80%;
+    --destructive: 0 45% 40%;
+    --destructive-foreground: 197 30% 94%;
+    --border: 58 14% 66%;
+    --input: 58 14% 66%;
+    --ring: 56 52% 44%;
+    --chart-1: 56 52% 44%;
+    --chart-2: 319 35% 28%;
+    --chart-3: 58 27% 78%;
+    --chart-4: 197 17% 50%;
+    --chart-5: 59 86% 14%;
     --radius: 0.75rem;
     --font-heading: 'FONTSPRING DEMO - The Seasons', 'Cormorant Garamond', Georgia, serif;
     --font-body: 'Lekton', ui-monospace, monospace;
     --font-display: 'FONTSPRING DEMO - The Seasons Light', 'Cormorant Garamond', Georgia, serif;
     --font-mono: 'Lekton', ui-monospace, monospace;
-    --sidebar-background: 60 13% 96%;
-    --sidebar-foreground: 204 7% 16%;
-    --sidebar-primary: 214 28% 53%;
-    --sidebar-primary-foreground: 60 14% 97%;
-    --sidebar-accent: 40 26% 72%;
-    --sidebar-accent-foreground: 204 7% 16%;
-    --sidebar-border: 200 5% 82%;
-    --sidebar-ring: 214 28% 53%;
+    --sidebar-background: 197 17% 84%;
+    --sidebar-foreground: 59 86% 14%;
+    --sidebar-primary: 56 52% 44%;
+    --sidebar-primary-foreground: 197 30% 94%;
+    --sidebar-accent: 58 27% 78%;
+    --sidebar-accent-foreground: 59 86% 14%;
+    --sidebar-border: 58 14% 66%;
+    --sidebar-ring: 56 52% 44%;
   }
 }
 
@@ -117,8 +117,8 @@
   }
 
   ::selection {
-    background: hsl(214 28% 88%);
-    color: hsl(214 28% 25%);
+    background: hsl(56 52% 88%);
+    color: hsl(59 86% 16%);
   }
 
   ::-webkit-scrollbar {
@@ -130,12 +130,12 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    background: hsl(35 12% 80%);
+    background: hsl(58 20% 70%);
     border-radius: 100px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: hsl(214 28% 53%);
+    background: hsl(56 52% 44%);
   }
 
   .font-serif {
@@ -201,7 +201,7 @@
   }
 
   :focus-visible {
-    outline: 2px solid hsl(22 50% 49% / 0.3);
+    outline: 2px solid hsl(56 52% 44% / 0.35);
     outline-offset: 3px;
     border-radius: 1px;
   }

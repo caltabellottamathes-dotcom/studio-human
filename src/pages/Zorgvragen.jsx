@@ -36,7 +36,7 @@ export default function Zorgvragen() {
             What brings you <span className="italic font-light text-red-600/90">here</span>.
           </h1>
           <p className="text-neutral-600 text-base md:text-lg font-light max-w-[44ch] leading-normal">
-            You don't need to name it precisely. These are common themes — not a checklist. Whatever you are carrying is welcome.
+            You don't need to name it precisely. These are common themes — not a checklist, not a diagnosis. Whatever you are carrying is welcome here.
           </p>
           <button
             onClick={() => window.dispatchEvent(new CustomEvent('open-zelfreflectie'))}

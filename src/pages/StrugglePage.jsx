@@ -14,54 +14,54 @@ const struggles = {
     title: 'Stress & Overwhelm',
     subtitle: 'When the noise of daily life drowns out your inner voice.',
     img: 'https://media.base44.com/images/public/6a565889855ed729a11c1b91/42b1d4724_generated_image.png',
-    intro: 'The pace of modern life can quietly accumulate — until one day the weight feels impossible to lift alone. Stress and overwhelm are not signs of weakness. They are your body and mind asking for a gentler pace.',
+    intro: 'The pace of modern life can quietly accumulate — until one day the weight feels impossible to lift alone. Stress and overwhelm are not signs of weakness. They are your body and mind asking for a gentler pace — for a place to sit down.',
     body: [
       { heading: 'What this looks like', text: "You may find yourself constantly 'on,' unable to switch off even when you have the time. Small tasks feel enormous. Your mind races at night. You feel irritable, depleted, and disconnected from the things that once brought you joy." },
       { heading: 'How we can help', text: 'In our sessions we slow down together. We identify the sources of pressure — external and internal — and begin to create small, meaningful shifts. You leave each session with practical tools and a deeper understanding of your own nervous system and needs.' },
-      { heading: "You don't have to earn rest", text: 'One of the most common things we hear from people in this situation is guilt about needing rest. Together we work to dissolve that guilt and build a relationship with yourself rooted in compassion, not productivity.' },
+      { heading: "You don't have to earn rest", text: 'One of the most common things we hear is guilt about needing rest. Together we work to dissolve that guilt and build a relationship with yourself rooted in compassion, not productivity.' },
     ],
   },
   'burnout': {
     title: 'Burnout',
     subtitle: 'Gently sifting through the ashes of exhaustion.',
     img: 'https://media.base44.com/images/public/6a565889855ed729a11c1b91/21edd95a2_generated_image.png',
-    intro: 'Burnout is not simply being tired. It is a deep exhaustion — of energy, of meaning, of the sense that things will ever feel different. Recovery from burnout asks for patience, gentleness, and a space where you are not expected to perform.',
+    intro: 'Burnout is not simply being tired. It is a deep exhaustion — of energy, of meaning, of the sense that things will ever feel different. Recovery asks for patience, gentleness, and a space where you are not expected to perform.',
     body: [
       { heading: 'Recognizing burnout', text: 'You may feel emotionally numb, or swing between exhaustion and anxiety. Work that once gave you meaning now feels hollow. You find it hard to concentrate, to make decisions, or to feel much at all. This is burnout, and it is real.' },
-      { heading: 'A pace that belongs to you', text: 'Recovery cannot be rushed. In our work together we honor the pace your body and mind need — no timelines, no performance standards. We begin simply by naming what has happened, and slowly, carefully, build from there.' },
+      { heading: 'A pace that belongs to you', text: 'Recovery cannot be rushed. In our work together we honour the pace your body and mind need — no timelines, no performance standards. We begin simply by naming what has happened, and slowly, carefully, build from there.' },
       { heading: 'Prevention and long-term resilience', text: 'As you begin to stabilize, we explore the patterns and beliefs that contributed to your burnout — so you can build a more sustainable relationship with work, rest, and your own expectations.' },
     ],
   },
   'caregiving': {
     title: 'Caregiving',
-    subtitle: 'Supporting the caregiver.',
+    subtitle: 'A considered space for the caregiver.',
     img: 'https://media.base44.com/images/public/6a565889855ed729a11c1b91/d567b0e7c_generated_image.png',
     intro: 'Caring for someone you love is one of the most selfless things a person can offer. It is also one of the most exhausting. studioHuman offers a safe, dedicated space for caregivers who have forgotten to care for themselves.',
     body: [
       { heading: 'The invisible weight of caring', text: 'Caregivers often carry enormous emotional and practical burdens while remaining invisible in their own right. You may grieve the person you care for while they are still present. You may feel frustration, and then guilt about that frustration. All of it is normal. Everything has a place here.' },
-      { heading: 'Finding yourself again', text: 'In our sessions we create room for your experience — not only your role. You are not just a caregiver. You are a whole person with needs, desires, and limits. Together we work to honor that truth.' },
+      { heading: 'Finding yourself again', text: 'In our sessions we create room for your experience — not only your role. You are not just a caregiver. You are a whole person with needs, desires, and limits. Together we work to honour that truth.' },
       { heading: 'Practical support too', text: 'Alongside emotional guidance, we help with practical navigation — coordinating with other care providers, clarifying paperwork, and finding the support structures that can lighten the load.' },
     ],
   },
   'grief-loss': {
     title: 'Grief & Loss',
-    subtitle: 'Honoring the space that remains.',
+    subtitle: 'Honouring the space that remains.',
     img: 'https://media.base44.com/images/public/6a565889855ed729a11c1b91/aa5459e8e_generated_image.png',
     intro: 'Grief is not a problem to solve. It is a testament to love and connection. At studioHuman, grief is surrounded with the reverence it deserves — at whatever pace your heart needs.',
     body: [
       { heading: 'All grief is valid', text: "Loss takes many forms: the death of a loved one, the end of a relationship, a diagnosis, the loss of a future you had imagined. You don't need to justify your grief or compare it to another's. If it is real for you, it belongs here." },
-      { heading: 'No timeline, no expectations', text: "There is no right way to grieve, and there is no deadline. In our sessions we don't rush toward acceptance. Instead we honor where you are now — and move from there, slowly, together." },
+      { heading: 'No timeline, no expectations', text: "There is no right way to grieve, and there is no deadline. In our sessions we don't rush toward acceptance. Instead we honour where you are now — and move from there, slowly, together." },
       { heading: 'Rebuilding meaning', text: 'Over time, many people find that grief opens a door to deeper self-understanding. We explore what the person or thing you lost meant to you, and how that meaning can live on in you in new ways.' },
     ],
   },
   'life-transitions': {
     title: 'Life Transitions',
-    subtitle: 'Finding balance on shifting ground.',
+    subtitle: 'Finding your footing in the blur.',
     img: 'https://media.base44.com/images/public/6a565889855ed729a11c1b91/62cb3ee5c_generated_image.png',
     intro: 'Every major life transition — a new job, a move, retirement, becoming a parent, a relationship ending — disrupts our sense of who we are. This disorientation is normal. And navigating it with support makes all the difference.',
     body: [
       { heading: 'When the map no longer fits the territory', text: 'You may feel lost, anxious, or strangely grief-stricken — even when the transition is one you chose or wanted. Change, even positive change, asks us to let something go. That letting go asks for courage, and it asks for time.' },
-      { heading: 'Clarity and direction', text: 'In our sessions we create space to process what is ending and what is beginning. We clarify your values, your needs, and what you want this next chapter to feel like — and then we build toward it, step by step.' },
+      { heading: 'A steady frame in the blur', text: 'In our sessions we create space to process what is ending and what is beginning. We hold steady while your old edges dissolve and new perspectives form — and then we build toward what comes next, step by step.' },
       { heading: 'You are not behind', text: 'There is no schedule for life transitions. At any age, in any phase, a new beginning is possible. Our role is to walk beside you as you find your own way — at your pace, on your terms.' },
     ],
   },
@@ -161,7 +161,7 @@ export default function StrugglePage() {
             <FadeSection>
               <span className="text-xs uppercase tracking-[0.2em] text-red-600/80 block label-line mb-4">Rest</span>
               <p className="font-display text-2xl md:text-4xl text-neutral-800 leading-snug max-w-[48ch]">
-                Sometimes rest is already the first step. You don't need to know where you're going — only that you don't have to be there alone.
+                Sometimes sitting down is already the first step. You don't need to know where you're going — only that you don't have to get there alone.
               </p>
             </FadeSection>
           </div>

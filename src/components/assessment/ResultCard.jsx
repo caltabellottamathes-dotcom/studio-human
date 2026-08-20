@@ -35,7 +35,7 @@ export default function ResultCard({ result, onRestart }) {
 
       <div className="mt-8 p-5 border border-neutral-200 rounded-xl bg-neutral-50">
         <p className="text-xs text-neutral-500 font-light leading-relaxed">
-          This reflection is not a diagnostic tool. It's simply an invitation to pause and notice how you're doing. If your answers resonate, a conversation can help you explore what you need.
+          This reflection is not a diagnostic tool. It is an invitation to sit down and notice how you are doing. If your answers resonate, a conversation can help you explore what you need.
         </p>
       </div>
 

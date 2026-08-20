@@ -9,7 +9,7 @@ export const BRAND = {
     mode: 'In person & online',
   },
   cta: {
-    primary: 'Book a session',
+    primary: 'Have a seat',
     reflect: 'Self-reflection',
   },
   legal: {
