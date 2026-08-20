@@ -67,8 +67,8 @@ export default function Home() {
             </p>
           </motion.div>
 
-          <motion.h1 variants={heroItem} className="font-display text-5xl md:text-7xl lg:text-[7rem] text-neutral-800 leading-[0.92] md:leading-[0.82] tracking-tight max-w-[16ch]">
-            Understand yourself.<br className="hidden md:inline" /> Explore what shapes you.{' '}
+          <motion.h1 variants={heroItem} className="font-display text-5xl md:text-6xl lg:text-[5.5rem] text-neutral-800 leading-[0.98] md:leading-[0.9] tracking-tight max-w-[26ch]">
+            Understand yourself.<br className="hidden md:inline" /> Explore what shapes you.<br className="hidden md:inline" />{' '}
             <span className="italic text-red-600/90 font-light">Move forward</span>.
           </motion.h1>
 
