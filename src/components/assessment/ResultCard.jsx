@@ -6,7 +6,7 @@ const sections = [
   { key: 'reflection', label: 'A reflection for you' },
   { key: 'recognition', label: 'What your answers suggest' },
   { key: 'encouragement', label: 'A gentle reminder' },
-  { key: 'how_debora_helps', label: 'How Maya can help' },
+  { key: 'how_debora_helps', label: 'How the studio can help' },
   { key: 'invitation', label: 'An invitation' },
 ];
 
