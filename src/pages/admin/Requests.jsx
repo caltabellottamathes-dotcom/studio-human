@@ -74,6 +74,18 @@ export default function AdminRequests() {
     );
   }
 
+  if (error) {
+    return (
+      <div className="p-6 md:p-10 max-w-6xl">
+        <div className="mb-8">
+          <span className="text-[10px] uppercase tracking-[0.25em] text-red-600/80 block mb-2">Manage</span>
+          <h1 className="font-display text-3xl md:text-4xl text-neutral-800 tracking-tight">Requests</h1>
+        </div>
+        <ErrorState onRetry={fetchRequests} />
+      </div>
+    );
+  }
+
   return (
     <div className="p-6 md:p-10 max-w-6xl">
       <div className="mb-8">

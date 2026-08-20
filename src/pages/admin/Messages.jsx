@@ -1,20 +1,25 @@
 import React, { useState, useEffect } from 'react';
 import { base44 } from '@/api/base44Client';
 import { Send, MessageSquare } from 'lucide-react';
+import { ErrorState } from '@/components/ListStates';
 
 export default function AdminMessages() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
   const [selectedClient, setSelectedClient] = useState(null);
   const [messageText, setMessageText] = useState('');
   const [sending, setSending] = useState(false);
 
   const fetchData = async () => {
+    setLoading(true);
+    setError(false);
     try {
       const response = await base44.functions.invoke('adminGetContent', {});
       setData(response.data);
     } catch (err) {
       console.error(err);
+      setError(true);
     } finally {
       setLoading(false);
     }
@@ -73,6 +78,18 @@ export default function AdminMessages() {
     return (
       <div className="flex items-center justify-center min-h-screen">
         <div className="w-8 h-8 border-4 border-neutral-200 border-t-red-600 rounded-full animate-spin"></div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="p-6 md:p-10 max-w-6xl">
+        <div className="mb-8">
+          <span className="text-[10px] uppercase tracking-[0.25em] text-red-600/80 block mb-2">Manage</span>
+          <h1 className="font-display text-3xl md:text-4xl text-neutral-800 tracking-tight">Messages</h1>
+        </div>
+        <ErrorState onRetry={fetchData} />
       </div>
     );
   }

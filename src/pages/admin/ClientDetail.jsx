@@ -10,6 +10,7 @@ import SessionNoteFormDialog from '@/components/admin/SessionNoteFormDialog';
 import AssignmentFormDialog from '@/components/admin/AssignmentFormDialog';
 import DocumentFormDialog from '@/components/admin/DocumentFormDialog';
 import AssignmentReviewPanel from '@/components/admin/AssignmentReviewPanel';
+import { ErrorState } from '@/components/ListStates';
 import {
   ArrowLeft, Calendar, FileText, ClipboardList, MessageSquare, Heart,
   User, FolderOpen, Plus, Send, Lock, ExternalLink, AlertCircle
@@ -36,14 +37,18 @@ export default function ClientDetail() {
   const [profileForm, setProfileForm] = useState({});
   const [savingProfile, setSavingProfile] = useState(false);
   const [messageText, setMessageText] = useState('');
+  const [error, setError] = useState(false);
 
   const fetchData = async () => {
+    setLoading(true);
+    setError(false);
     try {
       const response = await base44.functions.invoke('getAdminClientDetail', { client_user_id: id });
       setData(response.data);
       setProfileForm(response.data?.profile || {});
     } catch (err) {
       console.error('Failed to load client:', err);
+      setError(true);
     } finally {
       setLoading(false);
     }
@@ -94,6 +99,25 @@ export default function ClientDetail() {
   const profile = data?.profile;
   const client = { user_id: id, first_name: profile?.first_name || data?.user?.full_name?.split(' ')[0] || '', last_name: profile?.last_name || '' };
   const set = (k, v) => setProfileForm(f => ({ ...f, [k]: v }));
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="w-8 h-8 border-4 border-neutral-200 border-t-red-600 rounded-full animate-spin"></div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="p-6 md:p-10 max-w-5xl">
+        <Link to="/admin/clients" className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-neutral-500 hover:text-red-600 transition-colors mb-6">
+          <ArrowLeft className="w-4 h-4" /> Back to clients
+        </Link>
+        <ErrorState onRetry={fetchData} />
+      </div>
+    );
+  }
 
   return (
     <div className="p-6 md:p-10 max-w-5xl">
