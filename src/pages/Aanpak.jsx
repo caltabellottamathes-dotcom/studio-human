@@ -15,9 +15,9 @@ export default function Aanpak() {
       <Header />
 
       <PageHeader
-        label="Mijn aanpak"
-        title={<>Vier pijlers van <span className="italic font-light text-red-600/90">zachte</span> begeleiding.</>}
-        intro="Mijn begeleiding is persoonlijk en op maat. Zonder oordeel, zonder vast stramien — wel met aandacht voor jouw verhaal en jouw tempo." />
+        label="My approach"
+        title={<>Four pillars of <span className="italic font-light text-red-600/90">gentle</span> guidance.</>}
+        intro="My guidance is personal and tailored. Without judgment, without a fixed script — with attention to your story and your pace." />
 
       {/* Pillars — two-column grid on desktop */}
       <section className="px-6 md:px-12 max-w-[120rem] mx-auto pb-20 md:pb-32">
@@ -42,7 +42,7 @@ export default function Aanpak() {
           <div className="col-span-1 md:col-span-5 md:col-start-1 order-2 md:order-1">
             <FadeSection>
               <p className="font-display text-2xl md:text-4xl text-neutral-800 leading-tight tracking-tight">
-                Soms is dat een verhelderend gesprek, soms praktische ondersteuning, soms gewoon even samen <span className="italic font-light text-red-600/90">stilstaan</span>.
+                Sometimes that's a clarifying conversation, sometimes practical support, sometimes simply <span className="italic font-light text-red-600/90">pausing</span> together.
               </p>
             </FadeSection>
           </div>
@@ -55,11 +55,11 @@ export default function Aanpak() {
       {/* Process — centered vertical timeline */}
       <section className="py-16 md:py-24 px-6 md:px-12 max-w-[120rem] mx-auto">
         <FadeSection className="max-w-2xl mx-auto mb-16 md:mb-24 text-center">
-          <span className="text-xs uppercase tracking-[0.2em] text-red-600/80 block label-line mb-4">Het proces</span>
+          <span className="text-xs uppercase tracking-[0.2em] text-red-600/80 block label-line mb-4">The process</span>
           <h2 className="font-display text-3xl md:text-5xl text-neutral-800 tracking-tight">
-            Hoe we samen <span className="italic font-light text-red-600/90">gaan</span>.
+            How we move forward <span className="italic font-light text-red-600/90">together</span>.
           </h2>
-          <p className="text-neutral-500 text-base md:text-lg font-light mt-4">Vier heldere, onoverhaaste stappen om je begeleidingstraject te beginnen.</p>
+          <p className="text-neutral-500 text-base md:text-lg font-light mt-4">Four clear, unhurried steps to begin your guidance journey.</p>
         </FadeSection>
 
         <div className="relative max-w-3xl mx-auto">
@@ -81,7 +81,7 @@ export default function Aanpak() {
                   />
                   {/* Alternating: odd steps text left, even steps text right */}
                   <div className={i % 2 === 0 ? 'md:col-start-1 md:text-right' : 'md:col-start-2 md:row-start-1'}>
-                    <span className="font-mono italic text-red-600 block mb-1 text-sm md:text-base">Stap {step.num}</span>
+                    <span className="font-mono italic text-red-600 block mb-1 text-sm md:text-base">Step {step.num}</span>
                     <h3 className="font-display text-xl md:text-2xl text-neutral-800 mb-2">{step.title}</h3>
                     <p className="text-neutral-500 text-base md:text-lg font-light leading-normal">{step.desc}</p>
                   </div>
@@ -100,9 +100,9 @@ export default function Aanpak() {
           </div>
           <div className="md:w-[55%] flex items-center pb-12 md:pb-16 order-1 md:order-2">
             <FadeSection>
-              <span className="text-xs uppercase tracking-[0.2em] text-red-600/80 block label-line mb-4">Veerkracht</span>
+              <span className="text-xs uppercase tracking-[0.2em] text-red-600/80 block label-line mb-4">Resilience</span>
               <p className="font-display text-2xl md:text-4xl text-neutral-800 leading-snug">
-                Veerkracht betekent niet dat je alles moet blijven volhouden. Het betekent leren schakelen, keuzes maken en opnieuw beweging brengen — <span className="font-light text-red-600/90">met mildheid, maar ook met realisme</span>.
+                Resilience doesn't mean you have to keep holding everything together. It means learning to shift, to choose, and to move again — <span className="font-light text-red-600/90">with gentleness, but also with realism</span>.
               </p>
             </FadeSection>
           </div>

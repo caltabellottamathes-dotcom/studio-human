@@ -60,9 +60,9 @@ export default function PortalMessages() {
   return (
     <div className="p-6 md:p-10 max-w-3xl">
       <div className="mb-6">
-        <span className="text-[10px] uppercase tracking-[0.25em] text-red-600/80 block mb-2">Cliëntportaal</span>
-        <h1 className="font-display text-3xl md:text-4xl text-neutral-800 tracking-tight">Berichten</h1>
-        <p className="text-neutral-500 text-sm font-light mt-2">Veilig communiceren met Debora.</p>
+        <span className="text-[10px] uppercase tracking-[0.25em] text-red-600/80 block mb-2">Client Portal</span>
+        <h1 className="font-display text-3xl md:text-4xl text-neutral-800 tracking-tight">Messages</h1>
+        <p className="text-neutral-500 text-sm font-light mt-2">Message Maya securely.</p>
       </div>
 
       <div className="bg-white rounded-xl border border-neutral-200 flex flex-col" style={{ height: 'calc(100vh - 280px)', minHeight: '400px' }}>
@@ -70,8 +70,8 @@ export default function PortalMessages() {
           <div className="flex-1 flex items-center justify-center">
             <div className="text-center">
               <MessageSquare className="w-8 h-8 text-neutral-300 mx-auto mb-3" strokeWidth={1} />
-              <p className="text-sm text-neutral-400 font-light">Nog geen berichten.</p>
-              <p className="text-xs text-neutral-400 mt-1">Stuur een bericht om te beginnen.</p>
+              <p className="text-sm text-neutral-400 font-light">No messages yet.</p>
+              <p className="text-xs text-neutral-400 mt-1">Send a message to start.</p>
             </div>
           </div>
         ) : (
@@ -81,7 +81,7 @@ export default function PortalMessages() {
                 <div className={`max-w-[75%] p-3 rounded-2xl ${m.sender === 'client' ? 'bg-neutral-900 text-white rounded-br-sm' : 'bg-neutral-100 text-neutral-800 rounded-bl-sm'}`}>
                   <p className="text-sm font-light whitespace-pre-wrap">{m.content}</p>
                   <p className={`text-[9px] mt-1 ${m.sender === 'client' ? 'text-white/50' : 'text-neutral-400'}`}>
-                    {new Date(m.created_date).toLocaleString('nl-NL', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' })}
+                    {new Date(m.created_date).toLocaleString('en-US', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' })}
                   </p>
                 </div>
               </div>
@@ -94,7 +94,7 @@ export default function PortalMessages() {
             value={messageText}
             onChange={e => setMessageText(e.target.value)}
             onKeyDown={e => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(); } }}
-            placeholder="Typ een bericht..."
+            placeholder="Type a message..."
             className="flex-1 border border-neutral-200 rounded-full px-5 py-2.5 text-sm focus:outline-none focus:border-neutral-300"
           />
           <button onClick={sendMessage} disabled={sending || !messageText.trim()} className="w-10 h-10 flex items-center justify-center bg-neutral-900 hover:bg-black text-white rounded-full disabled:opacity-30 transition-colors flex-shrink-0">

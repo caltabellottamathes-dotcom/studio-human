@@ -18,7 +18,7 @@ export default function QuestionCard({ question, selectedIndices, onSelect }) {
     <div className="max-w-2xl mx-auto w-full">
       {isMultiple && (
         <p className="text-center text-xs uppercase tracking-widest text-neutral-400 mb-8">
-          Selecteer alles wat van toepassing is
+          Select all that apply
         </p>
       )}
       <h2 className="font-display text-3xl md:text-4xl text-neutral-800 leading-tight tracking-tight mb-10 text-center">

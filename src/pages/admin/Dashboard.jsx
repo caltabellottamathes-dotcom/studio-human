@@ -51,17 +51,17 @@ export default function AdminDashboard() {
   return (
     <div className="p-6 md:p-10 max-w-6xl">
       <div className="mb-10">
-        <span className="text-[10px] uppercase tracking-[0.25em] text-red-600/80 block mb-2">Beheerdersportaal</span>
+        <span className="text-[10px] uppercase tracking-[0.25em] text-red-600/80 block mb-2">Admin Portal</span>
         <h1 className="font-display text-3xl md:text-4xl text-neutral-800 tracking-tight">Dashboard</h1>
-        <p className="text-neutral-500 text-sm font-light mt-2">Een overzicht van je praktijk.</p>
+        <p className="text-neutral-500 text-sm font-light mt-2">An overview of your practice.</p>
       </div>
 
       {/* Stats */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mb-10">
-        <StatCard icon={Users} label="Actieve cliënten" value={stats.activeClients || 0} />
-        <StatCard icon={Calendar} label="Geplande afspraken" value={stats.upcomingAppointments || 0} accent="bg-amber-50 text-amber-600" />
-        <StatCard icon={MessageSquare} label="Ongelezen berichten" value={stats.unreadMessages || 0} accent="bg-blue-50 text-blue-600" />
-        <StatCard icon={Activity} label="Totaal cliënten" value={stats.totalClients || 0} accent="bg-emerald-50 text-emerald-600" />
+        <StatCard icon={Users} label="Active clients" value={stats.activeClients || 0} />
+        <StatCard icon={Calendar} label="Scheduled appointments" value={stats.upcomingAppointments || 0} accent="bg-amber-50 text-amber-600" />
+        <StatCard icon={MessageSquare} label="Unread messages" value={stats.unreadMessages || 0} accent="bg-blue-50 text-blue-600" />
+        <StatCard icon={Activity} label="Total clients" value={stats.totalClients || 0} accent="bg-emerald-50 text-emerald-600" />
       </div>
 
       {/* Two columns */}
@@ -69,16 +69,16 @@ export default function AdminDashboard() {
         {/* Upcoming appointments */}
         <div className="bg-white rounded-xl border border-neutral-200 p-6">
           <div className="flex items-center justify-between mb-4">
-            <h2 className="font-display text-lg text-neutral-800">Komende afspraken</h2>
+            <h2 className="font-display text-lg text-neutral-800">Upcoming appointments</h2>
           </div>
           {upcoming.length === 0 ? (
-            <p className="text-sm text-neutral-400 font-light py-4">Geen afspraken gepland.</p>
+            <p className="text-sm text-neutral-400 font-light py-4">No appointments scheduled.</p>
           ) : (
             <div className="space-y-3">
               {upcoming.slice(0, 5).map(apt => (
                 <div key={apt.id} className="flex items-start gap-3 py-2 border-b border-neutral-100 last:border-0">
                   <div className="w-10 h-10 rounded-lg bg-red-50 flex flex-col items-center justify-center flex-shrink-0">
-                    <span className="text-[9px] uppercase text-red-600 leading-none">{new Date(apt.date).toLocaleDateString('nl-NL', { month: 'short' })}</span>
+                    <span className="text-[9px] uppercase text-red-600 leading-none">{new Date(apt.date).toLocaleDateString('en-US', { month: 'short' })}</span>
                     <span className="text-sm font-display text-red-700 leading-none mt-0.5">{new Date(apt.date).getDate()}</span>
                   </div>
                   <div className="flex-1 min-w-0">
@@ -96,13 +96,13 @@ export default function AdminDashboard() {
         {/* Recent clients */}
         <div className="bg-white rounded-xl border border-neutral-200 p-6">
           <div className="flex items-center justify-between mb-4">
-            <h2 className="font-display text-lg text-neutral-800">Cliënten</h2>
+            <h2 className="font-display text-lg text-neutral-800">Clients</h2>
             <Link to="/admin/clienten" className="text-[10px] uppercase tracking-widest text-red-600 hover:underline flex items-center gap-1">
-              Alle <ArrowRight className="w-3 h-3" />
+              All <ArrowRight className="w-3 h-3" />
             </Link>
           </div>
           {clients.length === 0 ? (
-            <p className="text-sm text-neutral-400 font-light py-4">Nog geen cliënten.</p>
+            <p className="text-sm text-neutral-400 font-light py-4">No clients yet.</p>
           ) : (
             <div className="space-y-2">
               {clients.slice(0, 5).map(c => (
@@ -115,7 +115,7 @@ export default function AdminDashboard() {
                     c.status === 'active' ? 'bg-emerald-50 text-emerald-600' :
                     c.status === 'pending' ? 'bg-amber-50 text-amber-600' :
                     'bg-neutral-100 text-neutral-400'
-                  }`}>{c.status === 'active' ? 'Actief' : c.status === 'pending' ? 'In afwachting' : 'Gearchiveerd'}</span>
+                  }`}>{c.status === 'active' ? 'Active' : c.status === 'pending' ? 'Pending' : 'Archived'}</span>
                 </div>
               ))}
             </div>
@@ -124,9 +124,9 @@ export default function AdminDashboard() {
 
         {/* Recent activity */}
         <div className="bg-white rounded-xl border border-neutral-200 p-6 md:col-span-2">
-          <h2 className="font-display text-lg text-neutral-800 mb-4">Recente activiteit</h2>
+          <h2 className="font-display text-lg text-neutral-800 mb-4">Recent activity</h2>
           {activity.length === 0 ? (
-            <p className="text-sm text-neutral-400 font-light py-4">Nog geen activiteit geregistreerd.</p>
+            <p className="text-sm text-neutral-400 font-light py-4">No activity recorded yet.</p>
           ) : (
             <div className="space-y-2">
               {activity.slice(0, 8).map(log => (
@@ -134,7 +134,7 @@ export default function AdminDashboard() {
                   <div className="w-2 h-2 rounded-full bg-red-400 flex-shrink-0" />
                   <div className="flex-1 min-w-0">
                     <p className="text-xs text-neutral-700">{log.details || log.action}</p>
-                    <p className="text-[10px] text-neutral-400">{log.actor_name} · {new Date(log.created_date).toLocaleString('nl-NL')}</p>
+                    <p className="text-[10px] text-neutral-400">{log.actor_name} · {new Date(log.created_date).toLocaleString('en-US')}</p>
                   </div>
                 </div>
               ))}

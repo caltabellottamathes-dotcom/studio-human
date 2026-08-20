@@ -4,7 +4,7 @@ import { wordmarkImg } from '@/data/content';
 
 export default function PortalAuthLayout({ variant = 'client', image, children }) {
   const isClient = variant === 'client';
-  const portalLabel = isClient ? 'Cliëntportaal' : 'Beheerdersportaal';
+  const portalLabel = isClient ? 'Client Portal' : 'Admin Portal';
 
   return (
     <div className="min-h-screen flex bg-neutral-50">
@@ -13,11 +13,11 @@ export default function PortalAuthLayout({ variant = 'client', image, children }
         <img src={image} alt="" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-black/30" />
         <div className="absolute inset-0 flex flex-col justify-end p-12">
-          <img src={wordmarkImg} alt="amorvitae." className="h-6 w-auto brightness-0 invert mb-6" />
+          <span className="font-serif text-2xl tracking-tight text-white mb-6 block">studioHuman</span>
           <p className="text-white/90 text-sm font-light max-w-md leading-relaxed">
             {isClient
-              ? 'Een veilige ruimte voor jouw welzijn — waar je bent, zoals je bent.'
-              : 'Beheerdersomgeving — zorg dragen voor wie zorg draagt.'}
+              ? 'A safe space for your wellbeing — where you are, as you are.'
+              : 'The admin environment — caring for those who care.'}
           </p>
         </div>
       </div>
@@ -27,7 +27,7 @@ export default function PortalAuthLayout({ variant = 'client', image, children }
         <div className="w-full max-w-sm">
           <div className="mb-8 text-center">
             <Link to="/" className="inline-block lg:hidden mb-6">
-              <img src={wordmarkImg} alt="amorvitae." className="h-5 w-auto mx-auto" />
+              <span className="font-serif text-lg tracking-tight text-neutral-800 mx-auto block">studioHuman</span>
             </Link>
             <span className="text-[10px] uppercase tracking-[0.25em] text-red-600 font-body">
               {portalLabel}

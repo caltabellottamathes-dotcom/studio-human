@@ -11,69 +11,69 @@ import { handRestingImg } from '@/data/content';
 
 const struggles = {
   'stress-overwhelm': {
-    title: 'Stress & Overweldiging',
-    subtitle: 'Als het geroezemoes van het dagelijks leven je innerlijke stem overstemt.',
+    title: 'Stress & Overwhelm',
+    subtitle: 'When the noise of daily life drowns out your inner voice.',
     img: 'https://media.base44.com/images/public/6a565889855ed729a11c1b91/42b1d4724_generated_image.png',
-    intro: 'Het tempo van het moderne leven kan zich stilletjes opstapelen — tot de last op een dag onmogelijk alleen te tillen voelt. Stress en overweldiging zijn geen tekenen van zwakte. Ze zijn je lichaam en geest die om een zachter tempo vragen.',
+    intro: 'The pace of modern life can quietly accumulate — until one day the weight feels impossible to lift alone. Stress and overwhelm are not signs of weakness. They are your body and mind asking for a gentler pace.',
     body: [
-      { heading: 'Hoe dit eruitziet', text: "Je vindt jezelf misschien constant 'aan', niet in staat om uit te schakelen, zelfs als je de tijd hebt. Kleine taken voelen enorm. Je geest racet 's nachts. Je voelt je prikkelbaar, uitgeput en losgekoppeld van de dingen die je vroeger vreugde brachten." },
-      { heading: 'Hoe ik kan helpen', text: 'In onze sessies vertragen we samen. We identificeren de bronnen van druk — extern en intern — en beginnen kleine, betekenisvolle verschuivingen te creëren. Je verlaat elke sessie met praktische tools en een dieper begrip van je eigen zenuwstelsel en behoeften.' },
-      { heading: 'Je hoeft rust niet te verdienen', text: 'Een van de belangrijkste dingen die ik hoor van mensen in deze situatie is schuldgevoel over het nodig hebben van rust. Samen werken we eraan om dat schuldgevoel op te lossen en een relatie met jezelf op te bouwen die geworteld is in compassie, niet in productiviteit.' },
+      { heading: 'What this looks like', text: "You may find yourself constantly 'on,' unable to switch off even when you have the time. Small tasks feel enormous. Your mind races at night. You feel irritable, depleted, and disconnected from the things that once brought you joy." },
+      { heading: 'How I can help', text: 'In our sessions we slow down together. We identify the sources of pressure — external and internal — and begin to create small, meaningful shifts. You leave each session with practical tools and a deeper understanding of your own nervous system and needs.' },
+      { heading: "You don't have to earn rest", text: 'One of the most common things I hear from people in this situation is guilt about needing rest. Together we work to dissolve that guilt and build a relationship with yourself rooted in compassion, not productivity.' },
     ],
   },
   'burnout': {
-    title: 'Burn-out',
-    subtitle: 'Zachtjes door de as van uitputting schiften.',
+    title: 'Burnout',
+    subtitle: 'Gently sifting through the ashes of exhaustion.',
     img: 'https://media.base44.com/images/public/6a565889855ed729a11c1b91/21edd95a2_generated_image.png',
-    intro: 'Burn-out is niet simpelweg moe zijn. Het is een diepe uitputting — van energie, van betekenis, van het gevoel dat dingen ooit anders zullen voelen. Herstel van burn-out vereist geduld, zachtheid en een ruimte waar je niet geacht wordt te presteren.',
+    intro: 'Burnout is not simply being tired. It is a deep exhaustion — of energy, of meaning, of the sense that things will ever feel different. Recovery from burnout asks for patience, gentleness, and a space where you are not expected to perform.',
     body: [
-      { heading: 'Burn-out herkennen', text: 'Je kunt je emotioneel afgestompt voelen, of slingelen tussen uitputting en angst. Werk dat je ooit zingeving gaf, voelt nu hol. Je vindt het moeilijk om je te concentreren, beslissingen te nemen of iets te voelen. Dit is burn-out, en het is echt.' },
-      { heading: 'Een tempo dat aan jou toebehoort', text: 'Herstel kan niet worden overhaast. In ons werk samen eren we het tempo dat je lichaam en geest nodig hebben — geen tijdlijnen, geen prestatienormen. We beginnen simpelweg met benoemen wat er is gebeurd, en langzaam, voorzichtig, bouwen we van daaruit verder.' },
-      { heading: 'Preventie en langetermijnveerkracht', text: 'Wanneer je begint te stabiliseren, verkennen we de patronen en overtuigingen die hebben bijgedragen aan je burn-out — zodat je een duurzamere relatie kunt opbouwen met werk, rust en je eigen verwachtingen.' },
+      { heading: 'Recognizing burnout', text: 'You may feel emotionally numb, or swing between exhaustion and anxiety. Work that once gave you meaning now feels hollow. You find it hard to concentrate, to make decisions, or to feel much at all. This is burnout, and it is real.' },
+      { heading: 'A pace that belongs to you', text: 'Recovery cannot be rushed. In our work together we honor the pace your body and mind need — no timelines, no performance standards. We begin simply by naming what has happened, and slowly, carefully, build from there.' },
+      { heading: 'Prevention and long-term resilience', text: 'As you begin to stabilize, we explore the patterns and beliefs that contributed to your burnout — so you can build a more sustainable relationship with work, rest, and your own expectations.' },
     ],
   },
   'caregiving': {
-    title: 'Mantelzorg',
-    subtitle: 'De zorgdrager ondersteund.',
+    title: 'Caregiving',
+    subtitle: 'Supporting the caregiver.',
     img: 'https://media.base44.com/images/public/6a565889855ed729a11c1b91/d567b0e7c_generated_image.png',
-    intro: 'Zorgen voor iemand van wie je houdt is een van de meest onbaatzuchtige dingen die een mens kan bieden. Het is ook een van de meest uitputtende. Amor Vitae biedt een veilige, toegewijde ruimte voor mantelzorgers die vergeten zijn voor zichzelf te zorgen.',
+    intro: 'Caring for someone you love is one of the most selfless things a person can offer. It is also one of the most exhausting. studioHuman offers a safe, dedicated space for caregivers who have forgotten to care for themselves.',
     body: [
-      { heading: 'Het onzichtbare gewicht van zorgen', text: 'Mantelzorgers dragen vaak enorme emotionele en praktische lasten terwijl ze onzichtbaar blijven in hun eigen recht. Je kunt rouwen om de persoon voor wie je zorgt, terwijl ze nog aanwezig is. Je kunt frustratie voelen, en dan schuld over die frustratie. Dit is allemaal normaal. Alles heeft hier een plek.' },
-      { heading: 'Jezelf terugvinden', text: 'In onze sessies creëren we ruimte voor jouw ervaring — niet alleen je rol. Je bent niet enkel een mantelzorger. Je bent een volledig mens met behoeften, verlangens en grenzen. Samen werken we eraan om die waarheid te eren.' },
-      { heading: 'Ook praktische ondersteuning', text: 'Naast emotionele begeleiding help ik ook met praktische navigatie — coördineren met andere zorgverleners, administratie verduidelijken, en de ondersteuningsstructuren vinden die de last kunnen verlichten.' },
+      { heading: 'The invisible weight of caring', text: 'Caregivers often carry enormous emotional and practical burdens while remaining invisible in their own right. You may grieve the person you care for while they are still present. You may feel frustration, and then guilt about that frustration. All of it is normal. Everything has a place here.' },
+      { heading: 'Finding yourself again', text: 'In our sessions we create room for your experience — not only your role. You are not just a caregiver. You are a whole person with needs, desires, and limits. Together we work to honor that truth.' },
+      { heading: 'Practical support too', text: 'Alongside emotional guidance, I help with practical navigation — coordinating with other care providers, clarifying paperwork, and finding the support structures that can lighten the load.' },
     ],
   },
   'grief-loss': {
-    title: 'Rouw & Verlies',
-    subtitle: 'De ruimte eren die achterblijft.',
+    title: 'Grief & Loss',
+    subtitle: 'Honoring the space that remains.',
     img: 'https://media.base44.com/images/public/6a565889855ed729a11c1b91/aa5459e8e_generated_image.png',
-    intro: 'Rouw is geen probleem om op te lossen. Het is een getuigenis van liefde en verbondenheid. Bij Amor Vitae wordt rouw omringd met de eerbied die ze verdient — in welk tempo je hart ook nodig heeft.',
+    intro: 'Grief is not a problem to solve. It is a testament to love and connection. At studioHuman, grief is surrounded with the reverence it deserves — at whatever pace your heart needs.',
     body: [
-      { heading: 'Alle rouw is geldig', text: 'Verlies neemt vele vormen aan: het overlijden van een dierbare, het einde van een relatie, een diagnose, het verlies van een toekomst die je je had voorgesteld. Je hoeft je rouw niet te rechtvaardigen of te vergelijken met die van een ander. Als het echt voor jou is, hoort het hier.' },
-      { heading: 'Geen tijdlijn, geen verwachtingen', text: 'Er is geen juiste manier om te rouwen, en er is geen deadline. In onze sessies haasten we ons niet naar anvaarding. In plaats daarvan eren we waar je nu bent — en we gaan van daaruit, langzaam, samen.' },
-      { heading: 'Betekenis heropbouwen', text: 'Na verloop van tijd vinden veel mensen dat rouw een deur opent naar dieper zelfbegrip. We verkennen wat de persoon of datgene wat je verloren bent voor jou betekende, en hoe die betekenis op nieuwe manieren in je kan doorleven.' },
+      { heading: 'All grief is valid', text: "Loss takes many forms: the death of a loved one, the end of a relationship, a diagnosis, the loss of a future you had imagined. You don't need to justify your grief or compare it to another's. If it is real for you, it belongs here." },
+      { heading: 'No timeline, no expectations', text: "There is no right way to grieve, and there is no deadline. In our sessions we don't rush toward acceptance. Instead we honor where you are now — and move from there, slowly, together." },
+      { heading: 'Rebuilding meaning', text: 'Over time, many people find that grief opens a door to deeper self-understanding. We explore what the person or thing you lost meant to you, and how that meaning can live on in you in new ways.' },
     ],
   },
   'life-transitions': {
-    title: 'Levensovergangen',
-    subtitle: 'Balans vinden op verschuivende grond.',
+    title: 'Life Transitions',
+    subtitle: 'Finding balance on shifting ground.',
     img: 'https://media.base44.com/images/public/6a565889855ed729a11c1b91/62cb3ee5c_generated_image.png',
-    intro: 'Elke grote levensovergang — een nieuwe job, een verhuis, pensioen, ouder worden, een relatie die eindigt — verstoort ons gevoel van wie we zijn. Deze desoriëntatie is normaal. En ze navigeren met ondersteuning maakt alle verschil.',
+    intro: 'Every major life transition — a new job, a move, retirement, becoming a parent, a relationship ending — disrupts our sense of who we are. This disorientation is normal. And navigating it with support makes all the difference.',
     body: [
-      { heading: 'Als de kaart niet meer bij het gebied past', text: 'Je kunt je verdwaald, angstig of vreemd genoeg rouwig voelen — zelfs als de overgang er een is die je koos of wilde. Verandering, zelfs positieve, vraagt ons om iets los te laten. Dat loslaten vraagt moed, en het vraagt tijd.' },
-      { heading: 'Helderheid en richting', text: 'In onze sessies creëren we ruimte om te verwerken wat eindigt en wat begint. We verhelderen je waarden, je behoeften en wat je wilt dat dit volgende hoofdstuk voelt — en dan bouwen we daar naartoe, stap voor stap.' },
-      { heading: 'Je bent niet achter', text: 'Er is geen schema voor levensovergangen. Op elke leeftijd, in elke fase is een nieuw begin mogelijk. Mijn rol is om naast je te wandelen terwijl je je eigen weg vindt — in jouw tempo, op jouw voorwaarden.' },
+      { heading: 'When the map no longer fits the territory', text: 'You may feel lost, anxious, or strangely grief-stricken — even when the transition is one you chose or wanted. Change, even positive change, asks us to let something go. That letting go asks for courage, and it asks for time.' },
+      { heading: 'Clarity and direction', text: 'In our sessions we create space to process what is ending and what is beginning. We clarify your values, your needs, and what you want this next chapter to feel like — and then we build toward it, step by step.' },
+      { heading: 'You are not behind', text: 'There is no schedule for life transitions. At any age, in any phase, a new beginning is possible. My role is to walk beside you as you find your own way — at your pace, on your terms.' },
     ],
   },
   'emotional-exhaustion': {
-    title: 'Emotionele Uitputting',
-    subtitle: 'Lege reserves aanvullen.',
+    title: 'Emotional Exhaustion',
+    subtitle: 'Replenishing empty reserves.',
     img: 'https://media.base44.com/images/public/6a565889855ed729a11c1b91/af1d0a950_generated_image.png',
-    intro: 'Emotionele uitputting is wat gebeurt als we meer geven dan we ontvangen — te lang. Het is geen karaktergebrek. Het is een zeer menselijke reactie op een onhoudbare situatie. En het kan zachtjes, voorzichtig ongedaan worden gemaakt.',
+    intro: 'Emotional exhaustion is what happens when we give more than we receive — for too long. It is not a character flaw. It is a deeply human response to an untenable situation. And it can be gently, carefully undone.',
     body: [
-      { heading: 'Hoe emotionele uitputting voelt', text: 'Je kunt je hol, afgestompt of losgekoppeld voelen van de mensen en dingen waar je van houdt. Empathie die ooit vanzelf kwam, vraagt nu enorme inspanning. Je gaat door de bewegingen, maar voelt afwezig in je eigen leven. Zelfs kleine beslissingen voelen overweldigend.' },
-      { heading: 'Leren ontvangen', text: 'Vaak hebben mensen die emotionele uitputting ervaren jarenlang gegeven — aan anderen, aan werk, aan idealen — terwijl ze weinig ontvingen. In onze sessies verkennen we de overtuigingen die dit patroon noodzakelijk maakten, en beginnen we het zachte werk van herstel.' },
-      { heading: 'Grenzen als een daad van liefde', text: 'Grenzen stellen is niet egoïstisch. Het is wat je in staat stelt om te blijven opkomen — voor jezelf en voor de mensen die er voor jou toe doen. We werken samen om je grenzen te begrijpen, ze met vertrouwen uit te spreken en ze te handhaven zonder schuldgevoel.' },
+      { heading: 'How emotional exhaustion feels', text: 'You may feel hollow, numb, or disconnected from the people and things you love. Empathy that once came naturally now takes enormous effort. You go through the motions but feel absent from your own life. Even small decisions feel overwhelming.' },
+      { heading: 'Learning to receive', text: 'Often, people who experience emotional exhaustion have spent years giving — to others, to work, to ideals — while receiving little. In our sessions we explore the beliefs that made this pattern necessary, and begin the gentle work of restoration.' },
+      { heading: 'Boundaries as an act of love', text: 'Setting boundaries is not selfish. It is what allows you to keep showing up — for yourself and for the people who matter to you. We work together to understand your limits, voice them with confidence, and hold them without guilt.' },
     ],
   },
 };
@@ -89,8 +89,8 @@ export default function StrugglePage() {
       <div className="bg-neutral-50 min-h-screen">
         <Header />
         <div className="pt-40 px-6 max-w-xl mx-auto text-center">
-          <h1 className="font-display text-3xl text-neutral-800 mb-4">Pagina niet gevonden</h1>
-          <Link to="/" className="text-red-600 underline text-sm">Terug naar home</Link>
+          <h1 className="font-display text-3xl text-neutral-800 mb-4">Page not found</h1>
+          <Link to="/" className="text-red-600 underline text-sm">Back to home</Link>
         </div>
         <Footer />
       </div>
@@ -110,9 +110,9 @@ export default function StrugglePage() {
         <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}>
           <Link to="/zorgvragen" className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-neutral-500 hover:text-red-600 transition-colors mb-12 group">
             <ArrowLeft className="w-4 h-4 transform group-hover:-translate-x-1 transition-transform" />
-            Terug naar zorgvragen
+            Back to concerns
           </Link>
-          <span className="text-xs uppercase tracking-[0.25em] text-red-600/80 block label-line mb-6">Zorgvragen</span>
+          <span className="text-xs uppercase tracking-[0.25em] text-red-600/80 block label-line mb-6">Concerns</span>
           <h1 className="font-display text-5xl md:text-7xl text-neutral-800 leading-tight tracking-tight max-w-[18ch] mb-6">{data.title}</h1>
           <p className="text-neutral-600 text-base md:text-lg font-light max-w-[44ch] leading-normal">{data.subtitle}</p>
         </motion.div>
@@ -159,9 +159,9 @@ export default function StrugglePage() {
           </div>
           <div className="md:w-[55%] flex items-center pb-12 md:pb-16 order-1 md:order-2">
             <FadeSection>
-              <span className="text-xs uppercase tracking-[0.2em] text-red-600/80 block label-line mb-4">Rust</span>
+              <span className="text-xs uppercase tracking-[0.2em] text-red-600/80 block label-line mb-4">Rest</span>
               <p className="font-display text-2xl md:text-4xl text-neutral-800 leading-snug max-w-[48ch]">
-                Soms is rust al de eerste stap. Je hoeft niet te weten waar je naartoe gaat — enkel dat je er niet alleen hoeft te zijn.
+                Sometimes rest is already the first step. You don't need to know where you're going — only that you don't have to be there alone.
               </p>
             </FadeSection>
           </div>
@@ -173,7 +173,7 @@ export default function StrugglePage() {
       {/* Next topic */}
       <section className="px-6 md:px-12 max-w-[120rem] mx-auto pb-16">
         <div className="border-t border-neutral-200 pt-8 flex items-center justify-between">
-          <span className="text-xs uppercase tracking-widest text-neutral-400">Volgend onderwerp</span>
+          <span className="text-xs uppercase tracking-widest text-neutral-400">Next topic</span>
           <Link to={`/zorgvragen/${nextSlug}`} className="group flex items-center gap-3 hover:gap-4 transition-all duration-300">
             <span className="font-display text-xl md:text-2xl text-neutral-800 group-hover:text-red-600 transition-colors">{nextData.title}</span>
             <ArrowRight className="w-5 h-5 text-red-600" />

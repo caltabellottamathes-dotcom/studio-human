@@ -19,7 +19,7 @@ export default function AssessmentProfileManager() {
   useEffect(() => { fetchData(); }, []);
 
   const handleDelete = async (id) => {
-    if (!confirm('Dit profiel verwijderen? Bestaande resultaten kunnen beïnvloed worden.')) return;
+    if (!confirm('Delete this profile? Existing results may be affected.')) return;
     await base44.entities.AssessmentProfile.delete(id);
     fetchData();
   };
@@ -34,13 +34,13 @@ export default function AssessmentProfileManager() {
           onClick={() => { setEditing(null); setEditorOpen(true); }}
           className="inline-flex items-center gap-2 px-5 py-2.5 bg-neutral-900 hover:bg-black text-white rounded-full text-xs uppercase tracking-widest font-body transition-colors"
         >
-          <Plus className="w-3.5 h-3.5" /> Nieuw profiel
+          <Plus className="w-3.5 h-3.5" /> New profile
         </button>
       </div>
 
       <div className="bg-white rounded-xl border border-neutral-200 overflow-hidden">
         {profiles.length === 0 ? (
-          <div className="p-12 text-center"><p className="text-sm text-neutral-400">Nog geen profielen.</p></div>
+          <div className="p-12 text-center"><p className="text-sm text-neutral-400">No profiles yet.</p></div>
         ) : (
           <div className="divide-y divide-neutral-100">
             {profiles.map(p => (

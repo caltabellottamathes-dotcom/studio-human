@@ -3,11 +3,11 @@ import BrandedButton from '@/components/BrandedButton';
 import { RotateCcw } from 'lucide-react';
 
 const sections = [
-  { key: 'reflection', label: 'Een reflectie voor jou' },
-  { key: 'recognition', label: 'Wat je antwoorden suggereren' },
-  { key: 'encouragement', label: 'Een zachte herinnering' },
-  { key: 'how_debora_helps', label: 'Hoe Debora kan helpen' },
-  { key: 'invitation', label: 'Een uitnodiging' },
+  { key: 'reflection', label: 'A reflection for you' },
+  { key: 'recognition', label: 'What your answers suggest' },
+  { key: 'encouragement', label: 'A gentle reminder' },
+  { key: 'how_debora_helps', label: 'How Maya can help' },
+  { key: 'invitation', label: 'An invitation' },
 ];
 
 export default function ResultCard({ result, onRestart }) {
@@ -15,7 +15,7 @@ export default function ResultCard({ result, onRestart }) {
 
   return (
     <div>
-      <span className="text-xs uppercase tracking-[0.25em] text-red-600/80 block mb-4">Jouw reflectie</span>
+      <span className="text-xs uppercase tracking-[0.25em] text-red-600/80 block mb-4">Your reflection</span>
       <h3 className="font-display text-2xl md:text-3xl text-neutral-800 leading-[1.2] tracking-tight mb-8">
         {result.title}
       </h3>
@@ -30,18 +30,18 @@ export default function ResultCard({ result, onRestart }) {
       </div>
 
       <div className="mt-10">
-        <BrandedButton to={relatedUrl}>Lees meer over dit thema</BrandedButton>
+        <BrandedButton to={relatedUrl}>Read more about this theme</BrandedButton>
       </div>
 
       <div className="mt-8 p-5 border border-neutral-200 rounded-xl bg-neutral-50">
         <p className="text-xs text-neutral-500 font-light leading-relaxed">
-          Deze reflectie is geen diagnostisch instrument. Het is enkel een uitnodiging om even stil te staan bij hoe het met je gaat. Als je antwoorden je aanspreken, kan een gesprek je helpen verkennen wat je nodig hebt.
+          This reflection is not a diagnostic tool. It's simply an invitation to pause and notice how you're doing. If your answers resonate, a conversation can help you explore what you need.
         </p>
       </div>
 
       <div className="mt-6">
         <button onClick={onRestart} className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-neutral-400 hover:text-red-600 transition-colors">
-          <RotateCcw className="w-3 h-3" /> Opnieuw reflecteren
+          <RotateCcw className="w-3 h-3" /> Reflect again
         </button>
       </div>
     </div>

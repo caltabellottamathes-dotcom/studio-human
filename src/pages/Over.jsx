@@ -18,9 +18,9 @@ export default function Over() {
       <Header />
 
       <PageHeader
-        label="Over mij"
-        title={<>Amor Vitae — <span className="font-light text-red-600/90">liefde voor het leven</span>.</>}
-        intro="Ik ben Debora Caltabellotta, psychosociaal consulent en oprichter van Amor Vitae. In mijn praktijk begeleid ik mensen met uiteenlopende hulpvragen — persoonlijk, laagdrempelig en op maat."
+        label="About me"
+        title={<>studioHuman — <span className="font-light text-red-600/90">love for life</span>.</>}
+        intro="I'm Maya Hartwell, psychosocial counselor and founder of studioHuman. In my practice I guide people with a wide range of concerns — personal, accessible, and tailored."
         hideIntroMobile />
       
 
@@ -30,15 +30,15 @@ export default function Over() {
             <div className="relative -ml-6 lg:mr-0 lg:-ml-12">
               <div className="flex flex-row gap-3 lg:block">
                 <div className="w-2/5 lg:w-auto">
-                  <PremiumImage src={deboraPortraitImg} alt="Debora Caltabellotta, psychosociale consulent bij Amor Vitae" height="72vh" rounded="tr" className="w-full mobile-h-sm" />
+                  <PremiumImage src={deboraPortraitImg} alt="Maya Hartwell, psychosocial counselor at studioHuman" height="72vh" rounded="tr" className="w-full mobile-h-sm" />
                 </div>
-                <p className="lg:hidden text-neutral-600 text-base md:text-lg font-light leading-normal flex-1 self-center pr-2 text-left">Ik ben Debora Caltabellotta, psychosociaal consulent en oprichter van Amor Vitae. In mijn praktijk begeleid ik mensen met uiteenlopende hulpvragen — persoonlijk, laagdrempelig en op maat.
+                <p className="lg:hidden text-neutral-600 text-base md:text-lg font-light leading-normal flex-1 self-center pr-2 text-left">I'm Maya Hartwell, psychosocial counselor and founder of studioHuman. In my practice I guide people with a wide range of concerns — personal, accessible, and tailored.
 
                 </p>
               </div>
               <div className="hidden lg:block absolute bottom-0 left-0 right-0 bg-neutral-50/85 backdrop-blur-md border-t border-neutral-200/50 px-6 py-4 md:px-8">
-                <span className="font-display text-lg md:text-xl text-neutral-800 block leading-tight">Debora Caltabellotta</span>
-                <span className="text-[10px] uppercase tracking-[0.2em] text-red-600/80 font-medium block mt-0.5">Psychosociale Consulent</span>
+                <span className="font-display text-lg md:text-xl text-neutral-800 block leading-tight">Maya Hartwell</span>
+                <span className="text-[10px] uppercase tracking-[0.2em] text-red-600/80 font-medium block mt-0.5">Psychosocial Counselor</span>
               </div>
             </div>
           </FadeSection>
@@ -47,34 +47,34 @@ export default function Over() {
             <FadeSection>
               <div className="space-y-6 text-neutral-600 text-base md:text-lg font-light leading-normal max-w-[72ch]">
                 <p>
-                  Amor Vitae betekent 'liefde voor het leven'. Voor mij draait dat om zorgzaamheid, menselijke nabijheid en ruimte maken voor wie jij bent — in elke fase van je leven.
+                  studioHuman means 'love for life'. To me that's about care, human closeness, and making space for who you are — in every phase of your life.
                 </p>
                 <p>
-                  Mijn begeleiding is persoonlijk, laagdrempelig en op maat — bij mij in de praktijk, bij jou thuis of in jouw context. Altijd dichtbij. Altijd menselijk.
+                  My guidance is personal, accessible, and tailored — at my practice, at your home, or in your own context. Always nearby. Always human.
                 </p>
                 <p className="font-display text-red-600 text-lg md:text-xl my-8 leading-normal">
-                  &ldquo;Wat mij drijft, is de ontmoeting van mens tot mens. Met aandacht, zonder haast, en met ruimte voor jouw verhaal zoals het is.&rdquo;
+                  &ldquo;What drives me is the meeting of human to human. With attention, without haste, and with room for your story exactly as it is.&rdquo;
                 </p>
                 <p>
-                  Ik geloof dat echte verandering begint bij erkenning: jezelf mogen zijn, ook in je kwetsbaarheid. Daarom werk ik niet met standaardtrajecten, maar stem ik mijn aanpak af op jouw noden en ritme.
+                  I believe real change begins with recognition: being allowed to be yourself, including in your vulnerability. That's why I don't work with standard trajectories — I tune my approach to your needs and rhythm.
                 </p>
                 <p>
-                  Naast psychosociale begeleiding breng ik ook klinische expertise mee. Ik heb een brede ervaring met psychiatrische problematiek en bied ondersteuning en advies rond psychofarmacagebruik, steeds in afstemming met de behandelende arts of zorgverlener.
+                  Alongside psychosocial guidance, I also bring clinical expertise. I have broad experience with psychiatric concerns and offer support and advice around medication use, always in coordination with the treating physician or care provider.
                 </p>
               </div>
             </FadeSection>
             <StaggerGroup className="grid grid-cols-2 md:grid-cols-3 gap-6 pt-12 mt-12 border-t border-neutral-200" stagger={0.12}>
               <StaggerItem>
                 <AnimatedCounter to={10} suffix="+" className="block [font-family:'Lekton',_ui-monospace,_monospace] font-normal text-3xl md:text-4xl text-red-600" />
-                <span className="text-xs uppercase tracking-widest text-neutral-500 mt-1 block">Jaren Ervaring</span>
+                <span className="text-xs uppercase tracking-widest text-neutral-500 mt-1 block">Years of experience</span>
               </StaggerItem>
               <StaggerItem>
                 <AnimatedCounter to={100} suffix="%" className="block [font-family:'Lekton',_ui-monospace,_monospace] font-normal text-3xl md:text-4xl text-red-600" />
-                <span className="text-xs uppercase tracking-widest text-neutral-500 mt-1 block">Vertrouwelijk</span>
+                <span className="text-xs uppercase tracking-widest text-neutral-500 mt-1 block">Confidential</span>
               </StaggerItem>
               <StaggerItem className="col-span-2 md:col-span-1">
-                <span className="block [font-family:'Lekton',_ui-monospace,_monospace] font-normal text-3xl md:text-4xl text-red-600">Hasselt</span>
-                <span className="text-xs uppercase tracking-widest text-neutral-500 mt-1 block">en omgeving</span>
+                <span className="block [font-family:'Lekton',_ui-monospace,_monospace] font-normal text-3xl md:text-4xl text-red-600">Portland</span>
+                <span className="text-xs uppercase tracking-widest text-neutral-500 mt-1 block">and beyond</span>
               </StaggerItem>
             </StaggerGroup>
           </div>
@@ -86,10 +86,10 @@ export default function Over() {
           <div className="col-span-1 md:col-span-4 md:col-start-1 order-2 md:order-1">
             <FadeSection>
               <p className="font-display text-2xl md:text-4xl text-neutral-800 leading-tight tracking-tight">
-                Wil je weten waarmee ik je kan helpen? <span className="font-light text-red-600/90">Hier lees je meer over mijn begeleiding.</span>
+                Want to know how I can help? <span className="font-light text-red-600/90">Read more about my guidance here.</span>
               </p>
               <Link to="/aanpak" className="group inline-flex items-center gap-2 text-xs uppercase tracking-widest text-neutral-800 border-b border-neutral-400 py-2 mt-8 hover:gap-3 hover:border-red-600 hover:text-red-600 transition-all duration-300">
-                Ontdek de aanpak
+                Explore the approach
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </FadeSection>
@@ -103,13 +103,13 @@ export default function Over() {
       <section className="relative px-6 md:px-12 max-w-[120rem] mx-auto z-0">
         <div className="flex flex-col md:flex-row gap-8 md:gap-12">
           <div className="md:w-[42%] relative md:-ml-12 -mb-32 md:-mb-72 z-0 w-[56vw] -ml-6 order-2 md:order-1">
-            <PremiumImage src={linenTableImg} alt="Praktijkruimte detail" height="90vh" rounded="tr" className="w-full mobile-h-closing" />
+            <PremiumImage src={linenTableImg} alt="Practice space detail" height="90vh" rounded="tr" className="w-full mobile-h-closing" />
           </div>
           <div className="md:w-[55%] flex items-center pb-12 md:pb-16 order-1 md:order-2">
             <FadeSection>
-              <span className="text-xs uppercase tracking-[0.2em] text-red-600/80 block label-line mb-4">Mijn visie</span>
+              <span className="text-xs uppercase tracking-[0.2em] text-red-600/80 block label-line mb-4">My vision</span>
               <p className="font-display text-2xl md:text-4xl text-neutral-800 leading-snug max-w-[48ch]">
-                Amor Vitae is geboren vanuit de overtuiging dat zorg geen pasklare oplossing hoeft te zijn, maar een zorgzame aanwezigheid kan bieden. <span className="font-light text-red-600/90">Een plek waar je je gedragen voelt, even mag ademen, en stap voor stap weer richting vindt.</span>
+                studioHuman was born from the belief that care doesn't need to be a ready-made solution — it can be a caring presence. <span className="font-light text-red-600/90">A place where you feel held, where you may breathe for a moment, and step by step find your direction again.</span>
               </p>
             </FadeSection>
           </div>

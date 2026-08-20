@@ -4,7 +4,7 @@ const WORDMARK_URL = 'https://media.base44.com/images/public/6a565889855ed729a11
 
 export default function Logo({ variant = 'light', className = '', light = false }) {
   if (variant === 'dark') {
-    return <img src={WORDMARK_URL} alt="amorvitae." className={`h-5 md:h-6 w-auto ${className}`} />;
+    return <span className={`font-serif text-lg tracking-tight text-neutral-800 ${className}`}>studioHuman</span>;
   }
-  return <span className={`font-serif text-lg lowercase tracking-normal ${light ? 'text-white md:text-neutral-800' : 'text-neutral-800'} ${className}`}>amorvitae.</span>;
+  return <span className={`font-serif text-lg tracking-tight ${light ? 'text-white md:text-neutral-800' : 'text-neutral-800'} ${className}`}>studioHuman</span>;
 }

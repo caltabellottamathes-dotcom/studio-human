@@ -34,7 +34,7 @@ function ContactForm() {
       });
       setSubmitted(true);
     } catch (err) {
-      setError('Er ging iets mis bij het verzenden. Probeer het later opnieuw of mail direct naar debora@amorvitae.be');
+      setError('Something went wrong sending your message. Please try again later or email hello@studiohuman.com');
     } finally {
       setSubmitting(false);
     }
@@ -56,8 +56,8 @@ function ContactForm() {
         >
           <Check className="w-7 h-7 text-white" strokeWidth={2} />
         </motion.div>
-        <h3 className="font-display text-2xl text-neutral-800 mb-3">Je bericht is ontvangen.</h3>
-        <p className="text-neutral-500 font-light text-base max-w-[38ch] leading-normal">Dank je voor je bericht. Ik neem binnen twee werkdagen contact op om ons kennismakingsgesprek in te plannen.</p>
+        <h3 className="font-display text-2xl text-neutral-800 mb-3">Your message has been received.</h3>
+        <p className="text-neutral-500 font-light text-base max-w-[38ch] leading-normal">Thank you for your message. I'll be in touch within two business days to schedule our introductory call.</p>
       </motion.div>
     );
   }
@@ -66,46 +66,46 @@ function ContactForm() {
     <form onSubmit={handleSubmit} className="space-y-8 bg-neutral-100/40 p-8 md:p-12 rounded-[2rem] border border-neutral-200/60">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className="space-y-2">
-          <label htmlFor="first_name" className="text-xs uppercase tracking-widest text-neutral-500 block">Voornaam</label>
+          <label htmlFor="first_name" className="text-xs uppercase tracking-widest text-neutral-500 block">First name</label>
           <input type="text" id="first_name" required value={form.first_name} onChange={e => setForm({ ...form, first_name: e.target.value })}
             className="w-full bg-transparent border-b border-neutral-300 focus:border-red-600 py-3 text-neutral-800 placeholder-neutral-400 focus:outline-none transition-colors duration-300 font-light"
-            placeholder="Jouw voornaam" />
+            placeholder="Your first name" />
         </div>
         <div className="space-y-2">
-          <label htmlFor="last_name" className="text-xs uppercase tracking-widest text-neutral-500 block">Achternaam</label>
+          <label htmlFor="last_name" className="text-xs uppercase tracking-widest text-neutral-500 block">Last name</label>
           <input type="text" id="last_name" required value={form.last_name} onChange={e => setForm({ ...form, last_name: e.target.value })}
             className="w-full bg-transparent border-b border-neutral-300 focus:border-red-600 py-3 text-neutral-800 placeholder-neutral-400 focus:outline-none transition-colors duration-300 font-light"
-            placeholder="Jouw achternaam" />
+            placeholder="Your last name" />
         </div>
       </div>
       <div className="space-y-2">
-        <label htmlFor="email" className="text-xs uppercase tracking-widest text-neutral-500 block">E-mailadres</label>
+        <label htmlFor="email" className="text-xs uppercase tracking-widest text-neutral-500 block">Email address</label>
         <input type="email" id="email" required value={form.email} onChange={e => setForm({ ...form, email: e.target.value })}
           className="w-full bg-transparent border-b border-neutral-300 focus:border-red-600 py-3 text-neutral-800 placeholder-neutral-400 focus:outline-none transition-colors duration-300 font-light"
-          placeholder="naam@voorbeeld.be" />
+          placeholder="name@example.com" />
       </div>
       <div className="space-y-2">
-        <label htmlFor="struggle" className="text-xs uppercase tracking-widest text-neutral-500 block">Wat draag je met je mee? <span className="normal-case">(Optioneel)</span></label>
+        <label htmlFor="struggle" className="text-xs uppercase tracking-widest text-neutral-500 block">What are you carrying? <span className="normal-case">(Optional)</span></label>
         <select id="struggle" value={form.struggle} onChange={e => setForm({ ...form, struggle: e.target.value })}
           className="w-full bg-transparent border-b border-neutral-300 focus:border-red-600 py-3 text-neutral-600 focus:outline-none transition-colors duration-300 font-light appearance-none">
-          <option value="">Selecteer een zorgvraag</option>
-          <option value="stress">Stress & Overweldiging</option>
-          <option value="burnout">Burn-out</option>
-          <option value="caregiving">Mantelzorg</option>
-          <option value="grief">Rouw & Verlies</option>
-          <option value="transitions">Levensovergangen</option>
-          <option value="exhaustion">Emotionele Uitputting</option>
-          <option value="other">Iets anders</option>
+          <option value="">Select a concern</option>
+          <option value="stress">Stress & Overwhelm</option>
+          <option value="burnout">Burnout</option>
+          <option value="caregiving">Caregiving</option>
+          <option value="grief">Grief & Loss</option>
+          <option value="transitions">Life Transitions</option>
+          <option value="exhaustion">Emotional Exhaustion</option>
+          <option value="other">Something else</option>
         </select>
       </div>
       <div className="space-y-2">
-        <label htmlFor="message" className="text-xs uppercase tracking-widest text-neutral-500 block">Jouw bericht</label>
+        <label htmlFor="message" className="text-xs uppercase tracking-widest text-neutral-500 block">Your message</label>
         <textarea id="message" rows={4} value={form.message} onChange={e => setForm({ ...form, message: e.target.value })}
           className="w-full bg-transparent border-b border-neutral-300 focus:border-red-600 py-3 text-neutral-800 placeholder-neutral-400 focus:outline-none transition-colors duration-300 font-light resize-none"
-          placeholder="Deel zoveel of zo weinig als je wilt…" />
+          placeholder="Share as much or as little as you wish…" />
       </div>
       <div className="pt-2">
-        <BrandedButton type="submit" disabled={submitting}>{submitting ? 'Verzenden…' : 'Verstuur bericht'}</BrandedButton>
+        <BrandedButton type="submit" disabled={submitting}>{submitting ? 'Sending…' : 'Send message'}</BrandedButton>
       </div>
       {error && <p className="text-sm text-red-600 mt-4 font-light">{error}</p>}
     </form>
@@ -118,9 +118,9 @@ export default function Contact() {
       <Header />
 
       <PageHeader
-        label="Start het gesprek"
-        title={<>Zet je eerste <span className="italic font-light text-red-600/90">zachte</span> stap.</>}
-        intro="Vul het formulier in, en ik neem persoonlijk binnen twee werkdagen contact op om ons vrijblijvend kennismakingsgesprek in te plannen."
+        label="Start the conversation"
+        title={<>Take your first <span className="italic font-light text-red-600/90">gentle</span> step.</>}
+        intro="Fill in the form and I'll personally get back to you within two business days to schedule a no-obligation introductory call."
       />
 
       <section className="px-6 md:px-12 max-w-[120rem] mx-auto pb-24">
@@ -130,26 +130,26 @@ export default function Contact() {
               <StaggerItem>
                 <p className="flex items-center gap-3 text-neutral-600 text-sm font-light">
                   <Check className="w-4 h-4 text-red-600 flex-shrink-0" strokeWidth={2} />
-                  Strikt vertrouwelijke verwerking van je gegevens.
+                  Strictly confidential handling of your information.
                 </p>
               </StaggerItem>
               <StaggerItem>
                 <p className="flex items-center gap-3 text-neutral-600 text-sm font-light">
                   <Check className="w-4 h-4 text-red-600 flex-shrink-0" strokeWidth={2} />
-                  Geen verbintenis vereist voor het eerste gesprek.
+                  No commitment required for the first conversation.
                 </p>
               </StaggerItem>
               <StaggerItem>
                 <p className="flex items-center gap-3 text-neutral-600 text-sm font-light">
                   <Check className="w-4 h-4 text-red-600 flex-shrink-0" strokeWidth={2} />
-                  Antwoord binnen twee werkdagen.
+                  A reply within two business days.
                 </p>
               </StaggerItem>
             </StaggerGroup>
             <div className="mt-12 pt-8 border-t border-neutral-200 space-y-2 text-sm font-light text-neutral-500">
-              <p>De Gaer 8, 3510 Hasselt</p>
-              <p><a href="tel:+32476376675" className="hover:text-red-600 transition-colors">+32 476 37 66 75</a></p>
-              <p><a href="mailto:debora@amorvitae.be" className="hover:text-red-600 transition-colors">debora@amorvitae.be</a></p>
+              <p>14 Linden Walk, Portland</p>
+              <p><a href="tel:+15035550142" className="hover:text-red-600 transition-colors">+1 (503) 555 0142</a></p>
+              <p><a href="mailto:hello@studiohuman.com" className="hover:text-red-600 transition-colors">hello@studiohuman.com</a></p>
             </div>
           </FadeSection>
           <FadeSection delay={0.1} className="col-span-1 lg:col-span-7">
@@ -161,12 +161,12 @@ export default function Contact() {
       <section className="py-16 px-6 md:px-12 bg-neutral-100/60 rounded-[2rem] md:rounded-[4rem] mx-4 md:mx-8 mb-12">
         <div className="max-w-[112rem] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12">
           <FadeSection className="col-span-1 lg:col-span-4">
-            <span className="text-xs uppercase tracking-[0.2em] text-red-600/80 block label-line mb-4">Antwoorden op je vragen</span>
+            <span className="text-xs uppercase tracking-[0.2em] text-red-600/80 block label-line mb-4">Answers to your questions</span>
             <h2 className="font-display text-3xl md:text-5xl text-neutral-800 tracking-tight">
-              Veelgestelde <span className="italic font-light text-red-600/90">vragen</span>.
+              Frequently asked <span className="italic font-light text-red-600/90">questions</span>.
             </h2>
             <p className="text-neutral-500 text-sm md:text-base font-light mt-6 leading-normal">
-              Als je vraag hier niet wordt beantwoord, neem dan gerust contact op via het formulier hierboven.
+              If your question isn't answered here, feel free to reach out via the form above.
             </p>
           </FadeSection>
           <div className="col-span-1 lg:col-start-6 lg:col-span-7 space-y-4">
@@ -186,7 +186,7 @@ export default function Contact() {
             <FadeSection>
               <span className="text-xs uppercase tracking-[0.2em] text-red-600/80 block label-line mb-4">Contact</span>
               <p className="font-display text-2xl md:text-4xl text-neutral-800 leading-snug">
-                <span className="font-light text-red-600/90">Je hoeft niet te weten wat je gaat zeggen.</span> Je hoeft enkel te beginnen.
+                <span className="font-light text-red-600/90">You don't need to know what you'll say.</span> You only need to begin.
               </p>
             </FadeSection>
           </div>

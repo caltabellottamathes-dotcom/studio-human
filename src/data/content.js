@@ -22,45 +22,45 @@ export const contactConversationImg = 'https://media.base44.com/images/public/6a
 export const tarievenImg = 'https://media.base44.com/images/public/6a565889855ed729a11c1b91/264c1a276_AmorVitae_Tarieven_1.jpg';
 
 export const struggles = [
-  { num: '01', title: 'Stress & Overweldiging', slug: 'stress-overwhelm',
+  { num: '01', title: 'Stress & Overwhelm', slug: 'stress-overwhelm',
     img: 'https://media.base44.com/images/public/6a565889855ed729a11c1b91/42b1d4724_generated_image.png',
-    desc: 'Als het geroezemoes van het dagelijks leven je innerlijke stem overstemt, zoeken we stille paden terug naar je centrum.' },
-  { num: '02', title: 'Burn-out', slug: 'burnout',
+    desc: 'When the noise of daily life drowns out your inner voice, we seek quiet paths back to your center.' },
+  { num: '02', title: 'Burnout', slug: 'burnout',
     img: 'https://media.base44.com/images/public/6a565889855ed729a11c1b91/21edd95a2_generated_image.png',
-    desc: 'Zachtjes door de as van uitputting schiften om te ontdekken wat je werkelijk warmt en draagt.' },
-  { num: '03', title: 'Mantelzorg', slug: 'caregiving',
+    desc: 'Gently sifting through the ashes of exhaustion to discover what truly warms and sustains you.' },
+  { num: '03', title: 'Caregiving', slug: 'caregiving',
     img: 'https://media.base44.com/images/public/6a565889855ed729a11c1b91/d567b0e7c_generated_image.png',
-    desc: 'De zorgdrager ondersteund. Een veilige haven voor wie zijn dagen vult met de zorg voor een ander.' },
-  { num: '04', title: 'Rouw & Verlies', slug: 'grief-loss',
+    desc: 'Supporting the caregiver. A safe haven for those whose days are filled with caring for another.' },
+  { num: '04', title: 'Grief & Loss', slug: 'grief-loss',
     img: 'https://media.base44.com/images/public/6a565889855ed729a11c1b91/aa5459e8e_generated_image.png',
-    desc: 'De ruimte eren die achterblijft, zonder het tempo van je harts genezing te overhaasten.' },
-  { num: '05', title: 'Levensovergangen', slug: 'life-transitions',
+    desc: 'Honoring the space that remains, without rushing the pace of your heart’s healing.' },
+  { num: '05', title: 'Life Transitions', slug: 'life-transitions',
     img: 'https://media.base44.com/images/public/6a565889855ed729a11c1b91/62cb3ee5c_generated_image.png',
-    desc: 'Balans vinden op verschuivende grond — of je nu opnieuw begint, verdergaat of loslaat.' },
-  { num: '06', title: 'Emotionele Uitputting', slug: 'emotional-exhaustion',
+    desc: 'Finding balance on shifting ground — whether you’re beginning again, moving forward, or letting go.' },
+  { num: '06', title: 'Emotional Exhaustion', slug: 'emotional-exhaustion',
     img: 'https://media.base44.com/images/public/6a565889855ed729a11c1b91/af1d0a950_generated_image.png',
-    desc: 'Lege reserves aanvullen. Leren ademen en grenzen stellen zonder schuldgevoel.' },
+    desc: 'Replenishing empty reserves. Learning to breathe and set boundaries without guilt.' },
 ];
 
 export const services = [
-  { num: '01', title: 'Een veilige ruimte', desc: 'Een oordeelvrije, vertrouwelijke omgeving waarin je precies mag zijn wie je bent. Hier mag je neerzetten wat je draagt — zonder dat het onmiddellijk opgelost hoeft te worden. Soms is rust al de eerste stap.' },
-  { num: '02', title: 'Jouw tempo, jouw weg', desc: 'Begeleiding die zich aanpast aan jouw ritme, niet andersom. We overhaasten niets en forceren geen stappen. Wat voor jou veilig voelt, bepaalt de richting en het tempo van onze gesprekken.' },
-  { num: '03', title: 'Zelfcompassie als fundament', desc: 'Leren om jezelf te benaderen met dezelfde zachtheid die je een ander zou bieden. Niet als een techniek, maar als een nieuwe manier van naar jezelf kijken — geduldig, eerlijk en mild, ook wanneer het zwaar is.' },
-  { num: '04', title: 'Betekenis en integratie', desc: 'Samen betekenis terugvinden in wat je meemaakt. Niet door het weg te drukken, maar door het zachtjes te integreren in wie je aan het worden bent — zodat je verder kunt met wat er is, in plaats van ertegenin te vechten.' },
+  { num: '01', title: 'A safe space', desc: 'A judgment-free, confidential environment where you can be exactly who you are. Here you may set down what you carry — without it needing to be fixed right away. Sometimes rest is the first step.' },
+  { num: '02', title: 'Your pace, your path', desc: 'Guidance that adapts to your rhythm, not the other way around. We rush nothing and force no steps. What feels safe to you shapes the direction and pace of our conversations.' },
+  { num: '03', title: 'Self-compassion as foundation', desc: 'Learning to meet yourself with the same tenderness you would offer another. Not as a technique, but as a new way of seeing yourself — patient, honest, and gentle, even when it is hard.' },
+  { num: '04', title: 'Meaning and integration', desc: 'Finding meaning together in what you are going through. Not by pushing it away, but by gently weaving it into who you are becoming — so you can move forward with what is, rather than against it.' },
 ];
 
 export const steps = [
-  { num: '01', title: 'Het Vrijblijvende Kennismakingsgesprek', desc: 'Een zacht, 15-minuten durend telefoongesprek om je behoeften te horen en te voelen of mijn aanpak als een thuis voelt voor jou. Zonder verplichtingen.' },
-  { num: '02', title: 'Het Intakegesprek', desc: 'Onze eerste volledige sessie. We brengen je huidige emotionele landschap in kaart, bespreken de zware lasten en bepalen wat veilige vooruitgang voor jou betekent.' },
-  { num: '03', title: 'Begeleiding op Maat', desc: 'Lopende sessies waarin we patronen uitpakken, zelfcompassie-oefeningen ontwikkelen en grenzen leren stellen. Helemaal op jouw voorkeurstempo.' },
-  { num: '04', title: 'Integratie & Afsluiting', desc: 'Naarmate je je landschap met meer gemak begint te dragen, vergroten we langzaam de ruimte tussen sessies, afsluitend met een bewuste viering van je groei.' },
+  { num: '01', title: 'The Introductory Conversation', desc: 'A gentle, 15-minute phone call to hear your needs and sense whether my approach feels like a fit for you. No obligations.' },
+  { num: '02', title: 'The Intake Session', desc: 'Our first full session. We map your current emotional landscape, discuss the heavier burdens, and define what safe progress means for you.' },
+  { num: '03', title: 'Tailored Guidance', desc: 'Ongoing sessions where we unpack patterns, develop self-compassion practices, and learn to set boundaries. Entirely at your preferred pace.' },
+  { num: '04', title: 'Integration & Closure', desc: 'As you begin to carry your landscape with more ease, we slowly widen the space between sessions, closing with a mindful honoring of your growth.' },
 ];
 
 export const faqs = [
-  { q: 'Heb ik een doorverwijzing van mijn huisarts nodig om een afspraak te maken?', a: 'Nee, een doorverwijzing is niet vereist. Je kunt rechtstreeks een afspraak maken. We plannen onze eerste intake-sessie na een kort, vrijblijvend kennismakingsgesprek.' },
-  { q: 'Worden de sessies vergoed door mijn ziekenfonds?', a: 'Helaas worden de sessies niet vergoed door het ziekenfonds. De tarieven zijn echter opgesteld om begeleiding laagdrempelig en toegankelijk te houden.' },
-  { q: 'Wat is je annulatiebeleid?', a: 'Sessies kunnen kosteloos worden verzet of geannuleerd tot 24 uur op voorhand. Annulaties binnen 24 uur voor de afspraak worden volledig aangerekend.' },
-  { q: 'Bieden jullie online sessies aan?', a: 'Ja. Ik bied zowel fysieke sessies in mijn praktijk als online sessies via videogesprek, zodat je kunt verbinden vanuit waar het voor jou het meest comfortabel voelt.' },
-  { q: 'Hoeveel sessies zal ik nodig hebben?', a: 'Er is geen vast aantal. Sommige mensen vinden helderheid in een paar gesprekken; anderen verkiezen langere ondersteuning. We bewegen altijd in jouw tempo en herevalueren samen.' },
-  { q: 'Mijn zorgvraag staat niet in je lijst. Kan ik met andere zorgen ook bij jou terecht?', a: 'Ja, absoluut. De zorgvragen op mijn website geven een beeld van veelvoorkomende thema\'s, maar de lijst is niet-limitatief. Elke zorgvraag is welkom — neem gerust contact op om te bespreken wat je meedraagt, en samen kijken we of mijn begeleiding bij jou past.' },
+  { q: 'Do I need a referral from my doctor to make an appointment?', a: 'No, a referral is not required. You can make an appointment directly. We schedule our first intake session after a brief, no-obligation introductory call.' },
+  { q: 'Are sessions covered by my insurance?', a: 'Unfortunately sessions are not reimbursed by insurance. The rates are set to keep guidance accessible and affordable.' },
+  { q: 'What is your cancellation policy?', a: 'Sessions can be rescheduled or cancelled at no cost up to 24 hours in advance. Cancellations within 24 hours of the appointment are charged in full.' },
+  { q: 'Do you offer online sessions?', a: 'Yes. I offer both in-person sessions at my practice and online sessions via video call, so you can connect from wherever feels most comfortable.' },
+  { q: 'How many sessions will I need?', a: 'There is no fixed number. Some people find clarity in a few conversations; others prefer longer support. We always move at your pace and reassess together.' },
+  { q: 'My concern isn’t in your list. Can I come to you with other worries?', a: 'Yes, absolutely. The concerns on my site reflect common themes, but the list is not exhaustive. Every concern is welcome — reach out to discuss what you’re carrying, and together we’ll see whether my guidance is a fit for you.' },
 ];

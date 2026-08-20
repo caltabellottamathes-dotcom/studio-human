@@ -27,7 +27,7 @@ export default function Login() {
         window.location.href = '/portal/dashboard';
       }
     } catch (err) {
-      setError(err.message || 'Inloggen mislukt. Controleer uw gegevens.');
+      setError(err.message || 'Login failed. Please check your details.');
     } finally {
       setLoading(false);
     }
@@ -35,8 +35,8 @@ export default function Login() {
 
   return (
     <PortalAuthLayout variant="client" image={doorFrameImg}>
-      <h1 className="font-serif text-3xl text-neutral-900 mb-2">Welkom terug</h1>
-      <p className="text-sm text-neutral-500 mb-8">Log in op uw cliëntportaal</p>
+      <h1 className="font-serif text-3xl text-neutral-900 mb-2">Welcome back</h1>
+      <p className="text-sm text-neutral-500 mb-8">Sign in to your client portal</p>
 
       {error && (
         <div className="mb-4 p-3 rounded-lg bg-red-50 text-red-700 text-sm">{error}</div>
@@ -44,7 +44,7 @@ export default function Login() {
 
       <form onSubmit={handleSubmit} className="space-y-4">
         <div className="space-y-2">
-          <Label htmlFor="email">E-mailadres</Label>
+          <Label htmlFor="email">Email address</Label>
           <div className="relative">
             <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-400" />
             <Input
@@ -52,7 +52,7 @@ export default function Login() {
               type="email"
               autoComplete="email"
               autoFocus
-              placeholder="naam@voorbeeld.com"
+              placeholder="name@example.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="pl-10 h-12"
@@ -62,9 +62,9 @@ export default function Login() {
         </div>
         <div className="space-y-2">
           <div className="flex items-center justify-between">
-            <Label htmlFor="password">Wachtwoord</Label>
+            <Label htmlFor="password">Password</Label>
             <Link to="/forgot-password" className="text-xs text-red-600 hover:underline">
-              Wachtwoord vergeten?
+              Forgot password?
             </Link>
           </div>
           <div className="relative">
@@ -85,10 +85,10 @@ export default function Login() {
           {loading ? (
             <>
               <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-              Inloggen...
+              Signing in...
             </>
           ) : (
-            'Inloggen'
+            'Sign in'
           )}
         </Button>
       </form>
@@ -98,7 +98,7 @@ export default function Login() {
           to="/"
           className="inline-flex items-center gap-1.5 text-xs text-neutral-500 hover:text-red-600 transition-colors uppercase tracking-widest"
         >
-          <ArrowLeft className="w-3 h-3" /> Terug naar website
+          <ArrowLeft className="w-3 h-3" /> Back to website
         </Link>
       </div>
     </PortalAuthLayout>

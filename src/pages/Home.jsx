@@ -66,35 +66,35 @@ export default function Home() {
           <motion.div variants={heroItem} className="mb-10">
             <div className="flex items-center gap-4">
               <span className="text-xs uppercase tracking-[0.25em] text-red-600/80 font-medium">
-                Psychosociaal Consulent
+                Psychosocial Counselor
               </span>
               <span className="h-px w-12 bg-neutral-300" />
             </div>
             <p className="text-xs uppercase tracking-[0.25em] text-neutral-800 font-medium mt-1">
-              Debora Caltabellotta
+              Maya Hartwell
             </p>
           </motion.div>
 
           <motion.h1 variants={heroItem} className="font-display text-5xl md:text-7xl lg:text-[7.5rem] text-neutral-800 leading-[0.92] md:leading-[0.82] tracking-tight max-w-[15ch]">
-            Je hoeft het<br className="hidden md:inline" /> niet alleen te{' '}
-            <span className="italic text-red-600/90 font-light">dragen</span>.
+            You don't have to<br className="hidden md:inline" /> carry it{' '}
+            <span className="italic text-red-600/90 font-light">alone</span>.
           </motion.h1>
 
           <motion.div variants={heroItem} className="mt-10 md:mt-12 md:pl-0 md:max-w-[42ch] pr-[48%] md:pr-0">
             <p className="text-neutral-600 text-base md:text-lg font-light leading-normal max-w-[40ch] normal-case text-left">
-              Psychosociale begeleiding in Hasselt. Voor momenten waarop het leven meer van je vraagt dan je alleen hoeft te dragen.
+              Psychosocial counseling in Portland. For moments when life asks more of you than you should have to carry alone.
             </p>
           </motion.div>
         </motion.div>
 
         <Marquee className="absolute bottom-16 md:bottom-0 left-0 w-full z-20 py-3 bg-neutral-50/85 backdrop-blur-sm border-t border-neutral-200/60" speed={12}>
-          <span className="font-body uppercase tracking-widest text-sm md:text-base px-10 text-neutral-500">Liefde voor het leven</span>
+          <span className="font-body uppercase tracking-widest text-sm md:text-base px-10 text-neutral-500">Love for life</span>
           <span className="text-red-600/30 text-xs">✦</span>
-          <span className="font-body uppercase tracking-widest text-sm md:text-base px-10 text-neutral-500">Zorg voor de ziel</span>
+          <span className="font-body uppercase tracking-widest text-sm md:text-base px-10 text-neutral-500">Care for the soul</span>
           <span className="text-red-600/30 text-xs">✦</span>
-          <span className="font-body uppercase tracking-widest text-sm md:text-base px-10 text-neutral-500">Psychosociale begeleiding</span>
+          <span className="font-body uppercase tracking-widest text-sm md:text-base px-10 text-neutral-500">Psychosocial counseling</span>
           <span className="text-red-600/30 text-xs">✦</span>
-          <span className="font-body uppercase tracking-widest text-sm md:text-base px-10 text-neutral-500">Hasselt & aan huis</span>
+          <span className="font-body uppercase tracking-widest text-sm md:text-base px-10 text-neutral-500">Portland & at home</span>
           <span className="text-red-600/30 text-xs">✦</span>
         </Marquee>
       </section>
@@ -103,25 +103,25 @@ export default function Home() {
       <section className="pb-16 md:pb-24 px-6 md:px-12 max-w-[120rem] mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-16 items-center">
           <div className="md:col-span-5 md:col-start-1 -ml-6 md:-ml-12">
-            <PremiumImage src={deboraCurtainImg} alt="Debora Caltabellotta" height="85vh" rounded="br" className="w-[54vw] md:w-full mobile-h-xs" />
+            <PremiumImage src={deboraCurtainImg} alt="Maya Hartwell" height="85vh" rounded="br" className="w-[54vw] md:w-full mobile-h-xs" />
           </div>
           <StaggerGroup className="col-span-1 md:col-span-6 md:col-start-7" stagger={0.15}>
             <StaggerItem>
-              <span className="text-xs uppercase tracking-[0.2em] text-red-600/80 block label-line mb-6 font-medium">amorvitae.</span>
+              <span className="text-xs uppercase tracking-[0.2em] text-red-600/80 block label-line mb-6 font-medium">studioHuman</span>
             </StaggerItem>
             <StaggerItem>
               <p className="font-display text-3xl md:text-5xl text-neutral-800 tracking-tight leading-tight mb-6">
-                Liefde voor het leven,<br className="hidden md:inline" /> <span className="italic font-light text-red-600/90">zorg voor de ziel</span>.
+                Love for life,<br className="hidden md:inline" /> <span className="italic font-light text-red-600/90">care for the soul</span>.
               </p>
             </StaggerItem>
             <StaggerItem>
               <p className="text-neutral-600 text-base md:text-lg font-light leading-relaxed max-w-[52ch]">
-                Soms brengt het leven je op een punt waarop alles te veel wordt. Je draagt veel, denkt veel, voelt veel. Misschien zorg je voor anderen en raak je jezelf onderweg een beetje kwijt. Misschien sta je op een kruispunt, voel je dat er iets moet veranderen, maar weet je niet goed hoe of waar te beginnen.
+                Sometimes life brings you to a point where everything becomes too much. You carry a lot, think a lot, feel a lot. Perhaps you care for others and lose yourself a little along the way. Perhaps you stand at a crossroads, sensing that something needs to change, but you're not quite sure how or where to begin.
               </p>
             </StaggerItem>
             <StaggerItem>
               <p className="text-neutral-600 text-base md:text-lg font-light leading-relaxed max-w-[52ch] mt-4">
-                Op zulke momenten kan het een verschil maken als je er niet alleen door moet. Iemand die luistert zonder oordeel, mee helpt dragen wat zwaar voelt en samen met jou opnieuw richting zoekt — stap voor stap.
+                In such moments it can make a difference not to go through it alone. Someone who listens without judgment, helps carry what feels heavy, and searches with you for a new direction — step by step.
               </p>
             </StaggerItem>
           </StaggerGroup>
@@ -137,19 +137,19 @@ export default function Home() {
           <StaggerGroup className="grid grid-cols-2 md:grid-cols-4 gap-y-14 gap-x-6 md:gap-8" stagger={0.12}>
             <StaggerItem className="text-center">
               <AnimatedCounter to={10} suffix="+" className="[font-family:'Lekton',_ui-monospace,_monospace] font-normal text-4xl md:text-6xl text-red-600 block" />
-              <span className="text-xs uppercase tracking-widest text-neutral-500 mt-2 block">Jaren Ervaring</span>
+              <span className="text-xs uppercase tracking-widest text-neutral-500 mt-2 block">Years of experience</span>
             </StaggerItem>
             <StaggerItem className="text-center">
               <AnimatedCounter to={100} suffix="%" className="[font-family:'Lekton',_ui-monospace,_monospace] font-normal text-4xl md:text-6xl text-red-600 block" />
-              <span className="text-xs uppercase tracking-widest text-neutral-500 mt-2 block">Vertrouwelijk</span>
+              <span className="text-xs uppercase tracking-widest text-neutral-500 mt-2 block">Confidential</span>
             </StaggerItem>
             <StaggerItem className="text-center">
               <AnimatedCounter to={15} suffix=" min" className="[font-family:'Lekton',_ui-monospace,_monospace] font-normal text-4xl md:text-6xl text-red-600 block" />
-              <span className="text-xs uppercase tracking-widest text-neutral-500 mt-2 block">Gratis kennismaking</span>
+              <span className="text-xs uppercase tracking-widest text-neutral-500 mt-2 block">Free intro call</span>
             </StaggerItem>
             <StaggerItem className="text-center">
-              <span className="text-4xl md:text-6xl text-red-600 block font-normal [font-family:'Lekton',_ui-monospace,_monospace]">Hasselt</span>
-              <span className="text-xs uppercase tracking-widest text-neutral-500 mt-2 block">en omgeving</span>
+              <span className="text-4xl md:text-6xl text-red-600 block font-normal [font-family:'Lekton',_ui-monospace,_monospace]">Portland</span>
+              <span className="text-xs uppercase tracking-widest text-neutral-500 mt-2 block">and beyond</span>
             </StaggerItem>
           </StaggerGroup>
         </div>
@@ -160,12 +160,12 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 items-center">
           <div className="col-span-1 md:col-span-4 md:col-start-1">
             <FadeSection>
-              <span className="text-xs uppercase tracking-[0.2em] text-red-600/80 block label-line mb-4">Over mij</span>
+              <span className="text-xs uppercase tracking-[0.2em] text-red-600/80 block label-line mb-4">About me</span>
               <p className="font-display text-2xl md:text-4xl text-neutral-800 leading-snug mb-8">
-                Bij Amor Vitae vind je ruimte om <span className="font-light text-red-600/90">stil te staan</span>, te ademen en opnieuw richting te vinden.
+                At studioHuman you find space to <span className="font-light text-red-600/90">pause</span>, to breathe, and to find direction again.
               </p>
               <Link to="/over" className="group inline-flex items-center gap-2 text-xs uppercase tracking-widest text-neutral-800 border-b border-neutral-400 py-2 hover:gap-3 hover:border-red-600 hover:text-red-600 transition-all duration-300">
-                Leer mij kennen
+                Get to know me
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </FadeSection>
@@ -184,12 +184,12 @@ export default function Home() {
           </div>
           <div className="md:w-[55%] flex items-center pb-12 md:pb-16 order-1 md:order-2">
             <FadeSection>
-              <span className="text-xs uppercase tracking-[0.2em] text-red-600/80 block label-line mb-4">Mijn aanpak</span>
+              <span className="text-xs uppercase tracking-[0.2em] text-red-600/80 block label-line mb-4">My approach</span>
               <p className="font-display text-2xl md:text-4xl text-neutral-800 leading-snug mb-8">
-                Begeleiding die zich aanpast aan <span className="font-light text-red-600/90">jouw noden</span> — persoonlijk, laagdrempelig en op maat.
+                Guidance that adapts to <span className="font-light text-red-600/90">your needs</span> — personal, accessible, and tailored.
               </p>
               <Link to="/aanpak" className="group inline-flex items-center gap-2 text-xs uppercase tracking-widest text-neutral-800 border-b border-neutral-400 py-2 hover:gap-3 hover:border-red-600 hover:text-red-600 transition-all duration-300">
-                Ontdek de aanpak
+                Explore the approach
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </FadeSection>

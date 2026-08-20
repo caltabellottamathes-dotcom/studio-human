@@ -48,14 +48,14 @@ export default function AssessmentLightbox() {
             <button
               onClick={() => setOpen(false)}
               className="absolute top-5 right-5 z-10 w-9 h-9 rounded-full bg-white/40 backdrop-blur-md border border-neutral-200/40 flex items-center justify-center text-neutral-500 hover:text-red-600 hover:bg-white/60 transition-all duration-300"
-              aria-label="Sluiten"
+              aria-label="Close"
             >
               <X className="w-4 h-4" strokeWidth={1.5} />
             </button>
             <div className="p-6 md:p-10 pt-14 md:pt-16">
               <AssessmentFlow
-                title={<>Zachte <span className="italic font-light text-red-600/90">zelfreflectie</span></>}
-                description="Niet zeker waar je staat? Neem een paar minuten voor deze zachte zelfreflectie — geen diagnose, enkel een spiegel voor wat je voelt."
+                title={<>Gentle <span className="italic font-light text-red-600/90">self-reflection</span></>}
+                description="Not sure where you stand? Take a few minutes for this gentle self-reflection — not a diagnosis, just a mirror for what you feel."
               />
             </div>
           </motion.div>

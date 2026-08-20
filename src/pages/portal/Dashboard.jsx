@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { Calendar, FileText, ClipboardList, MessageSquare, Heart, Clock, ArrowRight } from 'lucide-react';
 
 const moodLabels = {
-  very_low: 'Zeer laag', low: 'Laag', neutral: 'Neutraal', good: 'Goed', very_good: 'Zeer goed'
+  very_low: 'Very low', low: 'Low', neutral: 'Neutral', good: 'Good', very_good: 'Very good'
 };
 
 function SummaryCard({ icon: Icon, label, count, to, accent }) {
@@ -61,19 +61,19 @@ export default function PortalDashboard() {
   return (
     <div className="p-6 md:p-10 max-w-5xl">
       <div className="mb-10">
-        <span className="text-[10px] uppercase tracking-[0.25em] text-red-600/80 block mb-2">Welkom terug</span>
+        <span className="text-[10px] uppercase tracking-[0.25em] text-red-600/80 block mb-2">Welcome back</span>
         <h1 className="font-display text-3xl md:text-4xl text-neutral-800 tracking-tight">
-          Hallo, {firstName}
+          Hello, {firstName}
         </h1>
-        <p className="text-neutral-500 text-sm font-light mt-2">Hier is een overzicht van je traject.</p>
+        <p className="text-neutral-500 text-sm font-light mt-2">Here's an overview of your journey.</p>
       </div>
 
       {/* Summary cards */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mb-10">
-        <SummaryCard icon={Calendar} label="Komende afspraken" count={upcoming.length} to="/portal/afspraken" />
-        <SummaryCard icon={ClipboardList} label="Open opdrachten" count={pendingAssignments.length} to="/portal/opdrachten" accent="bg-amber-50 text-amber-600" />
-        <SummaryCard icon={MessageSquare} label="Nieuwe berichten" count={unreadMessages.length} to="/portal/berichten" accent="bg-blue-50 text-blue-600" />
-        <SummaryCard icon={Heart} label="Stemmingen" count={recentMood.length} to="/portal/stemming" accent="bg-rose-50 text-rose-600" />
+        <SummaryCard icon={Calendar} label="Upcoming appointments" count={upcoming.length} to="/portal/afspraken" />
+        <SummaryCard icon={ClipboardList} label="Open assignments" count={pendingAssignments.length} to="/portal/opdrachten" accent="bg-amber-50 text-amber-600" />
+        <SummaryCard icon={MessageSquare} label="New messages" count={unreadMessages.length} to="/portal/berichten" accent="bg-blue-50 text-blue-600" />
+        <SummaryCard icon={Heart} label="Mood entries" count={recentMood.length} to="/portal/stemming" accent="bg-rose-50 text-rose-600" />
       </div>
 
       {/* Two column layout */}
@@ -81,21 +81,21 @@ export default function PortalDashboard() {
         {/* Upcoming appointments */}
         <div className="bg-white rounded-xl border border-neutral-200 p-6">
           <div className="flex items-center justify-between mb-4">
-            <h2 className="font-display text-lg text-neutral-800">Komende afspraken</h2>
-            <Link to="/portal/afspraken" className="text-[10px] uppercase tracking-widest text-red-600 hover:underline">Alle</Link>
+            <h2 className="font-display text-lg text-neutral-800">Upcoming appointments</h2>
+            <Link to="/portal/afspraken" className="text-[10px] uppercase tracking-widest text-red-600 hover:underline">All</Link>
           </div>
           {upcoming.length === 0 ? (
-            <p className="text-sm text-neutral-400 font-light py-4">Geen afspraken gepland.</p>
+            <p className="text-sm text-neutral-400 font-light py-4">No appointments scheduled.</p>
           ) : (
             <div className="space-y-3">
               {upcoming.slice(0, 3).map(apt => (
                 <div key={apt.id} className="flex items-start gap-3 py-2 border-b border-neutral-100 last:border-0">
                   <div className="w-10 h-10 rounded-lg bg-red-50 flex flex-col items-center justify-center flex-shrink-0">
-                    <span className="text-[9px] uppercase text-red-600 leading-none">{new Date(apt.date).toLocaleDateString('nl-NL', { month: 'short' })}</span>
+                    <span className="text-[9px] uppercase text-red-600 leading-none">{new Date(apt.date).toLocaleDateString('en-US', { month: 'short' })}</span>
                     <span className="text-sm font-display text-red-700 leading-none mt-0.5">{new Date(apt.date).getDate()}</span>
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="text-sm text-neutral-800 font-medium capitalize">{apt.type === 'online' ? 'Online sessie' : apt.type === 'physical' ? 'Fysieke sessie' : apt.type === 'intake' ? 'Intakegesprek' : 'Sessie'}</p>
+                    <p className="text-sm text-neutral-800 font-medium capitalize">{apt.type === 'online' ? 'Online session' : apt.type === 'physical' ? 'In-person session' : apt.type === 'intake' ? 'Intake session' : 'Session'}</p>
                     <p className="text-xs text-neutral-500 flex items-center gap-1 mt-0.5">
                       <Clock className="w-3 h-3" /> {apt.start_time} · {apt.duration_minutes} min
                     </p>
@@ -110,16 +110,16 @@ export default function PortalDashboard() {
         {/* Recent messages */}
         <div className="bg-white rounded-xl border border-neutral-200 p-6">
           <div className="flex items-center justify-between mb-4">
-            <h2 className="font-display text-lg text-neutral-800">Berichten</h2>
-            <Link to="/portal/berichten" className="text-[10px] uppercase tracking-widest text-red-600 hover:underline">Alle</Link>
+            <h2 className="font-display text-lg text-neutral-800">Messages</h2>
+            <Link to="/portal/berichten" className="text-[10px] uppercase tracking-widest text-red-600 hover:underline">All</Link>
           </div>
           {(data?.messages || []).length === 0 ? (
-            <p className="text-sm text-neutral-400 font-light py-4">Nog geen berichten.</p>
+            <p className="text-sm text-neutral-400 font-light py-4">No messages yet.</p>
           ) : (
             <div className="space-y-3">
               {(data?.messages || []).slice(-3).reverse().map(msg => (
                 <div key={msg.id} className={`p-3 rounded-lg ${msg.sender === 'admin' ? 'bg-red-50/50' : 'bg-neutral-50'}`}>
-                  <p className="text-[10px] uppercase tracking-widest text-neutral-400 mb-1">{msg.sender === 'admin' ? 'Debora' : 'Jij'}</p>
+                  <p className="text-[10px] uppercase tracking-widest text-neutral-400 mb-1">{msg.sender === 'admin' ? 'Maya' : 'You'}</p>
                   <p className="text-sm text-neutral-700 font-light line-clamp-2">{msg.content}</p>
                 </div>
               ))}
@@ -130,17 +130,17 @@ export default function PortalDashboard() {
         {/* Pending assignments */}
         <div className="bg-white rounded-xl border border-neutral-200 p-6">
           <div className="flex items-center justify-between mb-4">
-            <h2 className="font-display text-lg text-neutral-800">Open opdrachten</h2>
-            <Link to="/portal/opdrachten" className="text-[10px] uppercase tracking-widest text-red-600 hover:underline">Alle</Link>
+            <h2 className="font-display text-lg text-neutral-800">Open assignments</h2>
+            <Link to="/portal/opdrachten" className="text-[10px] uppercase tracking-widest text-red-600 hover:underline">All</Link>
           </div>
           {pendingAssignments.length === 0 ? (
-            <p className="text-sm text-neutral-400 font-light py-4">Geen openstaande opdrachten.</p>
+            <p className="text-sm text-neutral-400 font-light py-4">No open assignments.</p>
           ) : (
             <div className="space-y-3">
               {pendingAssignments.slice(0, 3).map(a => (
                 <div key={a.id} className="py-2 border-b border-neutral-100 last:border-0">
                   <p className="text-sm text-neutral-800 font-medium">{a.title}</p>
-                  {a.due_date && <p className="text-xs text-neutral-400 mt-0.5">Uiterlijk: {new Date(a.due_date).toLocaleDateString('nl-NL')}</p>}
+                  {a.due_date && <p className="text-xs text-neutral-400 mt-0.5">Due: {new Date(a.due_date).toLocaleDateString('en-US')}</p>}
                 </div>
               ))}
             </div>
@@ -150,11 +150,11 @@ export default function PortalDashboard() {
         {/* Mood tracking */}
         <div className="bg-white rounded-xl border border-neutral-200 p-6">
           <div className="flex items-center justify-between mb-4">
-            <h2 className="font-display text-lg text-neutral-800">Stemming</h2>
+            <h2 className="font-display text-lg text-neutral-800">Mood</h2>
             <Link to="/portal/stemming" className="text-[10px] uppercase tracking-widest text-red-600 hover:underline">Details</Link>
           </div>
           {recentMood.length === 0 ? (
-            <p className="text-sm text-neutral-400 font-light py-4">Nog geen stemmingen geregistreerd.</p>
+            <p className="text-sm text-neutral-400 font-light py-4">No mood entries yet.</p>
           ) : (
             <div className="flex items-end justify-between gap-1 h-20">
               {recentMood.map((m, i) => (

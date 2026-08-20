@@ -5,9 +5,9 @@ import AssessmentProfileManager from '@/components/admin/AssessmentProfileManage
 import AssessmentStats from '@/components/admin/AssessmentStats';
 
 const tabs = [
-  { key: 'questions', label: 'Vragen', icon: ClipboardList },
-  { key: 'profiles', label: 'Profielen', icon: FileText },
-  { key: 'stats', label: 'Statistieken', icon: BarChart3 },
+  { key: 'questions', label: 'Questions', icon: ClipboardList },
+  { key: 'profiles', label: 'Profiles', icon: FileText },
+  { key: 'stats', label: 'Statistics', icon: BarChart3 },
 ];
 
 export default function AdminAssessment() {
@@ -16,8 +16,8 @@ export default function AdminAssessment() {
   return (
     <div className="p-6 md:p-10 max-w-5xl">
       <div className="mb-8">
-        <span className="text-[10px] uppercase tracking-[0.25em] text-red-600/80 block mb-2">Beheer</span>
-        <h1 className="font-display text-3xl md:text-4xl text-neutral-800 tracking-tight">Zelfreflectie</h1>
+        <span className="text-[10px] uppercase tracking-[0.25em] text-red-600/80 block mb-2">Manage</span>
+        <h1 className="font-display text-3xl md:text-4xl text-neutral-800 tracking-tight">Self-reflection</h1>
       </div>
 
       <div className="flex gap-1 mb-8 border-b border-neutral-200">

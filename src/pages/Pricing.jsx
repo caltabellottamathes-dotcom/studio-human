@@ -11,40 +11,40 @@ import { tarievenImg } from '@/data/content';
 
 const tiers = [
   {
-    category: 'Individuele Begeleiding',
-    tagline: 'Gepersonaliseerde één-op-éénsessies, op jouw tempo.',
+    category: 'Individual Guidance',
+    tagline: 'Personalized one-on-one sessions, at your pace.',
     items: [
-      { label: 'Sessie aan de praktijk (60 min)', price: '€60' },
-      { label: 'Huisbezoek-sessie (60 min)', price: '€65' },
-      { label: 'Avondsessie (na 20u), zondag of feestdag', price: '+€15 supplement' },
+      { label: 'Practice session (60 min)', price: '$60' },
+      { label: 'Home visit session (60 min)', price: '$65' },
+      { label: 'Evening session (after 8pm), Sunday or holiday', price: '+$15 supplement' },
     ],
   },
   {
-    category: 'Thematische Groepssessies',
-    tagline: 'Op aanvraag — rouw, grenzen, mantelzorg, zingeving, en meer.',
+    category: 'Thematic Group Sessions',
+    tagline: 'On request — grief, boundaries, caregiving, meaning, and more.',
     items: [
-      { label: 'Groepssessie (max. 10 deelnemers)', price: '€150 / uur' },
+      { label: 'Group session (max. 10 participants)', price: '$150 / hour' },
     ],
   },
   {
-    category: 'Bijkomende Ondersteuning',
-    tagline: 'Enkel in combinatie met lopende begeleiding.',
+    category: 'Additional Support',
+    tagline: 'Only in combination with ongoing guidance.',
     items: [
-      { label: 'Dossiervoorbereiding voor huisarts of zorgverleners', price: '' },
-      { label: 'Coördinatie-gesprekken met specialisten', price: '' },
-      { label: 'Schriftelijke communicatie voor mutualiteit / zorginstelling', price: '' },
-      { label: 'Tarief per begonnen 15 minuten', price: '€15' },
-      { label: 'Uurtarief (vanaf 60 min)', price: '€60' },
-      { label: 'Vast tarief: dossier + consult (max. 1 uur)', price: '€55' },
+      { label: 'File preparation for GP or care providers', price: '' },
+      { label: 'Coordination meetings with specialists', price: '' },
+      { label: 'Written communication for insurance / care facility', price: '' },
+      { label: 'Rate per started 15 minutes', price: '$15' },
+      { label: 'Hourly rate (from 60 min)', price: '$60' },
+      { label: 'Fixed rate: file + consult (max. 1 hour)', price: '$55' },
     ],
     note: true,
   },
   {
-    category: 'Verplaatsingskosten Huisbezoek',
-    tagline: 'Verplaatsing inbegrepen binnen de lokale regio.',
+    category: 'Home Visit Travel Costs',
+    tagline: 'Travel included within the local region.',
     items: [
-      { label: 'Binnen Hasselt / Zonhoven', price: 'Inbegrepen' },
-      { label: 'Buiten dit gebied', price: 'Op aanvraag' },
+      { label: 'Within Portland / Lakeview', price: 'Included' },
+      { label: 'Outside this area', price: 'On request' },
     ],
   },
 ];
@@ -58,14 +58,14 @@ export default function Pricing() {
         <FadeSection>
           <Link to="/" className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-neutral-500 hover:text-red-600 transition-colors mb-12 group">
             <svg className="w-4 h-4 transform group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 19l-7-7 7-7" /></svg>
-            Terug naar home
+            Back to home
           </Link>
-          <span className="text-xs uppercase tracking-[0.25em] text-red-600/80 block label-line mb-6">Transparant & Eerlijk</span>
+          <span className="text-xs uppercase tracking-[0.25em] text-red-600/80 block label-line mb-6">Transparent & honest</span>
           <h1 className="font-display text-5xl md:text-7xl text-neutral-800 leading-tight tracking-tight mb-6">
-            Prijzen & <span className="italic font-light text-red-600/90">Tarieven</span>.
+            Rates & <span className="italic font-light text-red-600/90">pricing</span>.
           </h1>
           <p className="text-neutral-600 text-base md:text-lg font-light max-w-[44ch] leading-normal">
-            Zorg mag duidelijk zijn — ook als het om kosten gaat. Hieronder vind je de verschillende mogelijkheden en tarieven van mijn praktijk. Begeleiding kan in mijn praktijk of bij jou thuis. Vragen of iets afstemmen? Neem gerust contact op — we zoeken samen wat past bij jouw situatie.
+            Care should be clear — including when it comes to cost. Below you'll find the different options and rates of my practice. Guidance can take place at my practice or at your home. Questions or want to align on something? Reach out — together we'll find what fits your situation.
           </p>
         </FadeSection>
       </section>
@@ -79,7 +79,7 @@ export default function Pricing() {
                   <h2 className="font-display text-xl md:text-2xl text-neutral-800 mb-1">{tier.category}</h2>
                   <p className="text-neutral-500 text-sm md:text-base font-light leading-normal mt-1">{tier.tagline}</p>
                   {tier.note && (
-                    <p className="text-xs text-neutral-400 font-light mt-3 italic">Enkel beschikbaar in combinatie met individuele begeleiding.</p>
+                    <p className="text-xs text-neutral-400 font-light mt-3 italic">Only available in combination with individual guidance.</p>
                   )}
                 </div>
                 <div className="col-span-1 md:col-start-6 md:col-span-7">
@@ -103,9 +103,9 @@ export default function Pricing() {
         <div className="flex flex-col md:flex-row gap-8 md:gap-12">
           <div className="md:w-[55%] flex items-center pb-12 md:pb-16">
             <FadeSection>
-              <span className="text-xs uppercase tracking-[0.2em] text-red-600/80 block label-line mb-4">Transparantie</span>
+              <span className="text-xs uppercase tracking-[0.2em] text-red-600/80 block label-line mb-4">Transparency</span>
               <p className="font-display text-2xl md:text-4xl text-neutral-800 leading-snug">
-                <span className="font-light text-red-600/90">Zorg moet helder zijn</span> — ook als het over kosten gaat.
+                <span className="font-light text-red-600/90">Care should be clear</span> — including when it's about cost.
               </p>
             </FadeSection>
           </div>

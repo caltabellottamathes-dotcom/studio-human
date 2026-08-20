@@ -26,7 +26,7 @@ export default function AdminMessages() {
     const map = {};
     (data?.messages || []).forEach(m => {
       if (!map[m.client_id]) {
-        map[m.client_id] = { client_id: m.client_id, client_name: m.client_display_name || m.client_name || 'Onbekend', messages: [], unread: 0 };
+        map[m.client_id] = { client_id: m.client_id, client_name: m.client_display_name || m.client_name || 'Unknown', messages: [], unread: 0 };
       }
       map[m.client_id].messages.push(m);
       if (m.sender === 'client' && !m.read) map[m.client_id].unread++;
@@ -69,19 +69,19 @@ export default function AdminMessages() {
   return (
     <div className="p-6 md:p-10 max-w-6xl">
       <div className="mb-8">
-        <span className="text-[10px] uppercase tracking-[0.25em] text-red-600/80 block mb-2">Beheer</span>
-        <h1 className="font-display text-3xl md:text-4xl text-neutral-800 tracking-tight">Berichten</h1>
+        <span className="text-[10px] uppercase tracking-[0.25em] text-red-600/80 block mb-2">Manage</span>
+        <h1 className="font-display text-3xl md:text-4xl text-neutral-800 tracking-tight">Messages</h1>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 h-[600px]">
         {/* Conversation list */}
         <div className="bg-white rounded-xl border border-neutral-200 overflow-hidden">
           <div className="p-3 border-b border-neutral-100">
-            <p className="text-[10px] uppercase tracking-widest text-neutral-400">Conversaties ({conversations.length})</p>
+            <p className="text-[10px] uppercase tracking-widest text-neutral-400">Conversations ({conversations.length})</p>
           </div>
           <div className="overflow-y-auto h-full max-h-[550px]">
             {conversations.length === 0 ? (
-              <p className="text-sm text-neutral-400 font-light p-6 text-center">Nog geen berichten.</p>
+              <p className="text-sm text-neutral-400 font-light p-6 text-center">No messages yet.</p>
             ) : (
               <div className="divide-y divide-neutral-100">
                 {conversations.map(c => (
@@ -104,7 +104,7 @@ export default function AdminMessages() {
             <div className="flex-1 flex items-center justify-center">
               <div className="text-center">
                 <MessageSquare className="w-8 h-8 text-neutral-300 mx-auto mb-3" strokeWidth={1} />
-                <p className="text-sm text-neutral-400 font-light">Selecteer een conversatie</p>
+                <p className="text-sm text-neutral-400 font-light">Select a conversation</p>
               </div>
             </div>
           ) : (
@@ -117,7 +117,7 @@ export default function AdminMessages() {
                   <div key={m.id} className={`flex ${m.sender === 'admin' ? 'justify-end' : 'justify-start'}`}>
                     <div className={`max-w-[75%] p-3 rounded-lg ${m.sender === 'admin' ? 'bg-neutral-900 text-white' : 'bg-neutral-100 text-neutral-800'}`}>
                       <p className="text-sm font-light">{m.content}</p>
-                      <p className={`text-[9px] mt-1 ${m.sender === 'admin' ? 'text-white/50' : 'text-neutral-400'}`}>{new Date(m.created_date).toLocaleString('nl-NL')}</p>
+                      <p className={`text-[9px] mt-1 ${m.sender === 'admin' ? 'text-white/50' : 'text-neutral-400'}`}>{new Date(m.created_date).toLocaleString('en-US')}</p>
                     </div>
                   </div>
                 ))}
@@ -128,7 +128,7 @@ export default function AdminMessages() {
                   value={messageText}
                   onChange={e => setMessageText(e.target.value)}
                   onKeyDown={e => { if (e.key === 'Enter') sendMessage(); }}
-                  placeholder="Typ een bericht..."
+                  placeholder="Type a message..."
                   className="flex-1 border border-neutral-200 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-neutral-300"
                 />
                 <button onClick={sendMessage} disabled={sending || !messageText.trim()} className="px-4 py-2 bg-neutral-900 hover:bg-black text-white rounded-lg disabled:opacity-30 transition-colors">

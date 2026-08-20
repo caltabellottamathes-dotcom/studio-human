@@ -3,11 +3,11 @@ import { base44 } from '@/api/base44Client';
 import { Heart, Check } from 'lucide-react';
 
 const moods = [
-  { score: 1, label: 'Zeer slecht', color: 'bg-red-400', ring: 'ring-red-400' },
-  { score: 2, label: 'Slecht', color: 'bg-orange-400', ring: 'ring-orange-400' },
-  { score: 3, label: 'Neutraal', color: 'bg-amber-300', ring: 'ring-amber-300' },
-  { score: 4, label: 'Goed', color: 'bg-lime-400', ring: 'ring-lime-400' },
-  { score: 5, label: 'Zeer goed', color: 'bg-emerald-400', ring: 'ring-emerald-400' },
+  { score: 1, label: 'Very low', color: 'bg-red-400', ring: 'ring-red-400' },
+  { score: 2, label: 'Low', color: 'bg-orange-400', ring: 'ring-orange-400' },
+  { score: 3, label: 'Neutral', color: 'bg-amber-300', ring: 'ring-amber-300' },
+  { score: 4, label: 'Good', color: 'bg-lime-400', ring: 'ring-lime-400' },
+  { score: 5, label: 'Very good', color: 'bg-emerald-400', ring: 'ring-emerald-400' },
 ];
 
 export default function PortalMood() {
@@ -71,16 +71,16 @@ export default function PortalMood() {
   return (
     <div className="p-6 md:p-10 max-w-3xl">
       <div className="mb-8">
-        <span className="text-[10px] uppercase tracking-[0.25em] text-red-600/80 block mb-2">Cliëntportaal</span>
-        <h1 className="font-display text-3xl md:text-4xl text-neutral-800 tracking-tight">Stemmingsdagboek</h1>
-        <p className="text-neutral-500 text-sm font-light mt-2">Hoe voel je je vandaag?</p>
+        <span className="text-[10px] uppercase tracking-[0.25em] text-red-600/80 block mb-2">Client Portal</span>
+        <h1 className="font-display text-3xl md:text-4xl text-neutral-800 tracking-tight">Mood Journal</h1>
+        <p className="text-neutral-500 text-sm font-light mt-2">How are you feeling today?</p>
       </div>
 
       {/* Mood selector */}
       <div className="bg-white rounded-xl border border-neutral-200 p-6 mb-6">
         {savedToday && (
           <div className="mb-4 inline-flex items-center gap-2 text-xs text-emerald-600 bg-emerald-50 px-3 py-1.5 rounded-full">
-            <Check className="w-3 h-3" /> Vandaag al geregistreerd
+            <Check className="w-3 h-3" /> Already logged today
           </div>
         )}
         <div className="flex justify-between gap-2 mb-4">
@@ -101,7 +101,7 @@ export default function PortalMood() {
           value={note}
           onChange={e => setNote(e.target.value)}
           rows={2}
-          placeholder="Optionele notitie..."
+          placeholder="Optional note..."
           className="w-full border border-neutral-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-neutral-300 mb-3"
         />
         <button
@@ -109,14 +109,14 @@ export default function PortalMood() {
           disabled={!selectedMood || saving}
           className="w-full py-3 bg-neutral-900 hover:bg-black text-white rounded-full text-xs uppercase tracking-widest disabled:opacity-30 transition-colors"
         >
-          {saving ? 'Opslaan...' : 'Stemming opslaan'}
+          {saving ? 'Saving...' : 'Save mood'}
         </button>
       </div>
 
       {/* Chart */}
       {recent.length > 0 && (
         <div className="bg-white rounded-xl border border-neutral-200 p-6 mb-6">
-          <h2 className="font-display text-lg text-neutral-800 mb-4">Recente stemming</h2>
+          <h2 className="font-display text-lg text-neutral-800 mb-4">Recent mood</h2>
           <div className="flex items-end justify-between gap-1 h-32">
             {recent.map((m, i) => {
               const mood = moods[m.mood_score - 1];
@@ -134,7 +134,7 @@ export default function PortalMood() {
       {/* History */}
       {entries.length > 0 && (
         <div className="bg-white rounded-xl border border-neutral-200 p-6">
-          <h2 className="font-display text-lg text-neutral-800 mb-4">Geschiedenis</h2>
+          <h2 className="font-display text-lg text-neutral-800 mb-4">History</h2>
           <div className="space-y-2">
             {entries.map((m, i) => {
               const mood = moods[m.mood_score - 1];
@@ -143,8 +143,8 @@ export default function PortalMood() {
                   <div className={`w-3 h-3 rounded-full ${mood?.color || 'bg-neutral-300'} flex-shrink-0 mt-1`} />
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center justify-between">
-                      <p className="text-xs text-neutral-500">{mood?.label || 'Onbekend'}</p>
-                      <p className="text-xs text-neutral-400">{new Date(m.entry_date).toLocaleDateString('nl-NL', { day: 'numeric', month: 'long' })}</p>
+                      <p className="text-xs text-neutral-500">{mood?.label || 'Unknown'}</p>
+                      <p className="text-xs text-neutral-400">{new Date(m.entry_date).toLocaleDateString('en-US', { day: 'numeric', month: 'long' })}</p>
                     </div>
                     {m.note && <p className="text-xs text-neutral-600 font-light mt-1">{m.note}</p>}
                   </div>
@@ -158,7 +158,7 @@ export default function PortalMood() {
       {entries.length === 0 && !savedToday && (
         <div className="bg-white rounded-xl border border-neutral-200 p-12 text-center">
           <Heart className="w-8 h-8 text-neutral-300 mx-auto mb-3" strokeWidth={1} />
-          <p className="text-sm text-neutral-400 font-light">Nog geen stemmingen geregistreerd.</p>
+          <p className="text-sm text-neutral-400 font-light">No mood entries yet.</p>
         </div>
       )}
     </div>

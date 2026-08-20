@@ -22,7 +22,7 @@ export default function AssessmentFlow({ title, description }) {
       const res = await base44.functions.invoke('getAssessmentData', {});
       setQuestions(res.data.questions);
       setPhase('idle');
-    } catch {setError('De vragenlijst kon niet geladen worden. Probeer het later opnieuw.');}
+    } catch {setError('The questionnaire could not be loaded. Please try again later.');}
   };
 
   const handleSelect = (indices) => {
@@ -45,7 +45,7 @@ export default function AssessmentFlow({ title, description }) {
       const res = await base44.functions.invoke('submitAssessment', { answers: arr });
       setResult(res.data.profile);
       setPhase('result');
-    } catch {setError('Er ging iets mis. Probeer het opnieuw.');setPhase('questions');}
+    } catch {setError('Something went wrong. Please try again.');setPhase('questions');}
   };
 
   const restart = () => {setAnswers({});setCurrentIndex(0);setResult(null);setPhase('idle');};
@@ -63,7 +63,7 @@ export default function AssessmentFlow({ title, description }) {
     <div className={`${containerClass} flex items-center justify-center min-h-[280px]`}>
         <div className="text-center">
           <Loader2 className="w-6 h-6 text-red-600 animate-spin mx-auto mb-4" />
-          <p className="text-xs uppercase tracking-widest text-neutral-400">Je antwoorden worden samengevat...</p>
+          <p className="text-xs uppercase tracking-widest text-neutral-400">Summarizing your answers...</p>
         </div>
       </div>);
 
@@ -76,14 +76,14 @@ export default function AssessmentFlow({ title, description }) {
     <div className="p-8 md:p-12">
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8 md:gap-12">
         <div className="md:flex-1">
-          <span className="text-xs uppercase tracking-[0.25em] text-red-600/80 block mb-4 font-medium">Zelfreflectie</span>
+          <span className="text-xs uppercase tracking-[0.25em] text-red-600/80 block mb-4 font-medium">Self-reflection</span>
           {title && (
             <h2 className="font-display text-2xl md:text-4xl text-neutral-800 tracking-tight mb-4">
               {title}
             </h2>
           )}
           <p className="text-neutral-600 text-base md:text-lg font-light leading-normal max-w-[42ch]">
-            {description || 'Niet zeker welke zorgvraag bij jou past? Neem een paar minuten om je huidige landschap te herkennen.'}
+            {description || 'Not sure which concern fits you? Take a few minutes to recognize your current landscape.'}
           </p>
         </div>
         <div className="md:flex-shrink-0 flex flex-col md:items-end gap-4">
@@ -91,12 +91,12 @@ export default function AssessmentFlow({ title, description }) {
             onClick={() => setPhase('questions')}
             className="group inline-flex items-center gap-3 bg-neutral-900 hover:bg-black text-white px-6 py-4 rounded-full text-xs uppercase tracking-widest font-body transition-all duration-300"
           >
-            Begin de zelfreflectie
+            Begin self-reflection
             <span className="w-7 h-7 rounded-full bg-white flex items-center justify-center flex-shrink-0 group-hover:translate-x-1 transition-transform">
               <ArrowRight className="w-3.5 h-3.5 text-red-600" strokeWidth={1.5} />
             </span>
           </button>
-          <p className="text-[10px] text-neutral-400 uppercase tracking-widest">± 2 minuten · Vrijblijvend</p>
+          <p className="text-[10px] text-neutral-400 uppercase tracking-widest">± 2 minutes · No obligation</p>
         </div>
       </div>
     </div>);
@@ -125,7 +125,7 @@ export default function AssessmentFlow({ title, description }) {
         onClick={() => setCurrentIndex((i) => i - 1)}
         className="text-xs uppercase tracking-widest text-neutral-400 hover:text-red-600 transition-colors flex items-center gap-2 mb-6">
         
-          <ArrowLeft className="w-3 h-3" /> Terug
+          <ArrowLeft className="w-3 h-3" /> Back
         </button>
       }
 
@@ -147,7 +147,7 @@ export default function AssessmentFlow({ title, description }) {
           onClick={advance}
           className="inline-flex items-center gap-2 px-8 py-4 bg-neutral-900 hover:bg-black text-white rounded-full text-xs uppercase tracking-widest font-body transition-colors">
           
-            {currentIndex < questions.length - 1 ? 'Volgende' : 'Bekijk mijn reflectie'} <ArrowRight className="w-4 h-4" strokeWidth={1.5} />
+            {currentIndex < questions.length - 1 ? 'Next' : 'See my reflection'} <ArrowRight className="w-4 h-4" strokeWidth={1.5} />
           </button>
         </div>
       }

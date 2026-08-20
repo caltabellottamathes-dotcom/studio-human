@@ -13,10 +13,10 @@ const navItem = {
 
 const navLinks = [
   { label: 'Home', to: '/' },
-  { label: 'Aanpak', to: '/aanpak' },
-  { label: 'Zorgvragen', to: '/zorgvragen' },
-  { label: 'Over', to: '/over' },
-  { label: 'Tarieven', to: '/tarieven' },
+  { label: 'Approach', to: '/aanpak' },
+  { label: 'Concerns', to: '/zorgvragen' },
+  { label: 'About', to: '/over' },
+  { label: 'Pricing', to: '/tarieven' },
   { label: 'Contact', to: '/contact' },
 ];
 
@@ -55,13 +55,13 @@ export default function Header() {
         role="banner"
       >
         <div className="max-w-[120rem] mx-auto px-6 md:px-12 h-14 md:h-20 flex items-center justify-between">
-          <Link to="/" className="flex items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-red-600/20 rounded-md" aria-label="amorvitae. — home">
+          <Link to="/" className="flex items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-red-600/20 rounded-md"           aria-label="studioHuman — home">
             <Logo variant="light" />
           </Link>
 
           <motion.nav
             className="hidden md:flex items-center gap-6 text-[11px] uppercase tracking-[0.12em]"
-            aria-label="Hoofdnavigatie"
+            aria-label="Main navigation"
             initial="hidden"
             animate="visible"
             variants={{ visible: { transition: { staggerChildren: 0.05, delayChildren: 0.2 } } }}
@@ -92,12 +92,12 @@ export default function Header() {
             className="flex items-center gap-4"
           >
             <div className="hidden md:block">
-              <BrandedButton to="/contact" compact>Maak een afspraak</BrandedButton>
+              <BrandedButton to="/contact" compact>Book a session</BrandedButton>
             </div>
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
               className="md:hidden p-2.5 text-neutral-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-600 rounded-md"
-              aria-label={mobileOpen ? 'Menu sluiten' : 'Menu openen'}
+              aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={mobileOpen}
             >
               {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" strokeWidth={1.5} />}
@@ -116,7 +116,7 @@ export default function Header() {
             transition={{ duration: 0.3, ease }}
             className="fixed inset-0 z-[55] bg-neutral-50 md:hidden flex flex-col"
             role="navigation"
-            aria-label="Mobiele navigatie"
+            aria-label="Mobile navigation"
           >
             <div className="flex items-center justify-between h-14 md:h-20 px-6 flex-shrink-0">
               <Logo variant="light" />
@@ -158,7 +158,7 @@ export default function Header() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5, duration: 0.4, ease }}
               >
-                <BrandedButton to="/contact">Maak een afspraak</BrandedButton>
+                <BrandedButton to="/contact">Book a session</BrandedButton>
               </motion.div>
             </div>
           </motion.div>

@@ -32,9 +32,9 @@ export default function OpeningLoader() {
             initial={{ opacity: 0, y: 6, filter: 'blur(6px)' }}
             animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
             transition={{ duration: 0.5, ease, delay: 0.1 }}
-            className="font-serif text-2xl md:text-3xl lowercase tracking-normal text-neutral-800"
+            className="font-serif text-2xl md:text-3xl tracking-tight text-neutral-800"
           >
-            amorvitae.
+            studioHuman
           </motion.span>
           <motion.span
             initial={{ scaleX: 0, opacity: 0 }}

@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import { base44 } from '@/api/base44Client';
 import { ArrowRight } from 'lucide-react';
 
-const typeLabel = { homework: 'Huiswerk', reflection: 'Reflectie', exercise: 'Oefening', reading: 'Leesopdracht' };
-const statusLabel = { assigned: 'Toegewezen', in_progress: 'Bezig', submitted: 'Ingediend', reviewed: 'Beoordeeld' };
+const typeLabel = { homework: 'Homework', reflection: 'Reflection', exercise: 'Exercise', reading: 'Reading' };
+const statusLabel = { assigned: 'Assigned', in_progress: 'In progress', submitted: 'Submitted', reviewed: 'Reviewed' };
 
 export default function AdminAssignments() {
   const [data, setData] = useState(null);
@@ -37,14 +37,14 @@ export default function AdminAssignments() {
   return (
     <div className="p-6 md:p-10 max-w-4xl">
       <div className="mb-8">
-        <span className="text-[10px] uppercase tracking-[0.25em] text-red-600/80 block mb-2">Beheer</span>
-        <h1 className="font-display text-3xl md:text-4xl text-neutral-800 tracking-tight">Opdrachten</h1>
+        <span className="text-[10px] uppercase tracking-[0.25em] text-red-600/80 block mb-2">Manage</span>
+        <h1 className="font-display text-3xl md:text-4xl text-neutral-800 tracking-tight">Assignments</h1>
       </div>
 
       {assignments.length === 0 ? (
         <div className="bg-white rounded-xl border border-neutral-200 p-12 text-center">
-          <p className="text-sm text-neutral-400 font-light">Nog geen opdrachten.</p>
-          <p className="text-xs text-neutral-400 mt-2">Open een cliënt om een opdracht toe te wijzen.</p>
+          <p className="text-sm text-neutral-400 font-light">No assignments yet.</p>
+          <p className="text-xs text-neutral-400 mt-2">Open a client to assign a task.</p>
         </div>
       ) : (
         <div className="space-y-2">
@@ -64,7 +64,7 @@ export default function AdminAssignments() {
                   <ArrowRight className="w-4 h-4 text-neutral-300 group-hover:text-neutral-500 group-hover:translate-x-0.5 transition-all" />
                 </div>
               </div>
-              {a.due_date && <p className="text-xs text-neutral-400 mt-1">Uiterlijk: {new Date(a.due_date).toLocaleDateString('nl-NL')}</p>}
+              {a.due_date && <p className="text-xs text-neutral-400 mt-1">Due: {new Date(a.due_date).toLocaleDateString('en-US')}</p>}
             </Link>
           ))}
         </div>

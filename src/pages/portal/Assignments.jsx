@@ -5,8 +5,8 @@ import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import { ClipboardList, ChevronDown, ChevronUp, Check, Clock } from 'lucide-react';
 
-const typeLabel = { homework: 'Huiswerk', reflection: 'Reflectie', exercise: 'Oefening', reading: 'Leesopdracht' };
-const statusLabel = { assigned: 'Toegewezen', in_progress: 'Bezig', submitted: 'Ingediend', reviewed: 'Beoordeeld' };
+const typeLabel = { homework: 'Homework', reflection: 'Reflection', exercise: 'Exercise', reading: 'Reading' };
+const statusLabel = { assigned: 'Assigned', in_progress: 'In progress', submitted: 'Submitted', reviewed: 'Reviewed' };
 
 export default function PortalAssignments() {
   const [data, setData] = useState(null);
@@ -64,15 +64,15 @@ export default function PortalAssignments() {
   return (
     <div className="p-6 md:p-10 max-w-4xl">
       <div className="mb-8">
-        <span className="text-[10px] uppercase tracking-[0.25em] text-red-600/80 block mb-2">Cliëntportaal</span>
-        <h1 className="font-display text-3xl md:text-4xl text-neutral-800 tracking-tight">Opdrachten</h1>
-        <p className="text-neutral-500 text-sm font-light mt-2">Jouw huiswerk- en reflectieopdrachten.</p>
+        <span className="text-[10px] uppercase tracking-[0.25em] text-red-600/80 block mb-2">Client Portal</span>
+        <h1 className="font-display text-3xl md:text-4xl text-neutral-800 tracking-tight">Assignments</h1>
+        <p className="text-neutral-500 text-sm font-light mt-2">Your homework and reflection assignments.</p>
       </div>
 
       {assignments.length === 0 ? (
         <div className="bg-white rounded-xl border border-neutral-200 p-12 text-center">
           <ClipboardList className="w-8 h-8 text-neutral-300 mx-auto mb-3" strokeWidth={1} />
-          <p className="text-sm text-neutral-400 font-light">Er zijn nog geen opdrachten toegewezen.</p>
+          <p className="text-sm text-neutral-400 font-light">No assignments have been given yet.</p>
         </div>
       ) : (
         <div className="space-y-3">
@@ -91,7 +91,7 @@ export default function PortalAssignments() {
                       }`}>{statusLabel[a.status] || a.status}</span>
                     </div>
                     <p className="text-xs text-neutral-400">{typeLabel[a.type] || a.type}</p>
-                    {a.due_date && <p className="text-xs text-neutral-400 mt-0.5 flex items-center gap-1"><Clock className="w-3 h-3" /> Uiterlijk: {new Date(a.due_date).toLocaleDateString('nl-NL')}</p>}
+                    {a.due_date && <p className="text-xs text-neutral-400 mt-0.5 flex items-center gap-1"><Clock className="w-3 h-3" /> Due: {new Date(a.due_date).toLocaleDateString('en-US')}</p>}
                   </div>
                   {isOpen ? <ChevronUp className="w-4 h-4 text-neutral-400 flex-shrink-0" /> : <ChevronDown className="w-4 h-4 text-neutral-400 flex-shrink-0" />}
                 </button>
@@ -100,18 +100,18 @@ export default function PortalAssignments() {
                     {a.description && <p className="text-sm text-neutral-600 font-light">{a.description}</p>}
                     {a.instructions && (
                       <div>
-                        <p className="text-[10px] uppercase tracking-widest text-neutral-400 mb-1">Instructies</p>
+                        <p className="text-[10px] uppercase tracking-widest text-neutral-400 mb-1">Instructions</p>
                         <p className="text-sm text-neutral-600 font-light whitespace-pre-wrap">{a.instructions}</p>
                       </div>
                     )}
                     {a.status === 'submitted' || a.status === 'reviewed' ? (
                       <div className="bg-emerald-50/50 rounded-lg p-4">
-                        <p className="text-[10px] uppercase tracking-widest text-emerald-600 mb-1 flex items-center gap-1"><Check className="w-3 h-3" /> Ingediend</p>
-                        <p className="text-sm text-neutral-600 font-light">Je hebt deze opdracht ingediend. {a.status === 'reviewed' ? 'Debora heeft je inzending beoordeeld.' : 'Wacht op feedback van Debora.'}</p>
+                        <p className="text-[10px] uppercase tracking-widest text-emerald-600 mb-1 flex items-center gap-1"><Check className="w-3 h-3" /> Submitted</p>
+                        <p className="text-sm text-neutral-600 font-light">You've submitted this assignment. {a.status === 'reviewed' ? 'Maya has reviewed your submission.' : 'Awaiting feedback from Maya.'}</p>
                       </div>
                     ) : (
                       <Button onClick={() => { setSubmitDialog(a); setSubmissionText(''); }} className="bg-neutral-900 hover:bg-black">
-                        Opdracht indienen
+                        Submit assignment
                       </Button>
                     )}
                   </div>
@@ -125,7 +125,7 @@ export default function PortalAssignments() {
       <Dialog open={!!submitDialog} onOpenChange={(v) => !v && setSubmitDialog(null)}>
         <DialogContent className="max-w-md">
           <DialogHeader>
-            <DialogTitle className="font-display text-lg">Opdracht indienen</DialogTitle>
+            <DialogTitle className="font-display text-lg">Submit assignment</DialogTitle>
             <p className="text-sm text-neutral-500">{submitDialog?.title}</p>
           </DialogHeader>
           <div className="space-y-4">
@@ -133,13 +133,13 @@ export default function PortalAssignments() {
               value={submissionText}
               onChange={e => setSubmissionText(e.target.value)}
               rows={6}
-              placeholder="Schrijf je antwoord of reflectie..."
+              placeholder="Write your answer or reflection..."
               autoFocus
             />
             <div className="flex gap-2">
-              <Button variant="outline" onClick={() => setSubmitDialog(null)} className="flex-1">Annuleren</Button>
+              <Button variant="outline" onClick={() => setSubmitDialog(null)} className="flex-1">Cancel</Button>
               <Button onClick={handleSubmit} disabled={submitting || !submissionText.trim()} className="flex-1 bg-neutral-900 hover:bg-black">
-                {submitting ? 'Verzenden...' : 'Indienen'}
+                {submitting ? 'Sending...' : 'Submit'}
               </Button>
             </div>
           </div>

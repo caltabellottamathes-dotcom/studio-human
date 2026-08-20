@@ -31,12 +31,12 @@ export default function AssessmentStats() {
   return (
     <div className="space-y-8">
       <div className="bg-white rounded-xl border border-neutral-200 p-6">
-        <p className="text-[10px] uppercase tracking-[0.25em] text-neutral-400 mb-2">Totaal voltooiingen</p>
+        <p className="text-[10px] uppercase tracking-[0.25em] text-neutral-400 mb-2">Total completions</p>
         <p className="font-display text-4xl text-neutral-800">{total}</p>
       </div>
 
       <div className="bg-white rounded-xl border border-neutral-200 p-6">
-        <p className="text-[10px] uppercase tracking-[0.25em] text-neutral-400 mb-4">Per profiel</p>
+        <p className="text-[10px] uppercase tracking-[0.25em] text-neutral-400 mb-4">Per profile</p>
         <div className="space-y-3">
           {profiles.map(p => {
             const count = counts[p.profile_key] || 0;

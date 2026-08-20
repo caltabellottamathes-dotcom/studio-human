@@ -9,24 +9,24 @@ import {
 
 const portalNav = [
   { label: 'Dashboard', to: '/portal/dashboard', icon: LayoutDashboard },
-  { label: 'Afspraken', to: '/portal/afspraken', icon: Calendar },
-  { label: 'Documenten', to: '/portal/documenten', icon: FileText },
-  { label: 'Opdrachten', to: '/portal/opdrachten', icon: ClipboardList },
-  { label: 'Berichten', to: '/portal/berichten', icon: MessageSquare },
-  { label: 'Stemming', to: '/portal/stemming', icon: Heart },
-  { label: 'Profiel', to: '/portal/profiel', icon: User },
+  { label: 'Appointments', to: '/portal/afspraken', icon: Calendar },
+  { label: 'Documents', to: '/portal/documenten', icon: FileText },
+  { label: 'Assignments', to: '/portal/opdrachten', icon: ClipboardList },
+  { label: 'Messages', to: '/portal/berichten', icon: MessageSquare },
+  { label: 'Mood', to: '/portal/stemming', icon: Heart },
+  { label: 'Profile', to: '/portal/profiel', icon: User },
 ];
 
 const adminNav = [
   { label: 'Dashboard', to: '/admin/dashboard', icon: LayoutDashboard },
-  { label: 'Cliënten', to: '/admin/clienten', icon: Users },
-  { label: 'Agenda', to: '/admin/agenda', icon: Calendar },
-  { label: 'Notities', to: '/admin/notities', icon: FileText },
-  { label: 'Opdrachten', to: '/admin/opdrachten', icon: ClipboardList },
-  { label: 'Berichten', to: '/admin/berichten', icon: MessageSquare },
-  { label: 'Aanvragen', to: '/admin/aanvragen', icon: Inbox },
-  { label: 'Reflectie', to: '/admin/zelfreflectie', icon: Sparkles },
-  { label: 'Instellingen', to: '/admin/instellingen', icon: Settings },
+  { label: 'Clients', to: '/admin/clienten', icon: Users },
+  { label: 'Schedule', to: '/admin/agenda', icon: Calendar },
+  { label: 'Session Notes', to: '/admin/notities', icon: FileText },
+  { label: 'Assignments', to: '/admin/opdrachten', icon: ClipboardList },
+  { label: 'Messages', to: '/admin/berichten', icon: MessageSquare },
+  { label: 'Requests', to: '/admin/aanvragen', icon: Inbox },
+  { label: 'Reflection', to: '/admin/zelfreflectie', icon: Sparkles },
+  { label: 'Settings', to: '/admin/instellingen', icon: Settings },
 ];
 
 export default function SecureLayout({ variant = 'portal' }) {
@@ -47,10 +47,10 @@ export default function SecureLayout({ variant = 'portal' }) {
     <aside className="w-64 bg-white border-r border-neutral-200 flex flex-col h-full">
       <div className="px-6 py-5 border-b border-neutral-100">
         <Link to="/" className="inline-block">
-          <img src={wordmarkImg} alt="amorvitae." className="h-5 w-auto" />
+          <span className="font-serif text-lg tracking-tight text-neutral-800">studioHuman</span>
         </Link>
         <span className="block mt-1 text-[9px] uppercase tracking-[0.2em] text-neutral-400">
-          {variant === 'admin' ? 'Beheerdersportaal' : 'Cliëntportaal'}
+          {variant === 'admin' ? 'Admin Portal' : 'Client Portal'}
         </span>
       </div>
       <nav className="flex-1 px-3 py-4 space-y-0.5 overflow-y-auto">
@@ -74,7 +74,7 @@ export default function SecureLayout({ variant = 'portal' }) {
         <div className="px-2">
           <p className="text-xs text-neutral-700 font-medium truncate">{user?.full_name || user?.email}</p>
           <p className="text-[9px] text-neutral-400 uppercase tracking-widest mt-0.5">
-            {variant === 'admin' ? 'Beheerder' : 'Cliënt'}
+            {variant === 'admin' ? 'Admin' : 'Client'}
           </p>
         </div>
         <button
@@ -82,7 +82,7 @@ export default function SecureLayout({ variant = 'portal' }) {
           className="flex items-center gap-2 px-4 py-2 text-[11px] uppercase tracking-widest text-neutral-500 hover:text-red-600 transition-colors"
         >
           <LogOut className="w-4 h-4" strokeWidth={1.5} />
-          Uitloggen
+          Log out
         </button>
       </div>
     </aside>
@@ -106,7 +106,7 @@ export default function SecureLayout({ variant = 'portal' }) {
       {/* Mobile top bar */}
       <div className="md:hidden fixed top-0 left-0 right-0 z-40 bg-white border-b border-neutral-200 h-14 flex items-center justify-between px-4">
         <Link to="/">
-          <img src={wordmarkImg} alt="amorvitae." className="h-4 w-auto" />
+          <span className="font-serif text-base tracking-tight text-neutral-800">studioHuman</span>
         </Link>
         <button onClick={() => setMobileOpen(!mobileOpen)} className="p-2 text-neutral-600">
           {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" strokeWidth={1.5} />}

@@ -25,7 +25,7 @@ export default function AssessmentQuestionManager() {
   useEffect(() => { fetchData(); }, []);
 
   const handleDelete = async (id) => {
-    if (!confirm('Deze vraag verwijderen?')) return;
+    if (!confirm('Delete this question?')) return;
     await base44.entities.AssessmentQuestion.delete(id);
     fetchData();
   };
@@ -48,13 +48,13 @@ export default function AssessmentQuestionManager() {
           onClick={() => { setEditing(null); setEditorOpen(true); }}
           className="inline-flex items-center gap-2 px-5 py-2.5 bg-neutral-900 hover:bg-black text-white rounded-full text-xs uppercase tracking-widest font-body transition-colors"
         >
-          <Plus className="w-3.5 h-3.5" /> Nieuwe vraag
+          <Plus className="w-3.5 h-3.5" /> New question
         </button>
       </div>
 
       <div className="bg-white rounded-xl border border-neutral-200 overflow-hidden">
         {questions.length === 0 ? (
-          <div className="p-12 text-center"><p className="text-sm text-neutral-400">Nog geen vragen.</p></div>
+          <div className="p-12 text-center"><p className="text-sm text-neutral-400">No questions yet.</p></div>
         ) : (
           <div className="divide-y divide-neutral-100">
             {questions.map((q, i) => {
@@ -73,7 +73,7 @@ export default function AssessmentQuestionManager() {
                   <div className="flex-1 min-w-0">
                     <p className="text-sm text-neutral-800 truncate">{q.question_text}</p>
                     <p className="text-xs text-neutral-400 mt-0.5">
-                      {q.question_type === 'single' ? 'Enkelkeuze' : 'Meerkeuze'} · {answerCount} antwoorden
+                      {q.question_type === 'single' ? 'Single choice' : 'Multiple choice'} · {answerCount} answers
                     </p>
                   </div>
                   <div className="flex items-center gap-2">

@@ -6,22 +6,22 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 
 const fields = [
-  { key: 'title', label: 'Titel', type: 'input', placeholder: 'Kop die de bezoeker ziet' },
-  { key: 'reflection', label: 'Reflectie', type: 'textarea', placeholder: 'Warme, gepersonaliseerde paragraaf' },
-  { key: 'recognition', label: 'Herkenning', type: 'textarea', placeholder: 'Benoem hun situatie' },
-  { key: 'encouragement', label: 'Aanmoediging', type: 'textarea', placeholder: 'Ondersteunende boodschap' },
-  { key: 'how_debora_helps', label: 'Hoe Debora helpt', type: 'textarea', placeholder: 'Uitleg van de aanpak' },
-  { key: 'invitation', label: 'Uitnodiging', type: 'textarea', placeholder: 'Zachte oproep tot actie' },
+  { key: 'title', label: 'Title', type: 'input', placeholder: 'Headline the visitor sees' },
+  { key: 'reflection', label: 'Reflection', type: 'textarea', placeholder: 'Warm, personalized paragraph' },
+  { key: 'recognition', label: 'Recognition', type: 'textarea', placeholder: 'Name their situation' },
+  { key: 'encouragement', label: 'Encouragement', type: 'textarea', placeholder: 'Supportive message' },
+  { key: 'how_debora_helps', label: 'How Maya helps', type: 'textarea', placeholder: 'Explanation of the approach' },
+  { key: 'invitation', label: 'Invitation', type: 'textarea', placeholder: 'Gentle call to action' },
 ];
 
 const struggleOptions = [
-  { value: '', label: '— Geen —' },
-  { value: 'stress-overwhelm', label: 'Stress & Overweldiging' },
-  { value: 'burnout', label: 'Burn-out' },
-  { value: 'caregiving', label: 'Mantelzorg' },
-  { value: 'grief-loss', label: 'Rouw & Verlies' },
-  { value: 'life-transitions', label: 'Levensovergangen' },
-  { value: 'emotional-exhaustion', label: 'Emotionele Uitputting' },
+  { value: '', label: '— None —' },
+  { value: 'stress-overwhelm', label: 'Stress & Overwhelm' },
+  { value: 'burnout', label: 'Burnout' },
+  { value: 'caregiving', label: 'Caregiving' },
+  { value: 'grief-loss', label: 'Grief & Loss' },
+  { value: 'life-transitions', label: 'Life Transitions' },
+  { value: 'emotional-exhaustion', label: 'Emotional Exhaustion' },
 ];
 
 export default function AssessmentProfileEditor({ open, profile, onClose, onSaved }) {
@@ -64,19 +64,19 @@ export default function AssessmentProfileEditor({ open, profile, onClose, onSave
     <Dialog open={open} onOpenChange={(v) => { if (!v) onClose(); }}>
       <DialogContent className="max-w-2xl max-h-[85vh] overflow-y-auto">
         <DialogHeader>
-          <DialogTitle>{profile ? 'Profiel bewerken' : 'Nieuw profiel'}</DialogTitle>
+          <DialogTitle>{profile ? 'Edit profile' : 'New profile'}</DialogTitle>
         </DialogHeader>
         <div className="space-y-4 py-4">
           <div className="space-y-2">
-            <Label>Profielsleutel</Label>
+            <Label>Profile key</Label>
             <Input
               value={data.profile_key || ''}
               onChange={e => set('profile_key', e.target.value)}
               disabled={!!profile}
-              placeholder="bv. stress_overwhelm"
+              placeholder="e.g. stress_overwhelm"
               className="font-mono text-xs"
             />
-            <p className="text-[10px] text-neutral-400">Unieke identificatie gebruikt in antwoordgewichten. Kan na aanmaken niet gewijzigd worden.</p>
+            <p className="text-[10px] text-neutral-400">Unique identifier used in answer weights. Cannot be changed after creation.</p>
           </div>
           {fields.map(f => (
             <div key={f.key} className="space-y-2">
@@ -95,7 +95,7 @@ export default function AssessmentProfileEditor({ open, profile, onClose, onSave
             </div>
           ))}
           <div className="space-y-2">
-            <Label>Gerelateerde zorgvraag</Label>
+            <Label>Related concern</Label>
             <select
               value={data.related_slug || ''}
               onChange={e => set('related_slug', e.target.value)}
@@ -105,10 +105,10 @@ export default function AssessmentProfileEditor({ open, profile, onClose, onSave
                 <option key={o.value} value={o.value}>{o.label}</option>
               ))}
             </select>
-            <p className="text-[10px] text-neutral-400">De zorgvraag-pagina waar de bezoeker naartoe geleid wordt na de reflectie.</p>
+            <p className="text-[10px] text-neutral-400">The concern page the visitor is directed to after the reflection.</p>
           </div>
           <div className="space-y-2">
-            <Label>Prioriteit (lager wint bij gelijkspel)</Label>
+            <Label>Priority (lower wins on a tie)</Label>
             <Input
               type="number"
               value={data.priority || 10}
@@ -118,9 +118,9 @@ export default function AssessmentProfileEditor({ open, profile, onClose, onSave
           </div>
         </div>
         <DialogFooter>
-          <Button variant="ghost" onClick={onClose}>Annuleren</Button>
+          <Button variant="ghost" onClick={onClose}>Cancel</Button>
           <Button onClick={handleSave} disabled={saving || !data.profile_key?.trim() || !data.title?.trim()}>
-            {saving ? 'Opslaan...' : 'Profiel opslaan'}
+            {saving ? 'Saving...' : 'Save profile'}
           </Button>
         </DialogFooter>
       </DialogContent>

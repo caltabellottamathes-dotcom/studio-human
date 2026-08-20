@@ -44,12 +44,12 @@ export default function AdminClients() {
     <div className="p-6 md:p-10 max-w-5xl">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
         <div>
-          <span className="text-[10px] uppercase tracking-[0.25em] text-red-600/80 block mb-2">Beheer</span>
-          <h1 className="font-display text-3xl md:text-4xl text-neutral-800 tracking-tight">Cliënten</h1>
+          <span className="text-[10px] uppercase tracking-[0.25em] text-red-600/80 block mb-2">Manage</span>
+          <h1 className="font-display text-3xl md:text-4xl text-neutral-800 tracking-tight">Clients</h1>
         </div>
         <button onClick={() => setCreateOpen(true)} className="inline-flex items-center gap-2 px-5 py-3 bg-neutral-900 hover:bg-black text-white rounded-full text-xs uppercase tracking-widest font-body transition-colors">
           <UserPlus className="w-4 h-4" strokeWidth={1.5} />
-          Nieuwe cliënt
+          New client
         </button>
       </div>
 
@@ -57,7 +57,7 @@ export default function AdminClients() {
         <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-400" />
         <input
           type="text"
-          placeholder="Zoek op naam of e-mail..."
+          placeholder="Search by name or email..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           className="w-full bg-white border border-neutral-200 rounded-xl pl-12 pr-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-400 focus:outline-none focus:border-neutral-300"
@@ -67,7 +67,7 @@ export default function AdminClients() {
       <div className="bg-white rounded-xl border border-neutral-200 overflow-hidden">
         {clients.length === 0 ? (
           <div className="p-12 text-center">
-            <p className="text-sm text-neutral-400 font-light">Geen cliënten gevonden.</p>
+            <p className="text-sm text-neutral-400 font-light">No clients found.</p>
           </div>
         ) : (
           <div className="divide-y divide-neutral-100">
@@ -103,8 +103,8 @@ export default function AdminClients() {
                     c.status === 'pending' ? 'bg-amber-50 text-amber-600' :
                     'bg-neutral-100 text-neutral-400'
                   }`}>
-                    {c.status === 'active' ? 'Actief' : c.status === 'pending' ? 'In afwachting' : 'Gearchiveerd'}
-                  </span>
+                    {c.status === 'active' ? 'Active' : c.status === 'pending' ? 'Pending' : 'Archived'}
+                    </span>
                   <ArrowRight className="w-4 h-4 text-neutral-300 group-hover:text-neutral-500 group-hover:translate-x-0.5 transition-all" />
                 </div>
               </Link>
@@ -114,7 +114,7 @@ export default function AdminClients() {
       </div>
 
       <p className="text-xs text-neutral-400 font-light mt-4">
-        {clients.length} cliënt{clients.length !== 1 ? 'en' : ''} {search ? 'gevonden' : 'totaal'}
+        {clients.length} {clients.length !== 1 ? 'clients' : 'client'} {search ? 'found' : 'total'}
       </p>
 
       <CreateClientDialog open={createOpen} onClose={() => setCreateOpen(false)} onCreated={fetchData} />

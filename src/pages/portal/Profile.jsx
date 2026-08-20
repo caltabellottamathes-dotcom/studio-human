@@ -57,9 +57,9 @@ export default function PortalProfile() {
   return (
     <div className="p-6 md:p-10 max-w-3xl">
       <div className="mb-8">
-        <span className="text-[10px] uppercase tracking-[0.25em] text-red-600/80 block mb-2">Cliëntportaal</span>
-        <h1 className="font-display text-3xl md:text-4xl text-neutral-800 tracking-tight">Mijn Profiel</h1>
-        <p className="text-neutral-500 text-sm font-light mt-2">Beheer je persoonsgegevens en noodcontact.</p>
+        <span className="text-[10px] uppercase tracking-[0.25em] text-red-600/80 block mb-2">Client Portal</span>
+        <h1 className="font-display text-3xl md:text-4xl text-neutral-800 tracking-tight">My Profile</h1>
+        <p className="text-neutral-500 text-sm font-light mt-2">Manage your personal details and emergency contact.</p>
       </div>
 
       {/* Account info (read-only) */}
@@ -75,15 +75,15 @@ export default function PortalProfile() {
 
       {/* Personal info */}
       <div className="bg-white rounded-xl border border-neutral-200 p-6 mb-6">
-        <h2 className="font-display text-lg text-neutral-800 mb-4">Persoonsgegevens</h2>
+        <h2 className="font-display text-lg text-neutral-800 mb-4">Personal details</h2>
         <div className="grid grid-cols-2 gap-4">
-          <div><Label className="text-xs uppercase tracking-widest text-neutral-500">Voornaam</Label><Input value={form.first_name || ''} onChange={e => set('first_name', e.target.value)} className="mt-1" /></div>
-          <div><Label className="text-xs uppercase tracking-widest text-neutral-500">Achternaam</Label><Input value={form.last_name || ''} onChange={e => set('last_name', e.target.value)} className="mt-1" /></div>
-          <div><Label className="text-xs uppercase tracking-widest text-neutral-500">Geboortedatum</Label><Input type="date" value={form.date_of_birth || ''} onChange={e => set('date_of_birth', e.target.value)} className="mt-1" /></div>
-          <div><Label className="text-xs uppercase tracking-widest text-neutral-500">Telefoon</Label><Input value={form.phone || ''} onChange={e => set('phone', e.target.value)} className="mt-1" /></div>
-          <div className="col-span-2"><Label className="text-xs uppercase tracking-widest text-neutral-500">Adres</Label><Input value={form.address || ''} onChange={e => set('address', e.target.value)} className="mt-1" /></div>
-          <div><Label className="text-xs uppercase tracking-widest text-neutral-500">Postcode</Label><Input value={form.postal_code || ''} onChange={e => set('postal_code', e.target.value)} className="mt-1" /></div>
-          <div><Label className="text-xs uppercase tracking-widest text-neutral-500">Stad</Label><Input value={form.city || ''} onChange={e => set('city', e.target.value)} className="mt-1" /></div>
+          <div><Label className="text-xs uppercase tracking-widest text-neutral-500">First name</Label><Input value={form.first_name || ''} onChange={e => set('first_name', e.target.value)} className="mt-1" /></div>
+          <div><Label className="text-xs uppercase tracking-widest text-neutral-500">Last name</Label><Input value={form.last_name || ''} onChange={e => set('last_name', e.target.value)} className="mt-1" /></div>
+          <div><Label className="text-xs uppercase tracking-widest text-neutral-500">Date of birth</Label><Input type="date" value={form.date_of_birth || ''} onChange={e => set('date_of_birth', e.target.value)} className="mt-1" /></div>
+          <div><Label className="text-xs uppercase tracking-widest text-neutral-500">Phone</Label><Input value={form.phone || ''} onChange={e => set('phone', e.target.value)} className="mt-1" /></div>
+          <div className="col-span-2"><Label className="text-xs uppercase tracking-widest text-neutral-500">Address</Label><Input value={form.address || ''} onChange={e => set('address', e.target.value)} className="mt-1" /></div>
+          <div><Label className="text-xs uppercase tracking-widest text-neutral-500">Postal code</Label><Input value={form.postal_code || ''} onChange={e => set('postal_code', e.target.value)} className="mt-1" /></div>
+          <div><Label className="text-xs uppercase tracking-widest text-neutral-500">City</Label><Input value={form.city || ''} onChange={e => set('city', e.target.value)} className="mt-1" /></div>
         </div>
       </div>
 
@@ -91,12 +91,12 @@ export default function PortalProfile() {
       <div className="bg-white rounded-xl border border-neutral-200 p-6 mb-6">
         <div className="flex items-center gap-2 mb-4">
           <AlertCircle className="w-4 h-4 text-red-600" strokeWidth={1.5} />
-          <h2 className="font-display text-lg text-neutral-800">Noodcontact</h2>
+          <h2 className="font-display text-lg text-neutral-800">Emergency contact</h2>
         </div>
         <div className="grid grid-cols-2 gap-4">
-          <div><Label className="text-xs uppercase tracking-widest text-neutral-500">Naam</Label><Input value={form.emergency_contact_name || ''} onChange={e => set('emergency_contact_name', e.target.value)} className="mt-1" /></div>
-          <div><Label className="text-xs uppercase tracking-widest text-neutral-500">Telefoon</Label><Input value={form.emergency_contact_phone || ''} onChange={e => set('emergency_contact_phone', e.target.value)} className="mt-1" /></div>
-          <div><Label className="text-xs uppercase tracking-widest text-neutral-500">Relatie</Label><Input value={form.emergency_contact_relation || ''} onChange={e => set('emergency_contact_relation', e.target.value)} className="mt-1" /></div>
+          <div><Label className="text-xs uppercase tracking-widest text-neutral-500">Name</Label><Input value={form.emergency_contact_name || ''} onChange={e => set('emergency_contact_name', e.target.value)} className="mt-1" /></div>
+          <div><Label className="text-xs uppercase tracking-widest text-neutral-500">Phone</Label><Input value={form.emergency_contact_phone || ''} onChange={e => set('emergency_contact_phone', e.target.value)} className="mt-1" /></div>
+          <div><Label className="text-xs uppercase tracking-widest text-neutral-500">Relation</Label><Input value={form.emergency_contact_relation || ''} onChange={e => set('emergency_contact_relation', e.target.value)} className="mt-1" /></div>
         </div>
       </div>
 
@@ -105,19 +105,19 @@ export default function PortalProfile() {
         <div className="bg-white rounded-xl border border-neutral-200 p-6 mb-6">
           <div className="flex items-center gap-2 mb-3">
             <Shield className="w-4 h-4 text-neutral-400" strokeWidth={1.5} />
-            <h2 className="font-display text-lg text-neutral-800">Toestemmingen</h2>
+            <h2 className="font-display text-lg text-neutral-800">Consents</h2>
           </div>
           <div className="space-y-2">
             <div className="flex items-center gap-2 text-sm">
               {profile.consent_treatment ? <Check className="w-4 h-4 text-emerald-600" /> : <AlertCircle className="w-4 h-4 text-neutral-300" />}
-              <span className="text-neutral-600 font-light">Toestemming voor behandeling</span>
+              <span className="text-neutral-600 font-light">Consent to treatment</span>
             </div>
             <div className="flex items-center gap-2 text-sm">
               {profile.consent_data_processing ? <Check className="w-4 h-4 text-emerald-600" /> : <AlertCircle className="w-4 h-4 text-neutral-300" />}
-              <span className="text-neutral-600 font-light">Toestemming voor gegevensverwerking</span>
+              <span className="text-neutral-600 font-light">Consent to data processing</span>
             </div>
             {profile.consent_date && (
-              <p className="text-xs text-neutral-400 mt-2">Verleend op: {new Date(profile.consent_date).toLocaleDateString('nl-NL')}</p>
+              <p className="text-xs text-neutral-400 mt-2">Granted on: {new Date(profile.consent_date).toLocaleDateString('en-US')}</p>
             )}
           </div>
         </div>
@@ -125,9 +125,9 @@ export default function PortalProfile() {
 
       <div className="flex items-center gap-4">
         <Button onClick={handleSave} disabled={saving} className="bg-neutral-900 hover:bg-black px-8">
-          {saving ? 'Opslaan...' : 'Profiel opslaan'}
+          {saving ? 'Saving...' : 'Save profile'}
         </Button>
-        {saved && <span className="text-sm text-emerald-600 flex items-center gap-1"><Check className="w-4 h-4" /> Opgeslagen</span>}
+        {saved && <span className="text-sm text-emerald-600 flex items-center gap-1"><Check className="w-4 h-4" /> Saved</span>}
       </div>
     </div>
   );

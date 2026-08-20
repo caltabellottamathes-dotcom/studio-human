@@ -66,41 +66,41 @@ export default function AssessmentQuestionEditor({ open, question, profiles, max
     <Dialog open={open} onOpenChange={(v) => { if (!v) onClose(); }}>
       <DialogContent className="max-w-2xl max-h-[85vh] overflow-y-auto">
         <DialogHeader>
-          <DialogTitle>{question ? 'Vraag bewerken' : 'Nieuwe vraag'}</DialogTitle>
+          <DialogTitle>{question ? 'Edit question' : 'New question'}</DialogTitle>
         </DialogHeader>
         <div className="space-y-6 py-4">
           <div className="space-y-2">
-            <Label>Vraag</Label>
+            <Label>Question</Label>
             <textarea
               value={text}
               onChange={e => setText(e.target.value)}
               rows={2}
               className="w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-ring"
-              placeholder="Typ de vraag..."
+              placeholder="Type the question..."
             />
           </div>
           <div className="space-y-2">
-            <Label>Antwoordtype</Label>
+            <Label>Answer type</Label>
             <div className="flex gap-2">
               <button
                 onClick={() => setType('single')}
                 className={`px-4 py-2 rounded-md text-xs uppercase tracking-widest transition-colors ${type === 'single' ? 'bg-neutral-900 text-white' : 'bg-neutral-100 text-neutral-500'}`}
-              >Enkelkeuze</button>
+              >Single choice</button>
               <button
                 onClick={() => setType('multiple')}
                 className={`px-4 py-2 rounded-md text-xs uppercase tracking-widest transition-colors ${type === 'multiple' ? 'bg-neutral-900 text-white' : 'bg-neutral-100 text-neutral-500'}`}
-              >Meerkeuze</button>
+              >Multiple choice</button>
             </div>
           </div>
           <div className="space-y-3">
-            <Label>Antwoorden & gewichten</Label>
+            <Label>Answers & weights</Label>
             {answers.map((answer, ai) => (
               <div key={ai} className="border border-neutral-200 rounded-lg p-4 space-y-3">
                 <div className="flex items-start gap-2">
                   <Input
                     value={answer.text}
                     onChange={e => updateAnswerText(ai, e.target.value)}
-                    placeholder="Antwoord tekst..."
+                    placeholder="Answer text..."
                     className="flex-1"
                   />
                   {answers.length > 1 && (
@@ -129,17 +129,17 @@ export default function AssessmentQuestionEditor({ open, question, profiles, max
               </div>
             ))}
             <button
-              onClick={addAnswer}
-              className="inline-flex items-center gap-1 text-xs text-neutral-500 hover:text-neutral-800 transition-colors"
+             onClick={addAnswer}
+             className="inline-flex items-center gap-1 text-xs text-neutral-500 hover:text-neutral-800 transition-colors"
             >
-              <Plus className="w-3 h-3" /> Antwoord toevoegen
+             <Plus className="w-3 h-3" /> Add answer
             </button>
           </div>
         </div>
         <DialogFooter>
-          <Button variant="ghost" onClick={onClose}>Annuleren</Button>
+          <Button variant="ghost" onClick={onClose}>Cancel</Button>
           <Button onClick={handleSave} disabled={saving || !text.trim()}>
-            {saving ? 'Opslaan...' : 'Vraag opslaan'}
+            {saving ? 'Saving...' : 'Save question'}
           </Button>
         </DialogFooter>
       </DialogContent>

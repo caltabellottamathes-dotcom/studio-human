@@ -34,7 +34,7 @@ export default function StruggleCard({ item, index }) {
         </div>
 
         <span className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-widest text-neutral-400 group-hover:text-red-600 transition-colors duration-300 mt-1 flex-shrink-0">
-          Lees meer
+          Read more
           <ArrowUpRight className="w-3.5 h-3.5 group-hover:rotate-45 transition-all duration-300" strokeWidth={1.5} />
         </span>
       </Link>

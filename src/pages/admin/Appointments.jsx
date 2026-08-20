@@ -3,7 +3,7 @@ import { base44 } from '@/api/base44Client';
 import AppointmentFormDialog from '@/components/admin/AppointmentFormDialog';
 import { Plus, Clock } from 'lucide-react';
 
-const aptTypeLabel = { intake: 'Intake', session: 'Sessie', online: 'Online', physical: 'Fysiek', phone: 'Telefoon' };
+const aptTypeLabel = { intake: 'Intake', session: 'Session', online: 'Online', physical: 'In-person', phone: 'Phone' };
 
 export default function AdminAppointments() {
   const [data, setData] = useState(null);
@@ -35,21 +35,21 @@ export default function AdminAppointments() {
   const appointments = (data?.appointments || []).filter(a => filter === 'all' || a.status === filter);
 
   const filters = [
-    { id: 'all', label: 'Alle' },
-    { id: 'scheduled', label: 'Gepland' },
-    { id: 'completed', label: 'Voltooid' },
-    { id: 'cancelled', label: 'Geannuleerd' },
+    { id: 'all', label: 'All' },
+    { id: 'scheduled', label: 'Scheduled' },
+    { id: 'completed', label: 'Completed' },
+    { id: 'cancelled', label: 'Cancelled' },
   ];
 
   return (
     <div className="p-6 md:p-10 max-w-5xl">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
         <div>
-          <span className="text-[10px] uppercase tracking-[0.25em] text-red-600/80 block mb-2">Beheer</span>
-          <h1 className="font-display text-3xl md:text-4xl text-neutral-800 tracking-tight">Agenda</h1>
+          <span className="text-[10px] uppercase tracking-[0.25em] text-red-600/80 block mb-2">Manage</span>
+          <h1 className="font-display text-3xl md:text-4xl text-neutral-800 tracking-tight">Schedule</h1>
         </div>
         <button onClick={() => setDialog(true)} className="inline-flex items-center gap-2 px-5 py-3 bg-neutral-900 hover:bg-black text-white rounded-full text-xs uppercase tracking-widest font-body transition-colors">
-          <Plus className="w-4 h-4" strokeWidth={1.5} /> Nieuwe afspraak
+          <Plus className="w-4 h-4" strokeWidth={1.5} /> New appointment
         </button>
       </div>
 
@@ -63,7 +63,7 @@ export default function AdminAppointments() {
 
       {appointments.length === 0 ? (
         <div className="bg-white rounded-xl border border-neutral-200 p-12 text-center">
-          <p className="text-sm text-neutral-400 font-light">Geen afspraken gevonden.</p>
+          <p className="text-sm text-neutral-400 font-light">No appointments found.</p>
         </div>
       ) : (
         <div className="space-y-2">
@@ -71,7 +71,7 @@ export default function AdminAppointments() {
             <div key={a.id} className="bg-white rounded-lg border border-neutral-200 p-4 flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-lg bg-red-50 flex flex-col items-center justify-center flex-shrink-0">
-                  <span className="text-[9px] uppercase text-red-600 leading-none">{new Date(a.date).toLocaleDateString('nl-NL', { month: 'short' })}</span>
+                  <span className="text-[9px] uppercase text-red-600 leading-none">{new Date(a.date).toLocaleDateString('en-US', { month: 'short' })}</span>
                   <span className="text-sm font-display text-red-700 leading-none mt-0.5">{new Date(a.date).getDate()}</span>
                 </div>
                 <div className="min-w-0">
@@ -83,7 +83,7 @@ export default function AdminAppointments() {
                 a.status === 'scheduled' ? 'bg-blue-50 text-blue-600' :
                 a.status === 'completed' ? 'bg-emerald-50 text-emerald-600' :
                 'bg-neutral-100 text-neutral-400'
-              }`}>{a.status === 'scheduled' ? 'Gepland' : a.status === 'completed' ? 'Voltooid' : 'Geannuleerd'}</span>
+              }`}>{a.status === 'scheduled' ? 'Scheduled' : a.status === 'completed' ? 'Completed' : 'Cancelled'}</span>
             </div>
           ))}
         </div>
