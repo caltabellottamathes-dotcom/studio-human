@@ -9,7 +9,7 @@ import FAQItem from '@/components/FAQItem';
 import BrandedButton from '@/components/BrandedButton';
 import { StaggerGroup, StaggerItem } from '@/components/motion/Stagger';
 import { faqs } from '@/data/content';
-import CalmPanel from '@/components/CalmPanel';
+import PremiumImage from '@/components/motion/PremiumImage';
 import { base44 } from '@/api/base44Client';
 import { useBrand } from '@/hooks/useBrand';
 
@@ -193,7 +193,7 @@ export default function Contact() {
             </FadeSection>
           </div>
           <div className="md:w-[42%] relative md:-mr-12 -mb-32 md:-mb-72 z-0 w-[50vw] -mr-6 ml-auto md:ml-0">
-            <CalmPanel height="85vh" rounded="tl" tone="glacier" className="w-full mobile-h-closing" />
+            <PremiumImage src="https://media.base44.com/images/public/6a863d1d060de4a10b195ae3/a86df7bf1_Remake_photo_with_new_model_202608202132.jpeg" alt="A figure seated, inviting pause" height="85vh" rounded="tl" className="w-full mobile-h-closing" />
           </div>
         </div>
       </section>

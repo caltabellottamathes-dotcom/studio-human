@@ -6,7 +6,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import FadeSection from '@/components/FadeSection';
 import Marquee from '@/components/motion/Marquee';
-import CalmPanel from '@/components/CalmPanel';
+import PremiumImage from '@/components/motion/PremiumImage';
 import { StaggerGroup, StaggerItem } from '@/components/motion/Stagger';
 
 import { principles } from '@/data/content';
@@ -102,7 +102,7 @@ export default function Home() {
       <section className="pb-16 md:pb-24 px-6 md:px-12 max-w-[120rem] mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-16 items-center">
           <div className="md:col-span-5 md:col-start-1 -ml-6 md:-ml-12">
-            <CalmPanel height="85vh" rounded="br" tone="cliff" className="w-[54vw] md:w-full mobile-h-xs" />
+            <PremiumImage src="https://media.base44.com/images/public/6a863d1d060de4a10b195ae3/a41713583_Home_2.jpeg" alt="A figure kneeling beneath a chair" height="85vh" rounded="br" className="w-[54vw] md:w-full mobile-h-xs" />
           </div>
           <StaggerGroup className="col-span-1 md:col-span-6 md:col-start-7" stagger={0.15}>
             <StaggerItem>
@@ -164,7 +164,7 @@ export default function Home() {
             </FadeSection>
           </div>
           <div className="md:col-span-7 md:col-start-6 md:-mr-12">
-            <CalmPanel height="58vh" rounded="bl" tone="glacier" className="w-full -mr-6 md:mx-0 mobile-h-xs" />
+            <PremiumImage src="https://media.base44.com/images/public/6a863d1d060de4a10b195ae3/1c9d3fc4e_Man_with_curly_hair_2K_202608201955.jpeg" alt="A portrait seated in quiet reflection" height="58vh" rounded="bl" className="w-full -mr-6 md:mx-0 mobile-h-xs" />
           </div>
         </div>
       </section>
@@ -173,7 +173,7 @@ export default function Home() {
       <section className="relative px-6 md:px-12 max-w-[120rem] mx-auto z-0">
         <div className="flex flex-col md:flex-row gap-8 md:gap-12">
           <div className="md:w-[42%] relative md:-ml-12 -mb-32 md:-mb-72 z-0 w-[60vw] -ml-6 order-2 md:order-1">
-            <CalmPanel height="90vh" rounded="tr" tone="cliff" className="w-full mobile-h-closing" />
+            <PremiumImage src="https://media.base44.com/images/public/6a863d1d060de4a10b195ae3/ba6e506d5_Home_3.jpeg" alt="A figure resting, crouched in stillness" height="90vh" rounded="tr" className="w-full mobile-h-closing" />
           </div>
           <div className="md:w-[55%] flex items-center pb-12 md:pb-16 order-1 md:order-2">
             <FadeSection>

@@ -7,7 +7,7 @@ import Footer from '@/components/Footer';
 
 import FadeSection from '@/components/FadeSection';
 import PremiumImage from '@/components/motion/PremiumImage';
-import CalmPanel from '@/components/CalmPanel';
+
 
 const struggles = {
   'stress-overwhelm': {
@@ -155,7 +155,7 @@ export default function StrugglePage() {
       <section className="relative px-6 md:px-12 max-w-[120rem] mx-auto z-0">
         <div className="flex flex-col md:flex-row gap-8 md:gap-12">
           <div className="md:w-[42%] relative md:-ml-12 -mb-40 md:-mb-72 z-0 w-[60vw] -ml-6 order-2 md:order-1">
-            <CalmPanel height="90vh" rounded="tr" tone="glacier" className="w-full mobile-h-sm" />
+            <PremiumImage src="https://media.base44.com/images/public/6a863d1d060de4a10b195ae3/a9d0dc67a_Man_leaning_on_foam_2K_202608201954.jpeg" alt="A figure leaning back in repose" height="90vh" rounded="tr" className="w-full mobile-h-sm" />
           </div>
           <div className="md:w-[55%] flex items-center pb-12 md:pb-16 order-1 md:order-2">
             <FadeSection>
