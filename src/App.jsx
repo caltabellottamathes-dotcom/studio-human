@@ -40,9 +40,11 @@ import AdminMessages from '@/pages/admin/Messages';
 import AdminSettings from '@/pages/admin/Settings';
 import AdminAssessment from '@/pages/admin/Assessment';
 import AdminRequests from '@/pages/admin/Requests';
+import { useTier } from '@/hooks/useTier';
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
+  const { portal: hasPortal, admin: hasAdmin } = useTier();
 
   if (isLoadingPublicSettings || isLoadingAuth) {
     return (
@@ -73,40 +75,44 @@ const AuthenticatedApp = () => {
           <Route path="/about" element={<PageTransition><Over /></PageTransition>} />
           <Route path="/pricing" element={<PageTransition><Pricing /></PageTransition>} />
           <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
-          <Route path="/portal/login" element={<PortalLogin />} />
-          <Route path="/admin/login" element={<AdminLogin />} />
+          {hasPortal && <Route path="/portal/login" element={<PortalLogin />} />}
+          {hasAdmin && <Route path="/admin/login" element={<AdminLogin />} />}
 
           {/* Client Portal */}
-          <Route element={<RoleRoute allowedRole="client" unauthenticatedElement={<Navigate to="/portal/login" replace />} />}>
-            <Route element={<SecureLayout variant="portal" />}>
-              <Route path="/portal" element={<Navigate to="/portal/dashboard" replace />} />
-              <Route path="/portal/dashboard" element={<PortalDashboard />} />
-              <Route path="/portal/documents" element={<PortalDocuments />} />
-              <Route path="/portal/assignments" element={<PortalAssignments />} />
-              <Route path="/portal/appointments" element={<PortalAppointments />} />
-              <Route path="/portal/messages" element={<PortalMessages />} />
-              <Route path="/portal/mood" element={<PortalMood />} />
-              <Route path="/portal/invoices" element={<PortalInvoices />} />
-              <Route path="/portal/profile" element={<PortalProfile />} />
+          {hasPortal && (
+            <Route element={<RoleRoute allowedRole="client" unauthenticatedElement={<Navigate to="/portal/login" replace />} />}>
+              <Route element={<SecureLayout variant="portal" />}>
+                <Route path="/portal" element={<Navigate to="/portal/dashboard" replace />} />
+                <Route path="/portal/dashboard" element={<PortalDashboard />} />
+                <Route path="/portal/documents" element={<PortalDocuments />} />
+                <Route path="/portal/assignments" element={<PortalAssignments />} />
+                <Route path="/portal/appointments" element={<PortalAppointments />} />
+                <Route path="/portal/messages" element={<PortalMessages />} />
+                <Route path="/portal/mood" element={<PortalMood />} />
+                <Route path="/portal/invoices" element={<PortalInvoices />} />
+                <Route path="/portal/profile" element={<PortalProfile />} />
+              </Route>
             </Route>
-          </Route>
+          )}
 
           {/* Admin Dashboard */}
-          <Route element={<RoleRoute allowedRole="admin" unauthenticatedElement={<Navigate to="/admin/login" replace />} />}>
-            <Route element={<SecureLayout variant="admin" />}>
-              <Route path="/admin" element={<Navigate to="/admin/dashboard" replace />} />
-              <Route path="/admin/dashboard" element={<AdminDashboard />} />
-              <Route path="/admin/clients" element={<AdminClients />} />
-              <Route path="/admin/clients/:id" element={<AdminClientDetail />} />
-              <Route path="/admin/schedule" element={<AdminAppointments />} />
-              <Route path="/admin/session-notes" element={<AdminSessionNotes />} />
-              <Route path="/admin/assignments" element={<AdminAssignments />} />
-              <Route path="/admin/messages" element={<AdminMessages />} />
-              <Route path="/admin/requests" element={<AdminRequests />} />
-              <Route path="/admin/settings" element={<AdminSettings />} />
-              <Route path="/admin/assessment" element={<AdminAssessment />} />
+          {hasAdmin && (
+            <Route element={<RoleRoute allowedRole="admin" unauthenticatedElement={<Navigate to="/admin/login" replace />} />}>
+              <Route element={<SecureLayout variant="admin" />}>
+                <Route path="/admin" element={<Navigate to="/admin/dashboard" replace />} />
+                <Route path="/admin/dashboard" element={<AdminDashboard />} />
+                <Route path="/admin/clients" element={<AdminClients />} />
+                <Route path="/admin/clients/:id" element={<AdminClientDetail />} />
+                <Route path="/admin/schedule" element={<AdminAppointments />} />
+                <Route path="/admin/session-notes" element={<AdminSessionNotes />} />
+                <Route path="/admin/assignments" element={<AdminAssignments />} />
+                <Route path="/admin/messages" element={<AdminMessages />} />
+                <Route path="/admin/requests" element={<AdminRequests />} />
+                <Route path="/admin/settings" element={<AdminSettings />} />
+                <Route path="/admin/assessment" element={<AdminAssessment />} />
+              </Route>
             </Route>
-          </Route>
+          )}
 
           <Route path="*" element={<PageTransition><PageNotFound /></PageTransition>} />
         </Routes>

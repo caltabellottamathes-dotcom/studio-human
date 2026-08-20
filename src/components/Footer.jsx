@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import AssessmentLightbox from '@/components/assessment/AssessmentLightbox';
 import BrandedButton from '@/components/BrandedButton';
+import { useTier } from '@/hooks/useTier';
 
 const ease = [0.25, 0.1, 0.25, 1];
 
@@ -17,6 +18,7 @@ const navLinks = [
 ];
 
 export default function Footer() {
+  const { portal: hasPortal, admin: hasAdmin } = useTier();
   return (
     <motion.footer
       initial={{ opacity: 0 }}
@@ -40,13 +42,15 @@ export default function Footer() {
               Self-reflection
               <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" strokeWidth={1.5} />
             </button>
-            <Link
-              to="/portal/dashboard"
-              className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-neutral-500 hover:text-red-600 transition-colors group w-fit py-1.5"
-            >
-              Client portal
-              <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" strokeWidth={1.5} />
-            </Link>
+            {hasPortal && (
+              <Link
+                to="/portal/dashboard"
+                className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-neutral-500 hover:text-red-600 transition-colors group w-fit py-1.5"
+              >
+                Client portal
+                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" strokeWidth={1.5} />
+              </Link>
+            )}
           </div>
           <div className="mt-4 md:mt-6">
                         <BrandedButton to="/contact" compact>Book a session</BrandedButton>
@@ -69,7 +73,7 @@ export default function Footer() {
 
         <div className="mt-6 pt-4 md:mt-8 border-t border-neutral-200/60 flex items-center justify-between">
           <span className="text-[10px] text-neutral-400 uppercase tracking-widest">© {new Date().getFullYear()} studioHuman</span>
-          <Link to="/admin/dashboard" className="text-[10px] text-neutral-400 hover:text-red-600 transition-colors uppercase tracking-widest">Admin</Link>
+          {hasAdmin && <Link to="/admin/dashboard" className="text-[10px] text-neutral-400 hover:text-red-600 transition-colors uppercase tracking-widest">Admin</Link>}
         </div>
       </div>
       <AssessmentLightbox />
