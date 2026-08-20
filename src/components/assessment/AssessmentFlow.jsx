@@ -20,7 +20,12 @@ export default function AssessmentFlow({ title, description }) {
   const loadQuestions = async () => {
     try {
       const res = await base44.functions.invoke('getAssessmentData', {});
-      setQuestions(res.data.questions);
+      const qs = res.data.questions || [];
+      if (!qs.length) {
+        setError('The self-reflection questionnaire is not available yet. Please check back soon.');
+        return;
+      }
+      setQuestions(qs);
       setPhase('idle');
     } catch {setError('The questionnaire could not be loaded. Please try again later.');}
   };
@@ -103,9 +108,16 @@ export default function AssessmentFlow({ title, description }) {
 
 
   const q = questions[currentIndex];
-  const selected = answers[q?.id] || [];
+  if (!q) {
+    return (
+      <div className={`${containerClass} flex items-center justify-center min-h-[280px]`}>
+        <p className="text-sm text-neutral-400">No question available.</p>
+      </div>
+    );
+  }
+  const selected = answers[q.id] || [];
   const progress = currentIndex / questions.length;
-  const isMultiple = q?.question_type === 'multiple';
+  const isMultiple = q.question_type === 'multiple';
 
   return (
     <div className={containerClass}>
