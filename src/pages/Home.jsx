@@ -6,8 +6,9 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import FadeSection from '@/components/FadeSection';
 import Marquee from '@/components/motion/Marquee';
-
+import CalmPanel from '@/components/CalmPanel';
 import { StaggerGroup, StaggerItem } from '@/components/motion/Stagger';
+import ClosingCTA from '@/components/ClosingCTA';
 import { principles } from '@/data/content';
 
 const ease = [0.25, 0.1, 0.25, 1];
@@ -101,9 +102,7 @@ export default function Home() {
       <section className="pb-16 md:pb-24 px-6 md:px-12 max-w-[120rem] mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-16 items-center">
           <div className="md:col-span-5 md:col-start-1 -ml-6 md:-ml-12">
-            <div className="relative w-full overflow-hidden rounded-br-[3rem] md:rounded-br-[14rem] rounded-tl-xl rounded-tr-xl rounded-bl-xl w-[54vw] md:w-full mobile-h-xs shadow-2xl shadow-neutral-900/10" style={{ height: '85vh' }}>
-              <img src="https://media.base44.com/images/public/6a863d1d060de4a10b195ae3/47f67d467_Home_1_New.jpeg" alt="A figure standing on a staircase landing between angular concrete walls, dramatic diagonal shadows" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
-            </div>
+            <CalmPanel height="85vh" rounded="br" tone="cliff" className="w-[54vw] md:w-full mobile-h-xs" />
           </div>
           <StaggerGroup className="col-span-1 md:col-span-6 md:col-start-7" stagger={0.15}>
             <StaggerItem>
@@ -165,9 +164,7 @@ export default function Home() {
             </FadeSection>
           </div>
           <div className="md:col-span-7 md:col-start-6 md:-mr-12">
-            <div className="relative w-full overflow-hidden rounded-bl-[3rem] md:rounded-bl-[14rem] rounded-tl-xl rounded-tr-xl rounded-br-xl w-full -mr-6 md:mx-0 mobile-h-xs shadow-2xl shadow-neutral-900/10" style={{ height: '58vh' }}>
-              <img src="https://media.base44.com/images/public/6a863d1d060de4a10b195ae3/0e61d0840_Home_2_new.jpeg" alt="Several hands resting together on a brushed metal railing" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
-            </div>
+            <CalmPanel height="58vh" rounded="bl" tone="glacier" className="w-full -mr-6 md:mx-0 mobile-h-xs" />
           </div>
         </div>
       </section>
@@ -176,9 +173,7 @@ export default function Home() {
       <section className="relative px-6 md:px-12 max-w-[120rem] mx-auto z-0">
         <div className="flex flex-col md:flex-row gap-8 md:gap-12">
           <div className="md:w-[42%] relative md:-ml-12 -mb-32 md:-mb-72 z-0 w-[60vw] -ml-6 order-2 md:order-1">
-            <div className="relative w-full overflow-hidden rounded-tr-[3rem] md:rounded-tr-[14rem] rounded-tl-xl rounded-br-xl rounded-bl-xl w-full mobile-h-closing shadow-2xl shadow-neutral-900/10" style={{ height: '90vh' }}>
-              <img src="https://media.base44.com/images/public/6a863d1d060de4a10b195ae3/a1a43a221_Home_3.jpeg" alt="A man kneeling and leaning forward on a stone floor" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
-            </div>
+            <CalmPanel height="90vh" rounded="tr" tone="cliff" className="w-full mobile-h-closing" />
           </div>
           <div className="md:w-[55%] flex items-center pb-12 md:pb-16 order-1 md:order-2">
             <FadeSection>
@@ -194,6 +189,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <ClosingCTA />
 
       <Footer />
     </div>);
