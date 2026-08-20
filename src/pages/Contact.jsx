@@ -160,7 +160,7 @@ export default function Contact() {
         </div>
       </section>
 
-      <section className="py-16 px-6 md:px-12 bg-red-100/60 rounded-[2rem] md:rounded-[4rem] mx-4 md:mx-8 mb-12">
+      <section className="py-16 px-6 md:px-12 bg-glacier-50/70 rounded-[2rem] md:rounded-[4rem] mx-4 md:mx-8 mb-12">
         <div className="max-w-[112rem] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12">
           <FadeSection className="col-span-1 lg:col-span-4">
             <span className="text-xs uppercase tracking-[0.2em] text-red-600/80 block label-line mb-4">Answers to your questions</span>
@@ -193,7 +193,7 @@ export default function Contact() {
             </FadeSection>
           </div>
           <div className="md:w-[42%] relative md:-mr-12 -mb-32 md:-mb-72 z-0 w-[50vw] -mr-6 ml-auto md:ml-0">
-            <CalmPanel height="85vh" rounded="tl" tone="ink" className="w-full mobile-h-closing" />
+            <CalmPanel height="85vh" rounded="tl" tone="glacier" className="w-full mobile-h-closing" />
           </div>
         </div>
       </section>
