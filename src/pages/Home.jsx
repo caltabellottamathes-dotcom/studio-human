@@ -8,7 +8,7 @@ import FadeSection from '@/components/FadeSection';
 import Marquee from '@/components/motion/Marquee';
 import CalmPanel from '@/components/CalmPanel';
 import { StaggerGroup, StaggerItem } from '@/components/motion/Stagger';
-import ClosingCTA from '@/components/ClosingCTA';
+
 import { principles } from '@/data/content';
 
 const ease = [0.25, 0.1, 0.25, 1];
@@ -189,8 +189,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <ClosingCTA />
 
       <Footer />
     </div>);

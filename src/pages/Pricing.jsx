@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import ClosingCTA from '@/components/ClosingCTA';
+
 import FadeSection from '@/components/FadeSection';
 import CalmPanel from '@/components/CalmPanel';
 import { StaggerGroup, StaggerItem } from '@/components/motion/Stagger';
@@ -109,12 +109,10 @@ export default function Pricing() {
             </FadeSection>
           </div>
           <div className="md:w-[42%] relative md:-mr-12 -mb-32 md:-mb-72 z-0 w-[52vw] -mr-6 ml-auto md:ml-0">
-            <CalmPanel height="85vh" rounded="tl" tone="glacier" className="w-full mobile-h-closing" />
+            <CalmPanel height="85vh" rounded="tl" tone="ink" className="w-full mobile-h-closing" />
           </div>
         </div>
       </section>
-
-      <ClosingCTA />
 
       <Footer />
     </div>
