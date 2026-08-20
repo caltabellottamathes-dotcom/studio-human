@@ -108,7 +108,7 @@ export default function StrugglePage() {
       {/* Hero */}
       <section className="pt-40 pb-16 px-6 md:px-12 max-w-[120rem] mx-auto">
         <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}>
-          <Link to="/zorgvragen" className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-neutral-500 hover:text-red-600 transition-colors mb-12 group">
+          <Link to="/concerns" className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-neutral-500 hover:text-red-600 transition-colors mb-12 group">
             <ArrowLeft className="w-4 h-4 transform group-hover:-translate-x-1 transition-transform" />
             Back to concerns
           </Link>
@@ -174,7 +174,7 @@ export default function StrugglePage() {
       <section className="px-6 md:px-12 max-w-[120rem] mx-auto pb-16">
         <div className="border-t border-neutral-200 pt-8 flex items-center justify-between">
           <span className="text-xs uppercase tracking-widest text-neutral-400">Next topic</span>
-          <Link to={`/zorgvragen/${nextSlug}`} className="group flex items-center gap-3 hover:gap-4 transition-all duration-300">
+          <Link to={`/concerns/${nextSlug}`} className="group flex items-center gap-3 hover:gap-4 transition-all duration-300">
             <span className="font-display text-xl md:text-2xl text-neutral-800 group-hover:text-red-600 transition-colors">{nextData.title}</span>
             <ArrowRight className="w-5 h-5 text-red-600" />
           </Link>

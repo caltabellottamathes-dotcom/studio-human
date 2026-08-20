@@ -11,7 +11,7 @@ const sections = [
 ];
 
 export default function ResultCard({ result, onRestart }) {
-  const relatedUrl = result.related_slug ? `/zorgvragen/${result.related_slug}` : '/zorgvragen';
+  const relatedUrl = result.related_slug ? `/concerns/${result.related_slug}` : '/concerns';
 
   return (
     <div>

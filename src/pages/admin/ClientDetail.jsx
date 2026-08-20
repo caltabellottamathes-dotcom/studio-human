@@ -9,9 +9,10 @@ import AppointmentFormDialog from '@/components/admin/AppointmentFormDialog';
 import SessionNoteFormDialog from '@/components/admin/SessionNoteFormDialog';
 import AssignmentFormDialog from '@/components/admin/AssignmentFormDialog';
 import DocumentFormDialog from '@/components/admin/DocumentFormDialog';
+import AssignmentReviewPanel from '@/components/admin/AssignmentReviewPanel';
 import {
   ArrowLeft, Calendar, FileText, ClipboardList, MessageSquare, Heart,
-  User, FolderOpen, Plus, Send, Lock, ExternalLink
+  User, FolderOpen, Plus, Send, Lock, ExternalLink, AlertCircle
 } from 'lucide-react';
 
 const tabs = [
@@ -97,7 +98,7 @@ export default function ClientDetail() {
   return (
     <div className="p-6 md:p-10 max-w-5xl">
       {/* Header */}
-      <Link to="/admin/clienten" className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-neutral-500 hover:text-red-600 transition-colors mb-6">
+      <Link to="/admin/clients" className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-neutral-500 hover:text-red-600 transition-colors mb-6">
         <ArrowLeft className="w-4 h-4" /> Back to clients
       </Link>
 
@@ -195,6 +196,13 @@ export default function ClientDetail() {
                     <div>
                       <p className="text-sm text-neutral-800 font-medium">{aptTypeLabel[a.type] || a.type} · {a.start_time}</p>
                       <p className="text-xs text-neutral-400">{a.duration_minutes} min{a.location ? ` · ${a.location}` : ''}</p>
+                      {a.client_request && a.client_request !== 'none' && (
+                        <p className="text-[10px] text-amber-600 mt-1 flex items-center gap-1">
+                          <AlertCircle className="w-3 h-3" />
+                          {a.client_request === 'cancel' ? 'Cancel requested' : 'Reschedule requested'}
+                          {a.client_request_note ? ` — ${a.client_request_note}` : ''}
+                        </p>
+                      )}
                     </div>
                   </div>
                   <span className={`text-[9px] uppercase tracking-widest px-2 py-1 rounded-full ${
@@ -253,20 +261,26 @@ export default function ClientDetail() {
             <p className="text-sm text-neutral-400 font-light py-8 text-center">No assignments yet.</p>
           ) : (
             <div className="space-y-2">
-              {data.assignments.map(a => (
-                <div key={a.id} className="bg-white rounded-lg border border-neutral-200 p-4">
-                  <div className="flex items-center justify-between">
-                    <p className="text-sm text-neutral-800 font-medium">{a.title}</p>
-                    <span className={`text-[9px] uppercase tracking-widest px-2 py-1 rounded-full ${
-                      a.status === 'assigned' ? 'bg-blue-50 text-blue-600' :
-                      a.status === 'submitted' ? 'bg-amber-50 text-amber-600' :
-                      a.status === 'reviewed' ? 'bg-emerald-50 text-emerald-600' : ''
-                    }`}>{a.status === 'assigned' ? 'Assigned' : a.status === 'submitted' ? 'Submitted' : a.status === 'reviewed' ? 'Reviewed' : a.status}</span>
+              {data.assignments.map(a => {
+                const submission = (data?.submissions || []).find(s => s.assignment_id === a.id);
+                return (
+                  <div key={a.id} className="bg-white rounded-lg border border-neutral-200 p-4">
+                    <div className="flex items-center justify-between">
+                      <p className="text-sm text-neutral-800 font-medium">{a.title}</p>
+                      <span className={`text-[9px] uppercase tracking-widest px-2 py-1 rounded-full ${
+                        a.status === 'assigned' ? 'bg-blue-50 text-blue-600' :
+                        a.status === 'submitted' ? 'bg-amber-50 text-amber-600' :
+                        a.status === 'reviewed' ? 'bg-emerald-50 text-emerald-600' : ''
+                      }`}>{a.status === 'assigned' ? 'Assigned' : a.status === 'submitted' ? 'Submitted' : a.status === 'reviewed' ? 'Reviewed' : a.status}</span>
                     </div>
                     {a.description && <p className="text-xs text-neutral-500 mt-1">{a.description}</p>}
                     {a.due_date && <p className="text-xs text-neutral-400 mt-1">Due: {new Date(a.due_date).toLocaleDateString('en-US')}</p>}
-                </div>
-              ))}
+                    {submission && (
+                      <AssignmentReviewPanel assignment={a} submission={submission} client={client} onSaved={fetchData} />
+                    )}
+                  </div>
+                );
+              })}
             </div>
           )}
         </div>

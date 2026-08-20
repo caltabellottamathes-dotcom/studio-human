@@ -28,6 +28,7 @@ import PortalAppointments from '@/pages/portal/Appointments';
 import PortalMessages from '@/pages/portal/Messages';
 import PortalMood from '@/pages/portal/Mood';
 import PortalProfile from '@/pages/portal/Profile';
+import PortalInvoices from '@/pages/portal/Invoices';
 import AdminLogin from '@/pages/admin/Login';
 import AdminDashboard from '@/pages/admin/Dashboard';
 import AdminClients from '@/pages/admin/Clients';
@@ -66,11 +67,11 @@ const AuthenticatedApp = () => {
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<PageTransition><Home /></PageTransition>} />
-          <Route path="/aanpak" element={<PageTransition><Aanpak /></PageTransition>} />
-          <Route path="/zorgvragen" element={<PageTransition><Zorgvragen /></PageTransition>} />
-          <Route path="/zorgvragen/:slug" element={<PageTransition><StrugglePage /></PageTransition>} />
-          <Route path="/over" element={<PageTransition><Over /></PageTransition>} />
-          <Route path="/tarieven" element={<PageTransition><Pricing /></PageTransition>} />
+          <Route path="/approach" element={<PageTransition><Aanpak /></PageTransition>} />
+          <Route path="/concerns" element={<PageTransition><Zorgvragen /></PageTransition>} />
+          <Route path="/concerns/:slug" element={<PageTransition><StrugglePage /></PageTransition>} />
+          <Route path="/about" element={<PageTransition><Over /></PageTransition>} />
+          <Route path="/pricing" element={<PageTransition><Pricing /></PageTransition>} />
           <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
           <Route path="/portal/login" element={<PortalLogin />} />
           <Route path="/admin/login" element={<AdminLogin />} />
@@ -80,12 +81,13 @@ const AuthenticatedApp = () => {
             <Route element={<SecureLayout variant="portal" />}>
               <Route path="/portal" element={<Navigate to="/portal/dashboard" replace />} />
               <Route path="/portal/dashboard" element={<PortalDashboard />} />
-              <Route path="/portal/documenten" element={<PortalDocuments />} />
-              <Route path="/portal/opdrachten" element={<PortalAssignments />} />
-              <Route path="/portal/afspraken" element={<PortalAppointments />} />
-              <Route path="/portal/berichten" element={<PortalMessages />} />
-              <Route path="/portal/stemming" element={<PortalMood />} />
-              <Route path="/portal/profiel" element={<PortalProfile />} />
+              <Route path="/portal/documents" element={<PortalDocuments />} />
+              <Route path="/portal/assignments" element={<PortalAssignments />} />
+              <Route path="/portal/appointments" element={<PortalAppointments />} />
+              <Route path="/portal/messages" element={<PortalMessages />} />
+              <Route path="/portal/mood" element={<PortalMood />} />
+              <Route path="/portal/invoices" element={<PortalInvoices />} />
+              <Route path="/portal/profile" element={<PortalProfile />} />
             </Route>
           </Route>
 
@@ -94,15 +96,15 @@ const AuthenticatedApp = () => {
             <Route element={<SecureLayout variant="admin" />}>
               <Route path="/admin" element={<Navigate to="/admin/dashboard" replace />} />
               <Route path="/admin/dashboard" element={<AdminDashboard />} />
-              <Route path="/admin/clienten" element={<AdminClients />} />
-              <Route path="/admin/clienten/:id" element={<AdminClientDetail />} />
-              <Route path="/admin/agenda" element={<AdminAppointments />} />
-              <Route path="/admin/notities" element={<AdminSessionNotes />} />
-              <Route path="/admin/opdrachten" element={<AdminAssignments />} />
-              <Route path="/admin/berichten" element={<AdminMessages />} />
-              <Route path="/admin/aanvragen" element={<AdminRequests />} />
-              <Route path="/admin/instellingen" element={<AdminSettings />} />
-              <Route path="/admin/zelfreflectie" element={<AdminAssessment />} />
+              <Route path="/admin/clients" element={<AdminClients />} />
+              <Route path="/admin/clients/:id" element={<AdminClientDetail />} />
+              <Route path="/admin/schedule" element={<AdminAppointments />} />
+              <Route path="/admin/session-notes" element={<AdminSessionNotes />} />
+              <Route path="/admin/assignments" element={<AdminAssignments />} />
+              <Route path="/admin/messages" element={<AdminMessages />} />
+              <Route path="/admin/requests" element={<AdminRequests />} />
+              <Route path="/admin/settings" element={<AdminSettings />} />
+              <Route path="/admin/assessment" element={<AdminAssessment />} />
             </Route>
           </Route>
 

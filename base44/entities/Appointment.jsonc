@@ -50,6 +50,20 @@
     },
     "price": {
       "type": "number"
+    },
+    "client_request": {
+      "type": "string",
+      "enum": [
+        "none",
+        "cancel",
+        "reschedule"
+      ],
+      "default": "none",
+      "description": "A pending change request from the client for admin follow-up"
+    },
+    "client_request_note": {
+      "type": "string",
+      "description": "Optional note from the client explaining the request"
     }
   },
   "required": [

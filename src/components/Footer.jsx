@@ -9,10 +9,10 @@ const ease = [0.25, 0.1, 0.25, 1];
 
 const navLinks = [
   { label: 'Home', to: '/' },
-  { label: 'Approach', to: '/aanpak' },
-  { label: 'Concerns', to: '/zorgvragen' },
-  { label: 'About', to: '/over' },
-  { label: 'Pricing', to: '/tarieven' },
+  { label: 'Approach', to: '/approach' },
+  { label: 'Concerns', to: '/concerns' },
+  { label: 'About', to: '/about' },
+  { label: 'Pricing', to: '/pricing' },
   { label: 'Contact', to: '/contact' },
 ];
 

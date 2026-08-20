@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { base44 } from '@/api/base44Client';
 import { Link } from 'react-router-dom';
 import { Calendar, FileText, ClipboardList, MessageSquare, Heart, Clock, ArrowRight } from 'lucide-react';
+import { ErrorState } from '@/components/ListStates';
 
 const moodLabels = {
   very_low: 'Very low', low: 'Low', neutral: 'Neutral', good: 'Good', very_good: 'Very good'
@@ -25,25 +26,40 @@ function SummaryCard({ icon: Icon, label, count, to, accent }) {
 export default function PortalDashboard() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await base44.functions.invoke('getClientPortalData', {});
-        setData(response.data);
-      } catch (err) {
-        console.error('Failed to load portal data:', err);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchData();
-  }, []);
+  const fetchData = async () => {
+    setLoading(true);
+    setError(false);
+    try {
+      const response = await base44.functions.invoke('getClientPortalData', {});
+      setData(response.data);
+    } catch (err) {
+      console.error('Failed to load portal data:', err);
+      setError(true);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => { fetchData(); }, []);
 
   if (loading) {
     return (
       <div className="flex items-center justify-center min-h-screen">
         <div className="w-8 h-8 border-4 border-neutral-200 border-t-red-600 rounded-full animate-spin"></div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="p-6 md:p-10 max-w-5xl">
+        <div className="mb-10">
+          <span className="text-[10px] uppercase tracking-[0.25em] text-red-600/80 block mb-2">Welcome back</span>
+          <h1 className="font-display text-3xl md:text-4xl text-neutral-800 tracking-tight">Dashboard</h1>
+        </div>
+        <ErrorState onRetry={fetchData} />
       </div>
     );
   }
@@ -70,10 +86,10 @@ export default function PortalDashboard() {
 
       {/* Summary cards */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mb-10">
-        <SummaryCard icon={Calendar} label="Upcoming appointments" count={upcoming.length} to="/portal/afspraken" />
-        <SummaryCard icon={ClipboardList} label="Open assignments" count={pendingAssignments.length} to="/portal/opdrachten" accent="bg-amber-50 text-amber-600" />
-        <SummaryCard icon={MessageSquare} label="New messages" count={unreadMessages.length} to="/portal/berichten" accent="bg-blue-50 text-blue-600" />
-        <SummaryCard icon={Heart} label="Mood entries" count={recentMood.length} to="/portal/stemming" accent="bg-rose-50 text-rose-600" />
+        <SummaryCard icon={Calendar} label="Upcoming appointments" count={upcoming.length} to="/portal/appointments" />
+        <SummaryCard icon={ClipboardList} label="Open assignments" count={pendingAssignments.length} to="/portal/assignments" accent="bg-amber-50 text-amber-600" />
+        <SummaryCard icon={MessageSquare} label="New messages" count={unreadMessages.length} to="/portal/messages" accent="bg-blue-50 text-blue-600" />
+        <SummaryCard icon={Heart} label="Mood entries" count={recentMood.length} to="/portal/mood" accent="bg-rose-50 text-rose-600" />
       </div>
 
       {/* Two column layout */}
@@ -82,7 +98,7 @@ export default function PortalDashboard() {
         <div className="bg-white rounded-xl border border-neutral-200 p-6">
           <div className="flex items-center justify-between mb-4">
             <h2 className="font-display text-lg text-neutral-800">Upcoming appointments</h2>
-            <Link to="/portal/afspraken" className="text-[10px] uppercase tracking-widest text-red-600 hover:underline">All</Link>
+            <Link to="/portal/appointments" className="text-[10px] uppercase tracking-widest text-red-600 hover:underline">All</Link>
           </div>
           {upcoming.length === 0 ? (
             <p className="text-sm text-neutral-400 font-light py-4">No appointments scheduled.</p>
@@ -111,7 +127,7 @@ export default function PortalDashboard() {
         <div className="bg-white rounded-xl border border-neutral-200 p-6">
           <div className="flex items-center justify-between mb-4">
             <h2 className="font-display text-lg text-neutral-800">Messages</h2>
-            <Link to="/portal/berichten" className="text-[10px] uppercase tracking-widest text-red-600 hover:underline">All</Link>
+            <Link to="/portal/messages" className="text-[10px] uppercase tracking-widest text-red-600 hover:underline">All</Link>
           </div>
           {(data?.messages || []).length === 0 ? (
             <p className="text-sm text-neutral-400 font-light py-4">No messages yet.</p>
@@ -131,7 +147,7 @@ export default function PortalDashboard() {
         <div className="bg-white rounded-xl border border-neutral-200 p-6">
           <div className="flex items-center justify-between mb-4">
             <h2 className="font-display text-lg text-neutral-800">Open assignments</h2>
-            <Link to="/portal/opdrachten" className="text-[10px] uppercase tracking-widest text-red-600 hover:underline">All</Link>
+            <Link to="/portal/assignments" className="text-[10px] uppercase tracking-widest text-red-600 hover:underline">All</Link>
           </div>
           {pendingAssignments.length === 0 ? (
             <p className="text-sm text-neutral-400 font-light py-4">No open assignments.</p>
@@ -151,7 +167,7 @@ export default function PortalDashboard() {
         <div className="bg-white rounded-xl border border-neutral-200 p-6">
           <div className="flex items-center justify-between mb-4">
             <h2 className="font-display text-lg text-neutral-800">Mood</h2>
-            <Link to="/portal/stemming" className="text-[10px] uppercase tracking-widest text-red-600 hover:underline">Details</Link>
+            <Link to="/portal/mood" className="text-[10px] uppercase tracking-widest text-red-600 hover:underline">Details</Link>
           </div>
           {recentMood.length === 0 ? (
             <p className="text-sm text-neutral-400 font-light py-4">No mood entries yet.</p>

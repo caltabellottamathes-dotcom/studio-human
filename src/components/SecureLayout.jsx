@@ -4,29 +4,30 @@ import { useAuth } from '@/lib/AuthContext';
 import { wordmarkImg } from '@/data/content';
 import {
   LayoutDashboard, Calendar, FileText, ClipboardList,
-  MessageSquare, Heart, User, Users, Settings, LogOut, Menu, X, Sparkles, Inbox
+  MessageSquare, Heart, User, Users, Settings, LogOut, Menu, X, Sparkles, Inbox, Receipt
 } from 'lucide-react';
 
 const portalNav = [
   { label: 'Dashboard', to: '/portal/dashboard', icon: LayoutDashboard },
-  { label: 'Appointments', to: '/portal/afspraken', icon: Calendar },
-  { label: 'Documents', to: '/portal/documenten', icon: FileText },
-  { label: 'Assignments', to: '/portal/opdrachten', icon: ClipboardList },
-  { label: 'Messages', to: '/portal/berichten', icon: MessageSquare },
-  { label: 'Mood', to: '/portal/stemming', icon: Heart },
-  { label: 'Profile', to: '/portal/profiel', icon: User },
+  { label: 'Appointments', to: '/portal/appointments', icon: Calendar },
+  { label: 'Documents', to: '/portal/documents', icon: FileText },
+  { label: 'Assignments', to: '/portal/assignments', icon: ClipboardList },
+  { label: 'Messages', to: '/portal/messages', icon: MessageSquare },
+  { label: 'Mood', to: '/portal/mood', icon: Heart },
+  { label: 'Invoices', to: '/portal/invoices', icon: Receipt },
+  { label: 'Profile', to: '/portal/profile', icon: User },
 ];
 
 const adminNav = [
   { label: 'Dashboard', to: '/admin/dashboard', icon: LayoutDashboard },
-  { label: 'Clients', to: '/admin/clienten', icon: Users },
-  { label: 'Schedule', to: '/admin/agenda', icon: Calendar },
-  { label: 'Session Notes', to: '/admin/notities', icon: FileText },
-  { label: 'Assignments', to: '/admin/opdrachten', icon: ClipboardList },
-  { label: 'Messages', to: '/admin/berichten', icon: MessageSquare },
-  { label: 'Requests', to: '/admin/aanvragen', icon: Inbox },
-  { label: 'Reflection', to: '/admin/zelfreflectie', icon: Sparkles },
-  { label: 'Settings', to: '/admin/instellingen', icon: Settings },
+  { label: 'Clients', to: '/admin/clients', icon: Users },
+  { label: 'Schedule', to: '/admin/schedule', icon: Calendar },
+  { label: 'Session Notes', to: '/admin/session-notes', icon: FileText },
+  { label: 'Assignments', to: '/admin/assignments', icon: ClipboardList },
+  { label: 'Messages', to: '/admin/messages', icon: MessageSquare },
+  { label: 'Requests', to: '/admin/requests', icon: Inbox },
+  { label: 'Reflection', to: '/admin/assessment', icon: Sparkles },
+  { label: 'Settings', to: '/admin/settings', icon: Settings },
 ];
 
 export default function SecureLayout({ variant = 'portal' }) {

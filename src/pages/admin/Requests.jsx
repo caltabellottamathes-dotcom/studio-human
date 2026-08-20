@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { base44 } from '@/api/base44Client';
 import { Inbox, Mail } from 'lucide-react';
+import { ErrorState } from '@/components/ListStates';
 
 const statusConfig = {
   new: { label: 'New', color: 'bg-red-100 text-red-700 border-red-200', dot: 'bg-red-500' },
@@ -24,13 +25,17 @@ export default function AdminRequests() {
   const [selectedId, setSelectedId] = useState(null);
   const [filter, setFilter] = useState('all');
   const [updating, setUpdating] = useState(false);
+  const [error, setError] = useState(false);
 
   const fetchRequests = async () => {
+    setLoading(true);
+    setError(false);
     try {
       const data = await base44.entities.ContactRequest.list('-created_date', 100);
       setRequests(data);
     } catch (err) {
       console.error(err);
+      setError(true);
     } finally {
       setLoading(false);
     }

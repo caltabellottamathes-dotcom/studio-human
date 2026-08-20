@@ -15,16 +15,16 @@ Deno.serve(async (req) => {
     // Create a new client with login credentials (no email sent to client)
     if (body.action === 'create') {
       if (!body.email || !body.password) {
-        return Response.json({ error: 'E-mailadres en wachtwoord zijn verplicht' }, { status: 400 });
+        return Response.json({ error: 'Email and password are required' }, { status: 400 });
       }
       if (!body.first_name || !body.last_name) {
-        return Response.json({ error: 'Voor- en achternaam zijn verplicht' }, { status: 400 });
+        return Response.json({ error: 'First and last name are required' }, { status: 400 });
       }
 
       // Check if user already exists
       const existing = await sr.entities.User.filter({ email: body.email });
       if (existing.length > 0) {
-        return Response.json({ error: 'Er bestaat al een account met dit e-mailadres' }, { status: 409 });
+        return Response.json({ error: 'An account with this email already exists' }, { status: 409 });
       }
 
       // Register the user via the auth API (creates an unverified user + sends OTP email,
@@ -37,13 +37,13 @@ Deno.serve(async (req) => {
 
       if (!regRes.ok) {
         const errBody = await regRes.json().catch(() => ({}));
-        return Response.json({ error: errBody.detail || errBody.message || 'Registratie mislukt' }, { status: regRes.status });
+        return Response.json({ error: errBody.detail || errBody.message || 'Registration failed' }, { status: regRes.status });
       }
 
       // Fetch the newly created user
       const users = await sr.entities.User.filter({ email: body.email });
       if (users.length === 0) {
-        return Response.json({ error: 'Gebruiker aangemaakt maar niet gevonden' }, { status: 500 });
+        return Response.json({ error: 'User created but not found' }, { status: 500 });
       }
       const newUser = users[0];
 
@@ -81,7 +81,7 @@ Deno.serve(async (req) => {
     // Verify client OTP (step 2 of creation)
     if (body.action === 'verify') {
       if (!body.email || !body.otpCode) {
-        return Response.json({ error: 'E-mailadres en verificatiecode zijn verplicht' }, { status: 400 });
+        return Response.json({ error: 'Email and verification code are required' }, { status: 400 });
       }
       const verifyRes = await fetch(`${serverUrl}/api/apps/${appId}/auth/verify-otp`, {
         method: 'POST',
@@ -90,14 +90,14 @@ Deno.serve(async (req) => {
       });
       if (!verifyRes.ok) {
         const errBody = await verifyRes.json().catch(() => ({}));
-        return Response.json({ error: errBody.detail || errBody.message || 'Verificatiecode ongeldig' }, { status: verifyRes.status });
+        return Response.json({ error: errBody.detail || errBody.message || 'Invalid verification code' }, { status: verifyRes.status });
       }
       await sr.entities.AuditLog.create({
         actor_id: user.id, actor_name: user.full_name || user.email, actor_role: user.role,
         action: 'client_verified', entity_type: 'User',
         details: `Admin verified client email: ${body.email}`
       });
-      return Response.json({ success: true, message: 'Cliënt geverifieerd' });
+      return Response.json({ success: true, message: 'Client verified' });
     }
 
     // Archive a client

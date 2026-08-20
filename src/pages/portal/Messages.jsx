@@ -1,20 +1,25 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { base44 } from '@/api/base44Client';
 import { Send, MessageSquare } from 'lucide-react';
+import { ErrorState } from '@/components/ListStates';
 
 export default function PortalMessages() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [messageText, setMessageText] = useState('');
   const [sending, setSending] = useState(false);
+  const [error, setError] = useState(false);
   const threadRef = useRef(null);
 
   const fetchData = async () => {
+    setLoading(true);
+    setError(false);
     try {
       const response = await base44.functions.invoke('getClientPortalData', {});
       setData(response.data);
     } catch (err) {
       console.error(err);
+      setError(true);
     } finally {
       setLoading(false);
     }
@@ -30,6 +35,17 @@ export default function PortalMessages() {
   useEffect(() => {
     if (threadRef.current) {
       threadRef.current.scrollTop = threadRef.current.scrollHeight;
+    }
+  }, [data?.messages]);
+
+  // Mark admin messages as read when the thread is viewed
+  useEffect(() => {
+    const unreadAdmin = (data?.messages || []).filter(m => m.sender === 'admin' && !m.read);
+    if (unreadAdmin.length > 0) {
+      base44.entities.Message.updateMany(
+        { client_id: data.user.id, sender: 'admin', read: false },
+        { $set: { read: true } }
+      ).then(() => fetchData()).catch(() => {});
     }
   }, [data?.messages]);
 
@@ -51,6 +67,18 @@ export default function PortalMessages() {
     return (
       <div className="flex items-center justify-center min-h-screen">
         <div className="w-8 h-8 border-4 border-neutral-200 border-t-red-600 rounded-full animate-spin"></div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="p-6 md:p-10 max-w-3xl">
+        <div className="mb-6">
+          <span className="text-[10px] uppercase tracking-[0.25em] text-red-600/80 block mb-2">Client Portal</span>
+          <h1 className="font-display text-3xl md:text-4xl text-neutral-800 tracking-tight">Messages</h1>
+        </div>
+        <ErrorState onRetry={fetchData} />
       </div>
     );
   }

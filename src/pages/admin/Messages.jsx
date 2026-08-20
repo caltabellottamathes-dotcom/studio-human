@@ -40,6 +40,17 @@ export default function AdminMessages() {
 
   const activeConv = conversations.find(c => c.client_id === selectedClient);
 
+  // Mark the selected client's messages as read when the thread is opened
+  useEffect(() => {
+    if (!selectedClient) return;
+    const hasUnread = (activeConv?.messages || []).some(m => m.sender === 'client' && !m.read);
+    if (!hasUnread) return;
+    base44.entities.Message.updateMany(
+      { client_id: selectedClient, sender: 'client', read: false },
+      { $set: { read: true } }
+    ).then(() => fetchData()).catch(() => {});
+  }, [selectedClient]);
+
   const sendMessage = async () => {
     if (!messageText.trim() || !selectedClient) return;
     setSending(true);

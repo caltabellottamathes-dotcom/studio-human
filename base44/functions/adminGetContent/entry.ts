@@ -22,9 +22,9 @@ Deno.serve(async (req) => {
     });
 
     return Response.json({
-      sessionNotes: sessionNotes.map(n => ({ ...n, client_display_name: n.client_name || clientMap[n.client_id] || 'Onbekend' })),
-      assignments: assignments.map(a => ({ ...a, client_display_name: a.client_name || clientMap[a.client_id] || 'Onbekend' })),
-      messages: messages.map(m => ({ ...m, client_display_name: m.client_name || clientMap[m.client_id] || 'Onbekend' })),
+      sessionNotes: sessionNotes.map(n => ({ ...n, client_display_name: n.client_name || clientMap[n.client_id] || 'Unknown' })),
+      assignments: assignments.map(a => ({ ...a, client_display_name: a.client_name || clientMap[a.client_id] || 'Unknown' })),
+      messages: messages.map(m => ({ ...m, client_display_name: m.client_name || clientMap[m.client_id] || 'Unknown' })),
       clients: clientProfiles.map(c => ({ user_id: c.user_id, name: `${c.first_name} ${c.last_name}`.trim(), status: c.status }))
     });
   } catch (error) {

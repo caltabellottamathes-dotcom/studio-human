@@ -4,6 +4,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/u
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import { ClipboardList, ChevronDown, ChevronUp, Check, Clock } from 'lucide-react';
+import { ErrorState } from '@/components/ListStates';
 
 const typeLabel = { homework: 'Homework', reflection: 'Reflection', exercise: 'Exercise', reading: 'Reading' };
 const statusLabel = { assigned: 'Assigned', in_progress: 'In progress', submitted: 'Submitted', reviewed: 'Reviewed' };
@@ -15,13 +16,17 @@ export default function PortalAssignments() {
   const [submitDialog, setSubmitDialog] = useState(null);
   const [submissionText, setSubmissionText] = useState('');
   const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState(false);
 
   const fetchData = async () => {
+    setLoading(true);
+    setError(false);
     try {
       const response = await base44.functions.invoke('getClientPortalData', {});
       setData(response.data);
     } catch (err) {
       console.error(err);
+      setError(true);
     } finally {
       setLoading(false);
     }
@@ -54,6 +59,22 @@ export default function PortalAssignments() {
       </div>
     );
   }
+
+  if (error) {
+    return (
+      <div className="p-6 md:p-10 max-w-4xl">
+        <div className="mb-8">
+          <span className="text-[10px] uppercase tracking-[0.25em] text-red-600/80 block mb-2">Client Portal</span>
+          <h1 className="font-display text-3xl md:text-4xl text-neutral-800 tracking-tight">Assignments</h1>
+        </div>
+        <ErrorState onRetry={fetchData} />
+      </div>
+    );
+  }
+
+  const submissions = data?.submissions || [];
+  const submissionsByAssignment = {};
+  submissions.forEach(s => { submissionsByAssignment[s.assignment_id] = s; });
 
   const assignments = (data?.assignments || []).sort((a, b) => {
     if (a.status !== 'reviewed' && b.status === 'reviewed') return -1;
@@ -105,9 +126,17 @@ export default function PortalAssignments() {
                       </div>
                     )}
                     {a.status === 'submitted' || a.status === 'reviewed' ? (
-                      <div className="bg-emerald-50/50 rounded-lg p-4">
-                        <p className="text-[10px] uppercase tracking-widest text-emerald-600 mb-1 flex items-center gap-1"><Check className="w-3 h-3" /> Submitted</p>
-                        <p className="text-sm text-neutral-600 font-light">You've submitted this assignment. {a.status === 'reviewed' ? 'Maya has reviewed your submission.' : 'Awaiting feedback from Maya.'}</p>
+                      <div className="space-y-3">
+                        <div className="bg-emerald-50/50 rounded-lg p-4">
+                          <p className="text-[10px] uppercase tracking-widest text-emerald-600 mb-1 flex items-center gap-1"><Check className="w-3 h-3" /> Submitted</p>
+                          <p className="text-sm text-neutral-600 font-light">You've submitted this assignment. {a.status === 'reviewed' ? 'Maya has reviewed your submission.' : 'Awaiting feedback from Maya.'}</p>
+                        </div>
+                        {a.status === 'reviewed' && submissionsByAssignment[a.id]?.admin_feedback && (
+                          <div className="bg-red-50/40 border border-red-100 rounded-lg p-4">
+                            <p className="text-[10px] uppercase tracking-widest text-red-600 mb-1">Feedback from Maya</p>
+                            <p className="text-sm text-neutral-700 font-light whitespace-pre-wrap">{submissionsByAssignment[a.id].admin_feedback}</p>
+                          </div>
+                        )}
                       </div>
                     ) : (
                       <Button onClick={() => { setSubmitDialog(a); setSubmissionText(''); }} className="bg-neutral-900 hover:bg-black">

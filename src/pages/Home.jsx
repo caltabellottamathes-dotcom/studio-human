@@ -164,7 +164,7 @@ export default function Home() {
               <p className="font-display text-2xl md:text-4xl text-neutral-800 leading-snug mb-8">
                 At studioHuman you find space to <span className="font-light text-red-600/90">pause</span>, to breathe, and to find direction again.
               </p>
-              <Link to="/over" className="group inline-flex items-center gap-2 text-xs uppercase tracking-widest text-neutral-800 border-b border-neutral-400 py-2 hover:gap-3 hover:border-red-600 hover:text-red-600 transition-all duration-300">
+              <Link to="/about" className="group inline-flex items-center gap-2 text-xs uppercase tracking-widest text-neutral-800 border-b border-neutral-400 py-2 hover:gap-3 hover:border-red-600 hover:text-red-600 transition-all duration-300">
                 Get to know me
                 <ArrowRight className="w-4 h-4" />
               </Link>
@@ -188,7 +188,7 @@ export default function Home() {
               <p className="font-display text-2xl md:text-4xl text-neutral-800 leading-snug mb-8">
                 Guidance that adapts to <span className="font-light text-red-600/90">your needs</span> — personal, accessible, and tailored.
               </p>
-              <Link to="/aanpak" className="group inline-flex items-center gap-2 text-xs uppercase tracking-widest text-neutral-800 border-b border-neutral-400 py-2 hover:gap-3 hover:border-red-600 hover:text-red-600 transition-all duration-300">
+              <Link to="/approach" className="group inline-flex items-center gap-2 text-xs uppercase tracking-widest text-neutral-800 border-b border-neutral-400 py-2 hover:gap-3 hover:border-red-600 hover:text-red-600 transition-all duration-300">
                 Explore the approach
                 <ArrowRight className="w-4 h-4" />
               </Link>

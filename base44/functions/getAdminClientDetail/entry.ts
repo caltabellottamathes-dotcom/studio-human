@@ -13,12 +13,13 @@ Deno.serve(async (req) => {
 
     const sr = base44.asServiceRole;
 
-    const [clientUser, profiles, appointments, sessionNotes, assignments, documents, messages, moodEntries, questionnaires, invoices] = await Promise.all([
+    const [clientUser, profiles, appointments, sessionNotes, assignments, submissions, documents, messages, moodEntries, questionnaires, invoices] = await Promise.all([
       sr.entities.User.get(clientId),
       sr.entities.ClientProfile.filter({ user_id: clientId }),
       sr.entities.Appointment.filter({ client_id: clientId }),
       sr.entities.SessionNote.filter({ client_id: clientId }),
       sr.entities.Assignment.filter({ client_id: clientId }),
+      sr.entities.AssignmentSubmission.filter({ client_id: clientId }),
       sr.entities.SharedDocument.filter({ client_id: clientId }),
       sr.entities.Message.filter({ client_id: clientId }),
       sr.entities.MoodEntry.filter({ client_id: clientId }),
@@ -42,6 +43,7 @@ Deno.serve(async (req) => {
       appointments: appointments.sort((a, b) => b.date.localeCompare(a.date)),
       sessionNotes: sessionNotes.sort((a, b) => b.session_date.localeCompare(a.session_date)),
       assignments,
+      submissions,
       documents,
       messages: messages.sort((a, b) => a.created_date.localeCompare(b.created_date)),
       moodEntries: moodEntries.sort((a, b) => b.entry_date.localeCompare(a.entry_date)),

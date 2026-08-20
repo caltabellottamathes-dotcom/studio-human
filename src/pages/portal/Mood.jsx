@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { base44 } from '@/api/base44Client';
 import { Heart, Check } from 'lucide-react';
+import { ErrorState } from '@/components/ListStates';
 
 const moods = [
   { score: 1, label: 'Very low', color: 'bg-red-400', ring: 'ring-red-400' },
@@ -17,8 +18,11 @@ export default function PortalMood() {
   const [note, setNote] = useState('');
   const [saving, setSaving] = useState(false);
   const [savedToday, setSavedToday] = useState(false);
+  const [error, setError] = useState(false);
 
   const fetchData = async () => {
+    setLoading(true);
+    setError(false);
     try {
       const response = await base44.functions.invoke('getClientPortalData', {});
       setData(response.data);
@@ -31,6 +35,7 @@ export default function PortalMood() {
       }
     } catch (err) {
       console.error(err);
+      setError(true);
     } finally {
       setLoading(false);
     }
@@ -61,6 +66,18 @@ export default function PortalMood() {
     return (
       <div className="flex items-center justify-center min-h-screen">
         <div className="w-8 h-8 border-4 border-neutral-200 border-t-red-600 rounded-full animate-spin"></div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="p-6 md:p-10 max-w-3xl">
+        <div className="mb-8">
+          <span className="text-[10px] uppercase tracking-[0.25em] text-red-600/80 block mb-2">Client Portal</span>
+          <h1 className="font-display text-3xl md:text-4xl text-neutral-800 tracking-tight">Mood Journal</h1>
+        </div>
+        <ErrorState onRetry={fetchData} />
       </div>
     );
   }

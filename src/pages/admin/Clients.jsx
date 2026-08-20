@@ -3,19 +3,24 @@ import { Link } from 'react-router-dom';
 import { base44 } from '@/api/base44Client';
 import { Search, UserPlus, Mail, Phone, ArrowRight } from 'lucide-react';
 import CreateClientDialog from '@/components/admin/CreateClientDialog';
+import { ErrorState } from '@/components/ListStates';
 
 export default function AdminClients() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState('');
   const [createOpen, setCreateOpen] = useState(false);
+  const [error, setError] = useState(false);
 
   const fetchData = async () => {
+    setLoading(true);
+    setError(false);
     try {
       const response = await base44.functions.invoke('getAdminOverview', {});
       setData(response.data);
     } catch (err) {
       console.error('Failed to load clients:', err);
+      setError(true);
     } finally {
       setLoading(false);
     }
@@ -27,6 +32,18 @@ export default function AdminClients() {
     return (
       <div className="flex items-center justify-center min-h-screen">
         <div className="w-8 h-8 border-4 border-neutral-200 border-t-red-600 rounded-full animate-spin"></div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="p-6 md:p-10 max-w-5xl">
+        <div className="mb-8">
+          <span className="text-[10px] uppercase tracking-[0.25em] text-red-600/80 block mb-2">Manage</span>
+          <h1 className="font-display text-3xl md:text-4xl text-neutral-800 tracking-tight">Clients</h1>
+        </div>
+        <ErrorState onRetry={fetchData} />
       </div>
     );
   }
@@ -72,7 +89,7 @@ export default function AdminClients() {
         ) : (
           <div className="divide-y divide-neutral-100">
             {clients.map(c => (
-              <Link key={c.user_id} to={`/admin/clienten/${c.user_id}`} className="flex items-center justify-between p-4 md:p-5 hover:bg-neutral-50 transition-colors group">
+              <Link key={c.user_id} to={`/admin/clients/${c.user_id}`} className="flex items-center justify-between p-4 md:p-5 hover:bg-neutral-50 transition-colors group">
                 <div className="flex items-center gap-4 min-w-0 flex-1">
                   <div className="w-10 h-10 rounded-full bg-red-50 flex items-center justify-center flex-shrink-0">
                     <span className="text-sm font-display text-red-700">

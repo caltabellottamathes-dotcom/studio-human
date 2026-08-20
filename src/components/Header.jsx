@@ -13,10 +13,10 @@ const navItem = {
 
 const navLinks = [
   { label: 'Home', to: '/' },
-  { label: 'Approach', to: '/aanpak' },
-  { label: 'Concerns', to: '/zorgvragen' },
-  { label: 'About', to: '/over' },
-  { label: 'Pricing', to: '/tarieven' },
+  { label: 'Approach', to: '/approach' },
+  { label: 'Concerns', to: '/concerns' },
+  { label: 'About', to: '/about' },
+  { label: 'Pricing', to: '/pricing' },
   { label: 'Contact', to: '/contact' },
 ];
 
@@ -122,8 +122,8 @@ export default function Header() {
               <Logo variant="light" />
               <button
                 onClick={() => setMobileOpen(false)}
-                className="p-2.5 text-neutral-800 focus:outline-none"
-                aria-label="Menu sluiten"
+                className="p-2.5 text-neutral-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-600 rounded-md"
+                aria-label="Close menu"
               >
                 <X className="w-6 h-6" strokeWidth={1.5} />
               </button>
