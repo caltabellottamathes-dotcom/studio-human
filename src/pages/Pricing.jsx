@@ -65,7 +65,7 @@ export default function Pricing() {
             Rates & <span className="italic font-light text-red-600/90">pricing</span>.
           </h1>
           <p className="text-neutral-600 text-base md:text-lg font-light max-w-[44ch] leading-normal">
-            Care should be clear — including when it comes to cost. Below you'll find the different options and rates of my practice. Guidance can take place at my practice or at your home. Questions or want to align on something? Reach out — together we'll find what fits your situation.
+            Care should be clear — including when it comes to cost. Below you'll find the different options and rates of the studio. Guidance can take place at the studio or at your home. Questions or want to align on something? Reach out — together we'll find what fits your situation.
           </p>
         </FadeSection>
       </section>

@@ -17,8 +17,8 @@ const struggles = {
     intro: 'The pace of modern life can quietly accumulate — until one day the weight feels impossible to lift alone. Stress and overwhelm are not signs of weakness. They are your body and mind asking for a gentler pace.',
     body: [
       { heading: 'What this looks like', text: "You may find yourself constantly 'on,' unable to switch off even when you have the time. Small tasks feel enormous. Your mind races at night. You feel irritable, depleted, and disconnected from the things that once brought you joy." },
-      { heading: 'How I can help', text: 'In our sessions we slow down together. We identify the sources of pressure — external and internal — and begin to create small, meaningful shifts. You leave each session with practical tools and a deeper understanding of your own nervous system and needs.' },
-      { heading: "You don't have to earn rest", text: 'One of the most common things I hear from people in this situation is guilt about needing rest. Together we work to dissolve that guilt and build a relationship with yourself rooted in compassion, not productivity.' },
+      { heading: 'How we can help', text: 'In our sessions we slow down together. We identify the sources of pressure — external and internal — and begin to create small, meaningful shifts. You leave each session with practical tools and a deeper understanding of your own nervous system and needs.' },
+      { heading: "You don't have to earn rest", text: 'One of the most common things we hear from people in this situation is guilt about needing rest. Together we work to dissolve that guilt and build a relationship with yourself rooted in compassion, not productivity.' },
     ],
   },
   'burnout': {
@@ -40,7 +40,7 @@ const struggles = {
     body: [
       { heading: 'The invisible weight of caring', text: 'Caregivers often carry enormous emotional and practical burdens while remaining invisible in their own right. You may grieve the person you care for while they are still present. You may feel frustration, and then guilt about that frustration. All of it is normal. Everything has a place here.' },
       { heading: 'Finding yourself again', text: 'In our sessions we create room for your experience — not only your role. You are not just a caregiver. You are a whole person with needs, desires, and limits. Together we work to honor that truth.' },
-      { heading: 'Practical support too', text: 'Alongside emotional guidance, I help with practical navigation — coordinating with other care providers, clarifying paperwork, and finding the support structures that can lighten the load.' },
+      { heading: 'Practical support too', text: 'Alongside emotional guidance, we help with practical navigation — coordinating with other care providers, clarifying paperwork, and finding the support structures that can lighten the load.' },
     ],
   },
   'grief-loss': {
@@ -62,7 +62,7 @@ const struggles = {
     body: [
       { heading: 'When the map no longer fits the territory', text: 'You may feel lost, anxious, or strangely grief-stricken — even when the transition is one you chose or wanted. Change, even positive change, asks us to let something go. That letting go asks for courage, and it asks for time.' },
       { heading: 'Clarity and direction', text: 'In our sessions we create space to process what is ending and what is beginning. We clarify your values, your needs, and what you want this next chapter to feel like — and then we build toward it, step by step.' },
-      { heading: 'You are not behind', text: 'There is no schedule for life transitions. At any age, in any phase, a new beginning is possible. My role is to walk beside you as you find your own way — at your pace, on your terms.' },
+      { heading: 'You are not behind', text: 'There is no schedule for life transitions. At any age, in any phase, a new beginning is possible. Our role is to walk beside you as you find your own way — at your pace, on your terms.' },
     ],
   },
   'emotional-exhaustion': {
@@ -139,7 +139,7 @@ export default function StrugglePage() {
             <FadeSection key={i} delay={i * 0.05}>
               <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start">
                 <div className={`col-span-1 md:col-span-4 ${i % 2 === 1 ? 'md:order-2 md:col-start-9' : 'md:order-1'}`}>
-                  <span className="font-display italic text-red-600/40 text-5xl md:text-6xl block leading-none mb-4">{String(i + 1).padStart(2, '0')}</span>
+                  <span className={`font-display italic text-5xl md:text-6xl block leading-none mb-4 ${i % 2 === 0 ? 'text-cliff-400' : 'text-glacier-400'}`}>{String(i + 1).padStart(2, '0')}</span>
                   <h3 className="font-display text-xl md:text-2xl text-neutral-800">{block.heading}</h3>
                 </div>
                 <div className={`col-span-1 md:col-span-7 ${i % 2 === 1 ? 'md:order-1 md:col-start-1' : 'md:order-2 md:col-start-6'}`}>

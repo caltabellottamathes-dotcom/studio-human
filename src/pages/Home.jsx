@@ -66,12 +66,12 @@ export default function Home() {
           <motion.div variants={heroItem} className="mb-10">
             <div className="flex items-center gap-4">
               <span className="text-xs uppercase tracking-[0.25em] text-red-600/80 font-medium">
-                Psychosocial Counselor
+                Psychosocial Counseling
               </span>
               <span className="h-px w-12 bg-neutral-300" />
             </div>
             <p className="text-xs uppercase tracking-[0.25em] text-neutral-800 font-medium mt-1">
-              Maya Hartwell
+              studioHuman
             </p>
           </motion.div>
 
@@ -103,7 +103,7 @@ export default function Home() {
       <section className="pb-16 md:pb-24 px-6 md:px-12 max-w-[120rem] mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-16 items-center">
           <div className="md:col-span-5 md:col-start-1 -ml-6 md:-ml-12">
-            <PremiumImage src={deboraCurtainImg} alt="Maya Hartwell" height="85vh" rounded="br" className="w-[54vw] md:w-full mobile-h-xs" />
+            <PremiumImage src={deboraCurtainImg} alt="A studioHuman counselor" height="85vh" rounded="br" className="w-[54vw] md:w-full mobile-h-xs" />
           </div>
           <StaggerGroup className="col-span-1 md:col-span-6 md:col-start-7" stagger={0.15}>
             <StaggerItem>
@@ -160,12 +160,12 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 items-center">
           <div className="col-span-1 md:col-span-4 md:col-start-1">
             <FadeSection>
-              <span className="text-xs uppercase tracking-[0.2em] text-red-600/80 block label-line mb-4">About me</span>
+              <span className="text-xs uppercase tracking-[0.2em] text-red-600/80 block label-line mb-4">About the studio</span>
               <p className="font-display text-2xl md:text-4xl text-neutral-800 leading-snug mb-8">
                 At studioHuman you find space to <span className="font-light text-red-600/90">pause</span>, to breathe, and to find direction again.
               </p>
               <Link to="/about" className="group inline-flex items-center gap-2 text-xs uppercase tracking-widest text-neutral-800 border-b border-neutral-400 py-2 hover:gap-3 hover:border-red-600 hover:text-red-600 transition-all duration-300">
-                Get to know me
+                Meet the studio
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </FadeSection>
@@ -184,7 +184,7 @@ export default function Home() {
           </div>
           <div className="md:w-[55%] flex items-center pb-12 md:pb-16 order-1 md:order-2">
             <FadeSection>
-              <span className="text-xs uppercase tracking-[0.2em] text-red-600/80 block label-line mb-4">My approach</span>
+              <span className="text-xs uppercase tracking-[0.2em] text-red-600/80 block label-line mb-4">Our approach</span>
               <p className="font-display text-2xl md:text-4xl text-neutral-800 leading-snug mb-8">
                 Guidance that adapts to <span className="font-light text-red-600/90">your needs</span> — personal, accessible, and tailored.
               </p>

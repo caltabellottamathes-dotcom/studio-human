@@ -50,8 +50,8 @@ export const services = [
 ];
 
 export const steps = [
-  { num: '01', title: 'The Introductory Conversation', desc: 'A gentle, 15-minute phone call to hear your needs and sense whether my approach feels like a fit for you. No obligations.' },
-  { num: '02', title: 'The Intake Session', desc: 'Our first full session. We map your current emotional landscape, discuss the heavier burdens, and define what safe progress means for you.' },
+  { num: '01', title: 'The Introductory Conversation',     desc: 'A gentle, 15-minute phone call to hear your needs and sense whether our approach feels like a fit for you. No obligations.' },
+  { num: '02', title: 'The Intake Session',     desc: 'Your first full session. Together we map your current emotional landscape, discuss the heavier burdens, and define what safe progress means for you.' },
   { num: '03', title: 'Tailored Guidance', desc: 'Ongoing sessions where we unpack patterns, develop self-compassion practices, and learn to set boundaries. Entirely at your preferred pace.' },
   { num: '04', title: 'Integration & Closure', desc: 'As you begin to carry your landscape with more ease, we slowly widen the space between sessions, closing with a mindful honoring of your growth.' },
 ];
@@ -60,7 +60,7 @@ export const faqs = [
   { q: 'Do I need a referral from my doctor to make an appointment?', a: 'No, a referral is not required. You can make an appointment directly. We schedule our first intake session after a brief, no-obligation introductory call.' },
   { q: 'Are sessions covered by my insurance?', a: 'Unfortunately sessions are not reimbursed by insurance. The rates are set to keep guidance accessible and affordable.' },
   { q: 'What is your cancellation policy?', a: 'Sessions can be rescheduled or cancelled at no cost up to 24 hours in advance. Cancellations within 24 hours of the appointment are charged in full.' },
-  { q: 'Do you offer online sessions?', a: 'Yes. I offer both in-person sessions at my practice and online sessions via video call, so you can connect from wherever feels most comfortable.' },
+  { q: 'Do you offer online sessions?', a: 'Yes. We offer both in-person sessions at the studio and online sessions via video call, so you can connect from wherever feels most comfortable.' },
   { q: 'How many sessions will I need?', a: 'There is no fixed number. Some people find clarity in a few conversations; others prefer longer support. We always move at your pace and reassess together.' },
-  { q: 'My concern isn’t in your list. Can I come to you with other worries?', a: 'Yes, absolutely. The concerns on my site reflect common themes, but the list is not exhaustive. Every concern is welcome — reach out to discuss what you’re carrying, and together we’ll see whether my guidance is a fit for you.' },
+  { q: 'My concern isn’t in your list. Can I come to you with other worries?', a: 'Yes, absolutely. The concerns on our site reflect common themes, but the list is not exhaustive. Every concern is welcome — reach out to discuss what you’re carrying, and together we’ll see whether our guidance is a fit for you.' },
 ];

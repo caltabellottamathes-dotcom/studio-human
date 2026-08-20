@@ -15,9 +15,9 @@ export default function Aanpak() {
       <Header />
 
       <PageHeader
-        label="My approach"
+        label="Our approach"
         title={<>Four pillars of <span className="italic font-light text-red-600/90">gentle</span> guidance.</>}
-        intro="My guidance is personal and tailored. Without judgment, without a fixed script — with attention to your story and your pace." />
+        intro="Our guidance is personal and tailored. Without judgment, without a fixed script — with attention to your story and your pace." />
 
       {/* Pillars — two-column grid on desktop */}
       <section className="px-6 md:px-12 max-w-[120rem] mx-auto pb-20 md:pb-32">
@@ -64,7 +64,7 @@ export default function Aanpak() {
 
         <div className="relative max-w-3xl mx-auto">
           {/* Center vertical line */}
-          <div className="absolute left-1/2 top-2 bottom-2 w-px bg-neutral-300 -translate-x-px hidden md:block" aria-hidden />
+          <div className="absolute left-1/2 top-2 bottom-2 w-px bg-cliff-300 -translate-x-px hidden md:block" aria-hidden />
 
           <StaggerGroup className="space-y-12 md:space-y-20" stagger={0.12}>
             {steps.map((step, i) => (

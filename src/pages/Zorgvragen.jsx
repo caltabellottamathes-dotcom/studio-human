@@ -36,7 +36,7 @@ export default function Zorgvragen() {
             Recognize your current <span className="italic font-light text-red-600/90">landscape</span>.
           </h1>
           <p className="text-neutral-600 text-base md:text-lg font-light max-w-[44ch] leading-normal">
-            I guide people who struggle with stress, loss, overload, emotional difficulties, or life questions. People who feel it can't go on like this, but don't yet know how else.
+            We guide people who struggle with stress, loss, overload, emotional difficulties, or life questions. People who feel it can't go on like this, but don't yet know how else.
           </p>
           <button
             onClick={() => window.dispatchEvent(new CustomEvent('open-zelfreflectie'))}

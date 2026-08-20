@@ -18,9 +18,9 @@ export default function Over() {
       <Header />
 
       <PageHeader
-        label="About me"
+        label="About the studio"
         title={<>studioHuman — <span className="font-light text-red-600/90">love for life</span>.</>}
-        intro="I'm Maya Hartwell, psychosocial counselor and founder of studioHuman. In my practice I guide people with a wide range of concerns — personal, accessible, and tailored."
+        intro="studioHuman is a collective of psychosocial counselors. We guide people through a wide range of concerns — personal, accessible, and tailored."
         hideIntroMobile />
       
 
@@ -32,7 +32,7 @@ export default function Over() {
                 <div className="w-2/5 lg:w-auto">
                   <PremiumImage src={deboraPortraitImg} alt="Maya Hartwell, psychosocial counselor at studioHuman" height="72vh" rounded="tr" className="w-full mobile-h-sm" />
                 </div>
-                <p className="lg:hidden text-neutral-600 text-base md:text-lg font-light leading-normal flex-1 self-center pr-2 text-left">I'm Maya Hartwell, psychosocial counselor and founder of studioHuman. In my practice I guide people with a wide range of concerns — personal, accessible, and tailored.
+                <p className="lg:hidden text-neutral-600 text-base md:text-lg font-light leading-normal flex-1 self-center pr-2 text-left">studioHuman is a collective of psychosocial counselors. We guide people through a wide range of concerns — personal, accessible, and tailored.
 
                 </p>
               </div>
@@ -47,19 +47,19 @@ export default function Over() {
             <FadeSection>
               <div className="space-y-6 text-neutral-600 text-base md:text-lg font-light leading-normal max-w-[72ch]">
                 <p>
-                  studioHuman means 'love for life'. To me that's about care, human closeness, and making space for who you are — in every phase of your life.
+                  studioHuman means 'love for life'. To us that's about care, human closeness, and making space for who you are — in every phase of your life.
                 </p>
                 <p>
-                  My guidance is personal, accessible, and tailored — at my practice, at your home, or in your own context. Always nearby. Always human.
+                  Our guidance is personal, accessible, and tailored — at the studio, at your home, or in your own context. Always nearby. Always human.
                 </p>
                 <p className="font-display text-red-600 text-lg md:text-xl my-8 leading-normal">
-                  &ldquo;What drives me is the meeting of human to human. With attention, without haste, and with room for your story exactly as it is.&rdquo;
+                  &ldquo;What drives us is the meeting of human to human. With attention, without haste, and with room for your story exactly as it is.&rdquo;
                 </p>
                 <p>
-                  I believe real change begins with recognition: being allowed to be yourself, including in your vulnerability. That's why I don't work with standard trajectories — I tune my approach to your needs and rhythm.
+                  We believe real change begins with recognition: being allowed to be yourself, including in your vulnerability. That's why we don't work with standard trajectories — we tune our approach to your needs and rhythm.
                 </p>
                 <p>
-                  Alongside psychosocial guidance, I also bring clinical expertise. I have broad experience with psychiatric concerns and offer support and advice around medication use, always in coordination with the treating physician or care provider.
+                  Alongside psychosocial guidance, we also bring clinical expertise. We have broad experience with psychiatric concerns and offer support and advice around medication use, always in coordination with the treating physician or care provider.
                 </p>
               </div>
             </FadeSection>
@@ -86,7 +86,7 @@ export default function Over() {
           <div className="col-span-1 md:col-span-4 md:col-start-1 order-2 md:order-1">
             <FadeSection>
               <p className="font-display text-2xl md:text-4xl text-neutral-800 leading-tight tracking-tight">
-                Want to know how I can help? <span className="font-light text-red-600/90">Read more about my guidance here.</span>
+                Want to know how we can help? <span className="font-light text-red-600/90">Read more about our guidance here.</span>
               </p>
               <Link to="/approach" className="group inline-flex items-center gap-2 text-xs uppercase tracking-widest text-neutral-800 border-b border-neutral-400 py-2 mt-8 hover:gap-3 hover:border-red-600 hover:text-red-600 transition-all duration-300">
                 Explore the approach
@@ -107,7 +107,7 @@ export default function Over() {
           </div>
           <div className="md:w-[55%] flex items-center pb-12 md:pb-16 order-1 md:order-2">
             <FadeSection>
-              <span className="text-xs uppercase tracking-[0.2em] text-red-600/80 block label-line mb-4">My vision</span>
+              <span className="text-xs uppercase tracking-[0.2em] text-red-600/80 block label-line mb-4">Our vision</span>
               <p className="font-display text-2xl md:text-4xl text-neutral-800 leading-snug max-w-[48ch]">
                 studioHuman was born from the belief that care doesn't need to be a ready-made solution — it can be a caring presence. <span className="font-light text-red-600/90">A place where you feel held, where you may breathe for a moment, and step by step find your direction again.</span>
               </p>
