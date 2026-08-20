@@ -9,7 +9,7 @@
 // (appointments, documents, messages, assignments all originate on the admin
 // side), so the dashboard ships at Tier 2 — before the portal at Tier 3.
 
-export const ACTIVE_TIER = '1';
+export const ACTIVE_TIER = '4';
 
 export const TIERS = {
   '1': { name: 'Marketing + Quiz',          assessment: true,  portal: false, admin: false, agency: false },
