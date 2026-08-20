@@ -27,7 +27,7 @@ export default function Footer() {
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, margin: '-40px' }}
       transition={{ duration: 0.7, ease }}
-      className="relative z-10 bg-white/10 backdrop-blur-2xl text-neutral-800 mx-4 md:mx-8 mt-4 md:mt-6 mb-4 md:mb-8 rounded-[2rem] md:rounded-[3rem] shadow-2xl shadow-neutral-900/5 border border-red-600/20"
+      className="relative z-10 bg-white/10 backdrop-blur-2xl text-neutral-800 mx-4 md:mx-8 mt-12 md:mt-16 mb-4 md:mb-8 rounded-[2rem] md:rounded-[3rem] shadow-2xl shadow-neutral-900/5 border border-red-600/20"
       role="contentinfo"
     >
       <div className="max-w-[120rem] mx-auto px-6 md:px-12 py-6 md:py-14">
