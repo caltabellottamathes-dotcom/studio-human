@@ -11,8 +11,10 @@ import { StaggerGroup, StaggerItem } from '@/components/motion/Stagger';
 import { faqs } from '@/data/content';
 import CalmPanel from '@/components/CalmPanel';
 import { base44 } from '@/api/base44Client';
+import { useBrand } from '@/hooks/useBrand';
 
 function ContactForm() {
+  const { contact } = useBrand();
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState('');
@@ -34,7 +36,7 @@ function ContactForm() {
       });
       setSubmitted(true);
     } catch (err) {
-      setError('Something went wrong sending your message. Please try again later or email hello@studiohuman.com');
+      setError(`Something went wrong sending your message. Please try again later or email ${contact.email}`);
     } finally {
       setSubmitting(false);
     }
@@ -113,6 +115,7 @@ function ContactForm() {
 }
 
 export default function Contact() {
+  const { contact } = useBrand();
   return (
     <div className="bg-neutral-50 text-neutral-800 selection:bg-red-100 selection:text-red-900">
       <Header />
@@ -148,7 +151,7 @@ export default function Contact() {
             </StaggerGroup>
             <div className="mt-12 pt-8 border-t border-neutral-200 space-y-2 text-sm font-light text-neutral-500">
               <p>In person &amp; online</p>
-              <p><a href="mailto:hello@studiohuman.com" className="hover:text-red-600 transition-colors">hello@studiohuman.com</a></p>
+              <p><a href={`mailto:${contact.email}`} className="hover:text-red-600 transition-colors">{contact.email}</a></p>
             </div>
           </FadeSection>
           <FadeSection delay={0.1} className="col-span-1 lg:col-span-7">

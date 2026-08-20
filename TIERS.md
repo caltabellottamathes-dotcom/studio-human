@@ -68,9 +68,8 @@ content via `/admin/assessment`.
 ## Rebranding for a buyer (Tier 4 — resale)
 Each delivered instance is rebranded by editing:
 - `src/config/tiers.js` — set `ACTIVE_TIER`
+- `src/config/brand.js` — wordmark, contact email, CTAs, copyright entity (single edit-point; `Logo`, `Header`, `Footer`, `Contact` read via `useBrand()`)
 - `index.html` — `<title>`, meta description, favicon
-- Brand strings: "studioHuman" in `src/components/Header.jsx`, `Footer.jsx`, `src/components/Logo.jsx`
-- Contact email in `src/components/Footer.jsx` (`hello@studiohuman.com`)
 - Theme tokens in `src/index.css` (`--primary`, accent, fonts) + `tailwind.config.js`
 - Content copy in `src/data/content.js` (struggles, principles, steps, faqs)
 
@@ -79,5 +78,37 @@ Each delivered instance is rebranded by editing:
 - [x] **Phase 1** — Tier 3 superset finalized; coupling points resolved
 - [ ] **Phase 2** — verify Tier 2 build (manifest only, no pruning needed)
 - [ ] **Phase 3** — verify Tier 1 build
-- [ ] **Phase 4a** — agency license layer (white-label brand config + license-key check)
+- [x] **Phase 4a** — agency license layer (white-label brand config + license-key check)
 - [x] **Phase 5** — this delivery map
+
+## Agency license layer (Tier 4a)
+
+Tier 4 ships a white-label + license layer so a seller can rebrand and license
+each instance:
+
+- **Brand config** — `src/config/brand.js` is the single edit-point for the
+  wordmark, contact email, CTAs, and copyright entity. `Logo`, `Header`,
+  `Footer`, and `Contact` all read via `useBrand()`, so a buyer rebrands one
+  file. (Theme colors/fonts still live in `src/index.css` + `tailwind.config.js`.)
+- **License check** — `base44/functions/verifyAgencyLicense` validates an
+  HMAC-SHA256 signed license key against the `AGENCY_LICENSE_SECRET` app
+  secret. `src/components/LicenseGate` calls it on load (only when the agency
+  tier flag is on **and** `BRAND.LICENSE_KEY` is set) and shows a dismissible
+  notice only when verification fails. In dev/demo (no key set) it is silent.
+
+### Issuing a license key
+A key is `<base64url(payload)>.<base64url(hmac)>` where
+`payload = JSON.stringify({ tier: "4", exp: <ms epoch, optional> })`, signed
+with the same secret stored in the app's `AGENCY_LICENSE_SECRET`. Example
+issuer (run in any JS console with the secret):
+
+```js
+const secret = "your-secret"; // must match AGENCY_LICENSE_SECRET
+const payload = btoa(JSON.stringify({ tier: "4", exp: Date.now() + 365*864e5 }));
+const key = await crypto.subtle.importKey("raw", new TextEncoder().encode(secret),
+  { name: "HMAC", hash: "SHA-256" }, false, ["sign"]);
+const sig = await crypto.subtle.sign("HMAC", key, new TextEncoder().encode(payload));
+const b64url = (b) => btoa(String.fromCharCode(...new Uint8Array(b))).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,"");
+const licenseKey = `${payload}.${b64url(sig)}`;
+// paste licenseKey into BRAND.LICENSE_KEY in the delivered instance
+``

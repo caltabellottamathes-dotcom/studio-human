@@ -41,6 +41,7 @@ import AdminSettings from '@/pages/admin/Settings';
 import AdminAssessment from '@/pages/admin/Assessment';
 import AdminRequests from '@/pages/admin/Requests';
 import { useTier } from '@/hooks/useTier';
+import LicenseGate from '@/components/LicenseGate';
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
@@ -131,8 +132,9 @@ function App() {
         </Router>
         <OpeningLoader />
         <CustomCursor />
+        <LicenseGate />
         <Toaster />
-      </QueryClientProvider>
+        </QueryClientProvider>
     </AuthProvider>
   )
 }

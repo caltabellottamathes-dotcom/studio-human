@@ -4,6 +4,7 @@ import { Menu, X } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
 import Logo from '@/components/Logo';
 import BrandedButton from '@/components/BrandedButton';
+import { useBrand } from '@/hooks/useBrand';
 
 const ease = [0.25, 0.1, 0.25, 1];
 const navItem = {
@@ -21,6 +22,7 @@ const navLinks = [
 ];
 
 export default function Header() {
+  const { name, cta } = useBrand();
   const [scrolled, setScrolled] = useState(false);
   const [hidden, setHidden] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -55,7 +57,7 @@ export default function Header() {
         role="banner"
       >
         <div className="max-w-[120rem] mx-auto px-6 md:px-12 h-14 md:h-20 flex items-center justify-between">
-          <Link to="/" className="flex items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-red-600/20 rounded-md"           aria-label="studioHuman — home">
+          <Link to="/" className="flex items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-red-600/20 rounded-md"           aria-label={`${name} — home`}>
             <Logo variant="light" />
           </Link>
 
@@ -92,7 +94,7 @@ export default function Header() {
             className="flex items-center gap-4"
           >
             <div className="hidden md:block">
-              <BrandedButton to="/contact" compact>Book a session</BrandedButton>
+              <BrandedButton to="/contact" compact>{cta.primary}</BrandedButton>
             </div>
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
@@ -158,7 +160,7 @@ export default function Header() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5, duration: 0.4, ease }}
               >
-                <BrandedButton to="/contact">Book a session</BrandedButton>
+                <BrandedButton to="/contact">{cta.primary}</BrandedButton>
               </motion.div>
             </div>
           </motion.div>

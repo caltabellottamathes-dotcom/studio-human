@@ -5,6 +5,7 @@ import { ArrowRight } from 'lucide-react';
 import AssessmentLightbox from '@/components/assessment/AssessmentLightbox';
 import BrandedButton from '@/components/BrandedButton';
 import { useTier } from '@/hooks/useTier';
+import { useBrand } from '@/hooks/useBrand';
 
 const ease = [0.25, 0.1, 0.25, 1];
 
@@ -19,6 +20,7 @@ const navLinks = [
 
 export default function Footer() {
   const { portal: hasPortal, admin: hasAdmin } = useTier();
+  const { name, contact, cta, legal } = useBrand();
   return (
     <motion.footer
       initial={{ opacity: 0 }}
@@ -30,7 +32,7 @@ export default function Footer() {
     >
       <div className="max-w-[120rem] mx-auto px-6 md:px-12 py-6 md:py-14">
         <div className="mb-6 md:mb-10">
-          <span className="text-xs uppercase tracking-[0.25em] text-red-600/80 block label-line mb-4 font-medium">studioHuman</span>
+          <span className="text-xs uppercase tracking-[0.25em] text-red-600/80 block label-line mb-4 font-medium">{name}</span>
           <p className="font-display text-xl md:text-2xl text-neutral-800 leading-[1.1] tracking-tight max-w-[24ch]">
             A thoughtful space for <span className="italic font-light text-red-600/90">psychological wellbeing</span>.
           </p>
@@ -39,7 +41,7 @@ export default function Footer() {
               onClick={() => window.dispatchEvent(new CustomEvent('open-zelfreflectie'))}
               className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-neutral-500 hover:text-red-600 transition-colors group w-fit py-1.5"
             >
-              Self-reflection
+              {cta.reflect}
               <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" strokeWidth={1.5} />
             </button>
             {hasPortal && (
@@ -53,7 +55,7 @@ export default function Footer() {
             )}
           </div>
           <div className="mt-4 md:mt-6">
-                        <BrandedButton to="/contact" compact>Book a session</BrandedButton>
+                        <BrandedButton to="/contact" compact>{cta.primary}</BrandedButton>
           </div>
         </div>
 
@@ -67,12 +69,12 @@ export default function Footer() {
           </nav>
           <div className="flex flex-col gap-1 text-sm text-neutral-500 font-light md:text-right">
             <p className="text-neutral-700">In person &amp; online</p>
-            <a href="mailto:hello@studiohuman.com" className="hover:text-red-600 transition-colors py-1">hello@studiohuman.com</a>
+            <a href={`mailto:${contact.email}`} className="hover:text-red-600 transition-colors py-1">{contact.email}</a>
           </div>
         </div>
 
         <div className="mt-6 pt-4 md:mt-8 border-t border-neutral-200/60 flex items-center justify-between">
-          <span className="text-[10px] text-neutral-400 uppercase tracking-widest">© {new Date().getFullYear()} studioHuman</span>
+          <span className="text-[10px] text-neutral-400 uppercase tracking-widest">© {new Date().getFullYear()} {legal.copyrightEntity}</span>
           {hasAdmin && <Link to="/admin/dashboard" className="text-[10px] text-neutral-400 hover:text-red-600 transition-colors uppercase tracking-widest">Admin</Link>}
         </div>
       </div>
