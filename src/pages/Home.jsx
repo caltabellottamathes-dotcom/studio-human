@@ -8,7 +8,6 @@ import FadeSection from '@/components/FadeSection';
 import Marquee from '@/components/motion/Marquee';
 
 import { StaggerGroup, StaggerItem } from '@/components/motion/Stagger';
-import ClosingCTA from '@/components/ClosingCTA';
 import { principles } from '@/data/content';
 
 const ease = [0.25, 0.1, 0.25, 1];
@@ -103,7 +102,7 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-16 items-center">
           <div className="md:col-span-5 md:col-start-1 -ml-6 md:-ml-12">
             <div className="relative w-full overflow-hidden rounded-br-[3rem] md:rounded-br-[14rem] rounded-tl-xl rounded-tr-xl rounded-bl-xl w-[54vw] md:w-full mobile-h-xs shadow-2xl shadow-neutral-900/10" style={{ height: '85vh' }}>
-              <img src="https://media.base44.com/images/public/6a863d1d060de4a10b195ae3/228fabafa_Home_1.jpeg" alt="A figure standing in a narrow architectural alcove, shadows of foliage falling across the columns" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+              <img src="https://media.base44.com/images/public/6a863d1d060de4a10b195ae3/47f67d467_Home_1_New.jpeg" alt="A figure standing on a staircase landing between angular concrete walls, dramatic diagonal shadows" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
             </div>
           </div>
           <StaggerGroup className="col-span-1 md:col-span-6 md:col-start-7" stagger={0.15}>
@@ -167,7 +166,7 @@ export default function Home() {
           </div>
           <div className="md:col-span-7 md:col-start-6 md:-mr-12">
             <div className="relative w-full overflow-hidden rounded-bl-[3rem] md:rounded-bl-[14rem] rounded-tl-xl rounded-tr-xl rounded-br-xl w-full -mr-6 md:mx-0 mobile-h-xs shadow-2xl shadow-neutral-900/10" style={{ height: '58vh' }}>
-              <img src="https://media.base44.com/images/public/6a863d1d060de4a10b195ae3/80bac2449_Home_2.jpeg" alt="A figure bending forward beside a chair in a quiet studio" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+              <img src="https://media.base44.com/images/public/6a863d1d060de4a10b195ae3/0e61d0840_Home_2_new.jpeg" alt="Several hands resting together on a brushed metal railing" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
             </div>
           </div>
         </div>
@@ -195,8 +194,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <ClosingCTA />
 
       <Footer />
     </div>);
