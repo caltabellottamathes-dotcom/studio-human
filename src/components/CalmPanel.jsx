@@ -2,6 +2,7 @@ import React from 'react';
 import { cn } from '@/lib/utils';
 
 const tones = {
+  ink: 'bg-gradient-to-br from-red-800 to-red-900',
   glacier: 'bg-gradient-to-br from-red-100 via-red-200 to-cliff-100',
   cliff: 'bg-gradient-to-br from-cliff-100 via-cliff-200 to-red-100',
   ember: 'bg-gradient-to-br from-ember-100 via-ember-200 to-cliff-100',
