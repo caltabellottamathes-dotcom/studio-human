@@ -76,8 +76,8 @@ Each delivered instance is rebranded by editing:
 ## Phase status
 - [x] **Phase 0** — tier manifest + `useTier()` + gated routing/footer
 - [x] **Phase 1** — Tier 3 superset finalized; coupling points resolved
-- [ ] **Phase 2** — verify Tier 2 build (manifest only, no pruning needed)
-- [ ] **Phase 3** — verify Tier 1 build
+- [x] **Phase 2** — verified: no always-present public surface references gated portal/admin routes
+- [x] **Phase 3** — verified: same scan; only the gated Footer link + gated route groups reference portal/admin
 - [x] **Phase 4a** — agency license layer (white-label brand config + license-key check)
 - [x] **Phase 5** — this delivery map
 
@@ -111,4 +111,4 @@ const sig = await crypto.subtle.sign("HMAC", key, new TextEncoder().encode(paylo
 const b64url = (b) => btoa(String.fromCharCode(...new Uint8Array(b))).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,"");
 const licenseKey = `${payload}.${b64url(sig)}`;
 // paste licenseKey into BRAND.LICENSE_KEY in the delivered instance
-``
+`
