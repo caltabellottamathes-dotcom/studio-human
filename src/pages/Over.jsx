@@ -17,7 +17,7 @@ export default function Over() {
 
       <PageHeader
         label="The practice"
-        title={<>A considered space for <span className="font-light text-red-600/90">the work of being human</span>.</>}
+        title={<>A considered space for <span className="font-light text-sky-600/90">the work of being human</span>.</>}
         intro="studioHuman is a collective of qualified psychologists offering a contemporary approach to mental wellbeing — a deliberate departure from clinical language and sterile spaces."
         hideIntroMobile />
 

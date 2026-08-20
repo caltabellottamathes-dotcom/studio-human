@@ -52,7 +52,7 @@ export default function Aanpak() {
         <FadeSection className="max-w-2xl mx-auto mb-16 md:mb-24 text-center">
           <span className="text-xs uppercase tracking-[0.2em] text-red-600/80 block label-line mb-4">The process</span>
           <h2 className="font-display text-3xl md:text-5xl text-neutral-800 tracking-tight">
-            How we move <span className="italic font-light text-red-600/90">together</span>.
+            How we move <span className="italic font-light text-sky-600/90">together</span>.
           </h2>
           <p className="text-neutral-500 text-base md:text-lg font-light mt-4">Four unhurried steps — from sitting down to moving forward.</p>
         </FadeSection>

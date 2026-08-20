@@ -110,7 +110,7 @@ export default function Home() {
             </StaggerItem>
             <StaggerItem>
               <p className="font-display text-3xl md:text-5xl text-neutral-800 tracking-tight leading-tight mb-6">
-                A considered space for <span className="italic font-light text-red-600/90">the work of being human</span>.
+                A considered space for <span className="italic font-light text-sky-600/90">the work of being human</span>.
               </p>
             </StaggerItem>
             <StaggerItem>
@@ -155,7 +155,7 @@ export default function Home() {
             <FadeSection>
               <span className="text-xs uppercase tracking-[0.2em] text-red-600/80 block label-line mb-4">The practice</span>
               <p className="font-display text-2xl md:text-4xl text-neutral-800 leading-snug mb-8">
-                A quiet architecture for the mind — where you arrive as you are, and the <span className="font-light text-red-600/90">dust is allowed to settle</span>.
+                A quiet architecture for the mind — where you arrive as you are, and the <span className="font-light text-sky-600/90">dust is allowed to settle</span>.
               </p>
               <Link to="/about" className="group inline-flex items-center gap-2 text-xs uppercase tracking-widest text-neutral-800 border-b border-neutral-400 py-2 hover:gap-3 hover:border-red-600 hover:text-red-600 transition-all duration-300">
                 About the studio
