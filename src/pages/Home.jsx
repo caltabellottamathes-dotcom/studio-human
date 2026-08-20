@@ -43,9 +43,17 @@ export default function Home() {
           initial={{ clipPath: 'inset(6% 0 0 6% round 0px)', opacity: 0 }}
           animate={{ clipPath: 'inset(0 0 0 0 round 0px)', opacity: 1 }}
           transition={{ duration: 1.2, delay: 0.15, ease }}
-          className="absolute bottom-0 right-0 w-[44%] h-[48vh] md:w-[38%] md:h-screen overflow-hidden rounded-tl-[3rem] md:rounded-bl-[12rem] pointer-events-none z-0"
+          className="absolute bottom-0 right-0 w-[52%] h-[56vh] md:w-[42%] md:h-[92vh] overflow-hidden rounded-tl-[3rem] md:rounded-bl-[12rem] pointer-events-none z-0 shadow-2xl shadow-neutral-900/10"
           aria-hidden>
-          <CalmPanel height="100%" rounded="bl" tone="glacier" className="h-full" />
+          <video
+            src="https://media.base44.com/videos/public/6a863d1d060de4a10b195ae3/75bcdbf54_studioHuman.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="auto"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
         </motion.div>
 
         <motion.div
