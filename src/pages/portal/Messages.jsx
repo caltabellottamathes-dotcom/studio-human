@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import FadeSection from '@/components/FadeSection';
 import PortalPageHeader from '@/components/portal/PortalPageHeader';
 import { ErrorState } from '@/components/ListStates';
+import { useBrand } from '@/hooks/useBrand';
 
 export default function PortalMessages() {
   const [data, setData] = useState(null);
@@ -13,6 +14,7 @@ export default function PortalMessages() {
   const [sending, setSending] = useState(false);
   const [error, setError] = useState(false);
   const threadRef = useRef(null);
+  const { practitionerName } = useBrand();
 
   const fetchData = async () => {
     setLoading(true);
@@ -86,7 +88,7 @@ export default function PortalMessages() {
 
   return (
     <div className="px-6 md:px-10 lg:px-14 py-10 md:py-14 max-w-[60rem]">
-      <PortalPageHeader label="Client Portal" title="Messages" sub="Message Maya securely." />
+      <PortalPageHeader label="Client Portal" title="Messages" sub={`Message ${practitionerName} securely.`} />
 
       <FadeSection>
         <div
@@ -118,7 +120,7 @@ export default function PortalMessages() {
                       }`}
                     >
                       {m.sender === 'admin' && (
-                        <p className="font-mono text-[9px] uppercase tracking-widest text-red-600/70 mb-1">Maya</p>
+                        <p className="font-mono text-[9px] uppercase tracking-widest text-red-600/70 mb-1">{practitionerName}</p>
                       )}
                       <p className="text-sm font-light whitespace-pre-wrap leading-relaxed">{m.content}</p>
                       <p className="font-mono text-[9px] mt-1.5 text-neutral-400">

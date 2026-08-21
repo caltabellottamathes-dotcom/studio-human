@@ -10,11 +10,13 @@ import NextSessionCard from '@/components/portal/NextSessionCard';
 import MoodTrendChart from '@/components/portal/MoodTrendChart';
 import QuickActions from '@/components/portal/QuickActions';
 import { ErrorState } from '@/components/ListStates';
+import { useBrand } from '@/hooks/useBrand';
 
 export default function PortalDashboard() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
+  const { practitionerName } = useBrand();
 
   const fetchData = async () => {
     setLoading(true);
@@ -150,7 +152,7 @@ export default function PortalDashboard() {
                 {(data?.messages || []).slice(-5).reverse().map((msg) => (
                   <li key={msg.id} className="py-3 border-b border-neutral-100 last:border-0">
                     <p className="font-mono text-[9px] uppercase tracking-widest text-neutral-400 mb-1">
-                      {msg.sender === 'admin' ? 'Maya' : 'You'}
+                      {msg.sender === 'admin' ? practitionerName : 'You'}
                     </p>
                     <p className="text-sm text-neutral-700 font-light line-clamp-2">{msg.content}</p>
                   </li>

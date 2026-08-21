@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Clock, MapPin, ArrowRight } from 'lucide-react';
 import SectionShell from '@/components/admin/SectionShell';
+import { useBrand } from '@/hooks/useBrand';
 
 const TYPE_LABELS = {
   intake: 'Intake session',
@@ -13,6 +14,7 @@ const TYPE_LABELS = {
 
 export default function NextSessionCard({ upcoming = [] }) {
   const next = upcoming[0];
+  const { practitionerName } = useBrand();
 
   return (
     <SectionShell title="Your next session" label="Schedule" sub={next ? 'Coming up soon' : 'Nothing booked yet'}>
@@ -56,7 +58,7 @@ export default function NextSessionCard({ upcoming = [] }) {
             to="/portal/messages"
             className="inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-widest text-red-600 hover:gap-3 transition-all mt-1"
           >
-            Message Maya <ArrowRight className="w-3.5 h-3.5" strokeWidth={1.5} />
+            {`Message ${practitionerName}`} <ArrowRight className="w-3.5 h-3.5" strokeWidth={1.5} />
           </Link>
         </div>
       )}

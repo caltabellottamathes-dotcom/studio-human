@@ -10,6 +10,7 @@ import SectionShell from '@/components/admin/SectionShell';
 import PortalPageHeader from '@/components/portal/PortalPageHeader';
 import AnimatedCounter from '@/components/motion/AnimatedCounter';
 import { ErrorState } from '@/components/ListStates';
+import { useBrand } from '@/hooks/useBrand';
 
 const typeLabel = { homework: 'Homework', reflection: 'Reflection', exercise: 'Exercise', reading: 'Reading' };
 const statusLabel = { assigned: 'Assigned', in_progress: 'In progress', submitted: 'Submitted', reviewed: 'Reviewed' };
@@ -35,6 +36,7 @@ function MiniStat({ label, value, icon: Icon }) {
 }
 
 export default function PortalAssignments() {
+  const { practitionerName } = useBrand();
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [expanded, setExpanded] = useState(null);
@@ -182,12 +184,12 @@ export default function PortalAssignments() {
                                     <Check className="w-3 h-3" /> Submitted
                                   </p>
                                   <p className="text-sm text-neutral-600 font-light">
-                                    {a.status === 'reviewed' ? 'Maya has reviewed your submission.' : "Awaiting feedback from Maya."}
+                                    {a.status === 'reviewed' ? `${practitionerName} has reviewed your submission.` : `Awaiting feedback from ${practitionerName}.`}
                                   </p>
                                 </div>
                                 {a.status === 'reviewed' && submissionsByAssignment[a.id]?.admin_feedback && (
                                   <div className="bg-red-50/50 border border-red-100 rounded-xl p-4">
-                                    <p className="font-mono text-[10px] uppercase tracking-widest text-red-600 mb-1.5">Feedback from Maya</p>
+                                    <p className="font-mono text-[10px] uppercase tracking-widest text-red-600 mb-1.5">Feedback from {practitionerName}</p>
                                     <p className="text-sm text-neutral-700 font-light whitespace-pre-wrap leading-relaxed">{submissionsByAssignment[a.id].admin_feedback}</p>
                                   </div>
                                 )}

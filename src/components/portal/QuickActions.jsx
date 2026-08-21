@@ -1,15 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { MessageSquare, Heart, FileText, Calendar, ArrowRight } from 'lucide-react';
-
-const actions = [
-  { label: 'Message Maya', to: '/portal/messages', icon: MessageSquare },
-  { label: 'Log your mood', to: '/portal/mood', icon: Heart },
-  { label: 'Your documents', to: '/portal/documents', icon: FileText },
-  { label: 'View bookings', to: '/portal/appointments', icon: Calendar },
-];
+import { useBrand } from '@/hooks/useBrand';
 
 export default function QuickActions() {
+  const { practitionerName } = useBrand();
+  const actions = [
+    { label: `Message ${practitionerName}`, to: '/portal/messages', icon: MessageSquare },
+    { label: 'Log your mood', to: '/portal/mood', icon: Heart },
+    { label: 'Your documents', to: '/portal/documents', icon: FileText },
+    { label: 'View bookings', to: '/portal/appointments', icon: Calendar },
+  ];
+
   return (
     <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
       {actions.map((a) => (

@@ -4,6 +4,7 @@
 // (Logo, Header, Footer, Contact) read from here.
 export const BRAND = {
   name: 'studioHuman', // wordmark shown in header / footer / logo
+  practitionerName: 'Salvo', // counselor name shown across the client portal
   contact: {
     email: 'hello@studiohuman.com',
     mode: 'In person & online',
