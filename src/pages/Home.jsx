@@ -76,7 +76,7 @@ export default function Home() {
           </motion.div>
 
           <motion.h1 variants={heroItem} className="font-display text-5xl md:text-6xl lg:text-[5.5rem] text-neutral-800 leading-[0.98] md:leading-[0.9] tracking-tight max-w-[26ch]">
-            To move forward,<br className="hidden md:inline" /> first <span className="italic text-red-600/90 font-light">sit down</span>.
+            Sometimes, moving forward starts with <span className="italic text-red-600/90 font-light">sitting still</span>.
           </motion.h1>
 
           <motion.div variants={heroItem} className="mt-10 md:mt-12 md:max-w-[42ch] pr-[48%] md:pr-0">
