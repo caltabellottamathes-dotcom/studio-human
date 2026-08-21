@@ -39,7 +39,7 @@ export default function Footer() {
             <div className="flex flex-col gap-1.5">
               <button
                 onClick={() => window.dispatchEvent(new CustomEvent('open-zelfreflectie'))}
-                className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-neutral-500 hover:text-red-600 transition-colors group w-fit py-1"
+                className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-neutral-600 hover:text-red-600 transition-colors group w-fit py-1"
               >
                 {cta.reflect}
                 <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" strokeWidth={1.5} />
@@ -47,7 +47,7 @@ export default function Footer() {
               {hasPortal && (
                 <Link
                   to="/portal/dashboard"
-                  className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-neutral-500 hover:text-red-600 transition-colors group w-fit py-1"
+                  className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-neutral-600 hover:text-red-600 transition-colors group w-fit py-1"
                 >
                   Client portal
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" strokeWidth={1.5} />
@@ -69,19 +69,19 @@ export default function Footer() {
 
         {/* Bottom strip */}
         <div className="mt-6 md:mt-8 pt-5 border-t border-neutral-200/60 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
-          <nav className="flex flex-wrap gap-x-5 gap-y-1 text-sm text-neutral-500 font-light" aria-label="Footer navigation">
+          <nav className="flex flex-wrap gap-x-5 gap-y-1 text-sm text-neutral-600 font-normal" aria-label="Footer navigation">
             {navLinks.map((link) => (
               <Link key={link.label} to={link.to} className="hover:text-red-600 transition-colors">{link.label}</Link>
             ))}
           </nav>
-          <div className="flex flex-col gap-0.5 text-sm text-neutral-500 font-light md:text-right">
-            <span className="text-neutral-700">In person &amp; online</span>
+          <div className="flex flex-col gap-0.5 text-sm text-neutral-600 font-normal md:text-right">
+            <span className="text-neutral-800">In person &amp; online</span>
             <a href={`mailto:${contact.email}`} className="hover:text-red-600 transition-colors">{contact.email}</a>
           </div>
         </div>
         <div className="mt-4 flex items-center justify-between">
-          <span className="text-[10px] text-neutral-400 uppercase tracking-widest">© {new Date().getFullYear()} {legal.copyrightEntity}</span>
-          {hasAdmin && <Link to="/admin/dashboard" className="text-[10px] text-neutral-400 hover:text-red-600 transition-colors uppercase tracking-widest">Admin</Link>}
+          <span className="text-[10px] text-neutral-500 uppercase tracking-widest">© {new Date().getFullYear()} {legal.copyrightEntity}</span>
+          {hasAdmin && <Link to="/admin/dashboard" className="text-[10px] text-neutral-500 hover:text-red-600 transition-colors uppercase tracking-widest">Admin</Link>}
         </div>
       </div>
       <AssessmentLightbox />
