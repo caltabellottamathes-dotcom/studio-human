@@ -9,6 +9,7 @@ import ClientCompositionChart from '@/components/admin/ClientCompositionChart';
 import AgendaTimeline from '@/components/admin/AgendaTimeline';
 import ActivityFeed from '@/components/admin/ActivityFeed';
 import UnreadInbox from '@/components/admin/UnreadInbox';
+import LivePulse from '@/components/admin/LivePulse';
 
 export default function AdminDashboard() {
   const [data, setData] = useState(null);
@@ -62,7 +63,12 @@ export default function AdminDashboard() {
             </h1>
             <p className="text-neutral-500 font-light mt-3">An overview of your practice.</p>
           </div>
-          <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-neutral-400">{today}</p>
+          <div className="flex items-center gap-2.5">
+            <LivePulse />
+            <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-neutral-400">Live</span>
+            <span className="font-mono text-[10px] text-neutral-300">·</span>
+            <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-neutral-400">{today}</span>
+          </div>
         </div>
       </FadeSection>
 

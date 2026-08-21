@@ -1,4 +1,5 @@
 import React from 'react';
+import AnimatedCounter from '@/components/motion/AnimatedCounter';
 
 export default function AdminStatLedger({ stats = {} }) {
   const {
@@ -25,7 +26,7 @@ export default function AdminStatLedger({ stats = {} }) {
             {it.label}
           </span>
           <p className="font-display text-5xl md:text-6xl text-neutral-800 leading-none tabular-nums">
-            {it.value}
+            <AnimatedCounter to={it.value} duration={1.4} />
           </p>
           <p className="font-mono text-[10px] uppercase tracking-widest text-neutral-400 mt-3">
             {it.sub}
