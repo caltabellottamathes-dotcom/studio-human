@@ -24,6 +24,8 @@ export default function RoleRoute({ allowedRole, unauthenticatedElement }) {
   }
 
   if (user.role !== allowedRole) {
+    // Allow admins to preview the client portal; otherwise route each role to its home.
+    if (user.role === 'admin' && allowedRole === 'client') return <Outlet />;
     if (user.role === 'admin') return <Navigate to="/admin/dashboard" replace />;
     if (user.role === 'client') return <Navigate to="/portal/dashboard" replace />;
     return <Navigate to="/" replace />;
