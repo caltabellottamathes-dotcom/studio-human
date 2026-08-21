@@ -5,7 +5,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
 import FadeSection from '@/components/FadeSection';
-import PremiumImage from '@/components/motion/PremiumImage';
+import EditableImage from '@/components/beeldbank/EditableImage';
 import { StaggerGroup, StaggerItem } from '@/components/motion/Stagger';
 
 const tiers = [
@@ -109,7 +109,7 @@ export default function Pricing() {
             </FadeSection>
           </div>
           <div className="md:w-[42%] relative md:-mr-12 -mb-32 md:-mb-72 z-0 w-[52vw] -mr-6 ml-auto md:ml-0">
-            <PremiumImage src="https://media.base44.com/images/public/6a863d1d060de4a10b195ae3/1c9d3fc4e_Man_with_curly_hair_2K_202608201955.jpeg" alt="A portrait in composed stillness" height="85vh" rounded="tl" className="w-full mobile-h-closing" />
+            <EditableImage slotKey="pricing.closing" alt="A portrait in composed stillness" height="85vh" rounded="tl" className="w-full mobile-h-closing" />
           </div>
         </div>
       </section>

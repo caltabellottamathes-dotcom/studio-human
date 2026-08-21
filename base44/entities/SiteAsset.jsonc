@@ -1,0 +1,52 @@
+{
+  "name": "SiteAsset",
+  "type": "object",
+  "properties": {
+    "slot_key": {
+      "type": "string",
+      "description": "Unique identifier for an image / placeholder slot"
+    },
+    "label": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string",
+      "description": "Image URL; empty when the slot is a gradient placeholder"
+    },
+    "slot_type": {
+      "type": "string",
+      "enum": [
+        "image",
+        "panel"
+      ],
+      "default": "image"
+    },
+    "tone": {
+      "type": "string",
+      "default": "glacier",
+      "description": "Gradient tone used for panel placeholders"
+    }
+  },
+  "required": [
+    "slot_key",
+    "slot_type"
+  ],
+  "rls": {
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "read": null,
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

@@ -5,7 +5,7 @@ import Footer from '@/components/Footer';
 import FadeSection from '@/components/FadeSection';
 import PageHeader from '@/components/PageHeader';
 
-import PremiumImage from '@/components/motion/PremiumImage';
+import EditableImage from '@/components/beeldbank/EditableImage';
 import { StaggerGroup, StaggerItem } from '@/components/motion/Stagger';
 import { principles, steps } from '@/data/content';
 
@@ -43,7 +43,7 @@ export default function Aanpak() {
             </FadeSection>
           </div>
           <div className="md:col-span-7 md:col-start-6 order-1 md:order-2 md:-mr-12">
-            <PremiumImage src="https://media.base44.com/images/public/6a863d1d060de4a10b195ae3/a86df7bf1_Remake_photo_with_new_model_202608202132.jpeg" alt="Seated in conversation" height="52vh" rounded="bl" className="w-full -mr-6 md:mx-0 mobile-h-xs" />
+            <EditableImage slotKey="approach.mid" alt="Seated in conversation" height="52vh" rounded="bl" className="w-full -mr-6 md:mx-0 mobile-h-xs" />
           </div>
         </div>
       </section>
@@ -87,7 +87,7 @@ export default function Aanpak() {
       <section className="relative px-6 md:px-12 max-w-[120rem] mx-auto z-0">
         <div className="flex flex-col md:flex-row gap-8 md:gap-12">
           <div className="md:w-[42%] relative md:-ml-12 -mb-32 md:-mb-72 z-0 w-[54vw] -ml-6 order-2 md:order-1">
-            <PremiumImage src="https://media.base44.com/images/public/6a863d1d060de4a10b195ae3/682227ccd_Gemini_Generated_Image_nnix4xnnix4xnnix.jpg" alt="A figure inverted, resting against a chair" height="90vh" rounded="tr" className="w-full mobile-h-closing" />
+            <EditableImage slotKey="approach.closing" alt="A figure inverted, resting against a chair" height="90vh" rounded="tr" className="w-full mobile-h-closing" />
           </div>
           <div className="md:w-[55%] flex items-center pb-12 md:pb-16 order-1 md:order-2">
             <FadeSection>

@@ -6,7 +6,7 @@ import Footer from '@/components/Footer';
 import FadeSection from '@/components/FadeSection';
 import StruggleCard from '@/components/StruggleCard';
 
-import PremiumImage from '@/components/motion/PremiumImage';
+import EditableImage from '@/components/beeldbank/EditableImage';
 import { struggles } from '@/data/content';
 
 export default function Zorgvragen() {
@@ -51,7 +51,7 @@ export default function Zorgvragen() {
       {/* Photo floating right with struggles flowing around */}
       <section className="px-6 md:px-12 max-w-[120rem] mx-auto pb-0 md:pb-16 relative z-0 flex flex-col md:block">
         <div className="md:float-right md:ml-8 lg:ml-12 md:-mr-12 md:w-[42%] lg:w-[38%] order-2 md:order-none -mb-40 md:-mb-72 relative z-0">
-          <PremiumImage src="https://media.base44.com/images/public/6a863d1d060de4a10b195ae3/4e741b653_Man_sitting_against_foam_sheets_202608201954.jpeg" alt="A figure sitting in quiet contemplation" height="90vh" rounded="bl" className="w-[60vw] ml-auto -mr-6 md:w-full md:ml-0 md:mx-0 mobile-h-tall" />
+          <EditableImage slotKey="concerns.index" alt="A figure sitting in quiet contemplation" height="90vh" rounded="bl" className="w-[60vw] ml-auto -mr-6 md:w-full md:ml-0 md:mx-0 mobile-h-tall" />
         </div>
         <div className="border-t border-neutral-200 order-1 md:order-none">
           {struggles.map((item, i) => (

@@ -6,8 +6,7 @@ import Footer from '@/components/Footer';
 import FadeSection from '@/components/FadeSection';
 import PageHeader from '@/components/PageHeader';
 
-import CalmPanel from '@/components/CalmPanel';
-import PremiumImage from '@/components/motion/PremiumImage';
+import EditableImage from '@/components/beeldbank/EditableImage';
 import { StaggerGroup, StaggerItem } from '@/components/motion/Stagger';
 import { principles } from '@/data/content';
 
@@ -26,7 +25,7 @@ export default function Over() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16">
           <FadeSection className="col-span-1 lg:col-span-5 lg:sticky lg:top-28 self-start">
             <div className="relative -ml-6 lg:mr-0 lg:-ml-12">
-              <PremiumImage src="https://media.base44.com/images/public/6a863d1d060de4a10b195ae3/a9d0dc67a_Man_leaning_on_foam_2K_202608201954.jpeg" alt="A figure leaning back in repose" height="72vh" rounded="tr" className="w-full mobile-h-sm" />
+              <EditableImage slotKey="about.portrait" alt="A figure leaning back in repose" height="72vh" rounded="tr" className="w-full mobile-h-sm" />
               <div className="hidden lg:block absolute bottom-0 left-0 right-0 bg-neutral-50/85 backdrop-blur-md border-t border-neutral-200/50 px-6 py-4 md:px-8">
                 <span className="font-display text-lg md:text-xl text-neutral-800 block leading-tight">studioHuman</span>
                 <span className="text-[10px] uppercase tracking-[0.2em] text-red-600/80 font-medium block mt-0.5">A psychological practice</span>
@@ -81,7 +80,7 @@ export default function Over() {
             </FadeSection>
           </div>
           <div className="md:col-span-7 md:col-start-6 order-1 md:order-2 md:-mr-12">
-            <CalmPanel height="58vh" rounded="bl" tone="cliff" className="w-full -mr-6 md:mx-0 mobile-h-xs" />
+            <EditableImage slotKey="about.mid" height="58vh" rounded="bl" className="w-full -mr-6 md:mx-0 mobile-h-xs" />
           </div>
         </div>
       </section>
@@ -89,7 +88,7 @@ export default function Over() {
       <section className="relative px-6 md:px-12 max-w-[120rem] mx-auto z-0">
         <div className="flex flex-col md:flex-row gap-8 md:gap-12">
           <div className="md:w-[42%] relative md:-ml-12 -mb-32 md:-mb-72 z-0 w-[56vw] -ml-6 order-2 md:order-1">
-            <PremiumImage src="https://media.base44.com/images/public/6a863d1d060de4a10b195ae3/35ec8f9a0_Remake_photo_using_reference_man_202608202022.jpeg" alt="A figure in motion across a yellow sofa" height="90vh" rounded="tr" className="w-full mobile-h-closing" />
+            <EditableImage slotKey="about.closing" alt="A figure in motion across a yellow sofa" height="90vh" rounded="tr" className="w-full mobile-h-closing" />
           </div>
           <div className="md:w-[55%] flex items-center pb-12 md:pb-16 order-1 md:order-2">
             <FadeSection>

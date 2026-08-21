@@ -42,6 +42,9 @@ import AdminAssessment from '@/pages/admin/Assessment';
 import AdminRequests from '@/pages/admin/Requests';
 import { useTier } from '@/hooks/useTier';
 import LicenseGate from '@/components/LicenseGate';
+import { BeeldbankProvider } from '@/lib/beeldbankContext';
+import BeeldbankButton from '@/components/beeldbank/BeeldbankButton';
+import BeeldbankModal from '@/components/beeldbank/BeeldbankModal';
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
@@ -118,6 +121,8 @@ const AuthenticatedApp = () => {
           <Route path="*" element={<PageTransition><PageNotFound /></PageTransition>} />
         </Routes>
       </AnimatePresence>
+      <BeeldbankButton />
+      <BeeldbankModal />
     </>
   );
 };
@@ -128,7 +133,9 @@ function App() {
       <QueryClientProvider client={queryClientInstance}>
         <Router>
           <ScrollToTop />
-          <AuthenticatedApp />
+          <BeeldbankProvider>
+            <AuthenticatedApp />
+          </BeeldbankProvider>
         </Router>
         <OpeningLoader />
         <CustomCursor />
