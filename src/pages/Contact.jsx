@@ -122,7 +122,7 @@ export default function Contact() {
 
       <PageHeader
         label="Start the conversation"
-        title={<>Take a first, <span className="italic font-light text-red-600/90">quiet</span> step.</>}
+        title={<>Take a first, <span className="font-mono font-light text-red-600/90">quiet</span> step.</>}
         intro="Fill in the form and we'll get back to you within two business days to arrange a no-obligation first conversation."
       />
 
@@ -165,7 +165,7 @@ export default function Contact() {
           <FadeSection className="col-span-1 lg:col-span-4">
             <span className="text-xs uppercase tracking-[0.2em] text-red-600/80 block label-line mb-4">Answers to your questions</span>
             <h2 className="font-display text-3xl md:text-5xl text-neutral-800 tracking-tight">
-              Frequently asked <span className="italic font-light text-red-600/90">questions</span>.
+              Frequently asked <span className="font-mono font-light text-red-600/90">questions</span>.
             </h2>
             <p className="text-neutral-500 text-sm md:text-base font-light mt-6 leading-normal">
               If your question isn't answered here, feel free to reach out via the form above.

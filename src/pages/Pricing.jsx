@@ -61,7 +61,7 @@ export default function Pricing() {
           </Link>
           <span className="text-xs uppercase tracking-[0.25em] text-red-600/80 block label-line mb-6">Transparent & honest</span>
           <h1 className="font-display text-5xl md:text-7xl text-neutral-800 leading-tight tracking-tight mb-6">
-            Rates & <span className="italic font-light text-red-600/90">pricing</span>.
+            Rates & <span className="font-mono font-light text-red-600/90">pricing</span>.
           </h1>
           <p className="text-neutral-600 text-base md:text-lg font-light max-w-[44ch] leading-normal">
             Sessions should be clear — including when it comes to cost. Below are the options and rates. Sessions take place at the studio or online. Questions? Reach out, and we'll find what fits your situation.

@@ -33,7 +33,7 @@ export default function Zorgvragen() {
           </Link>
           <span className="text-xs uppercase tracking-[0.25em] text-red-600/80 block label-line mb-6 font-medium">Concerns</span>
           <h1 className="font-display text-5xl md:text-7xl text-neutral-800 leading-[1.1] tracking-tight mb-6 max-w-[18ch]">
-            What brings you <span className="italic font-light text-red-600/90">here</span>.
+            What brings you <span className="font-mono font-light text-red-600/90">here</span>.
           </h1>
           <p className="text-neutral-600 text-base md:text-lg font-light max-w-[44ch] leading-normal">
             You don't need to name it precisely. These are common themes — not a checklist, not a diagnosis. Whatever you are carrying is welcome here.

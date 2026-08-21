@@ -16,7 +16,7 @@ export default function Aanpak() {
 
       <PageHeader
         label="Our approach"
-        title={<>Sit. Blur. <span className="italic font-light text-red-600/90">Move</span>.</>}
+        title={<>Sit. Blur. <span className="font-mono font-light text-red-600/90">Move</span>.</>}
         intro="At the heart of our method lies a simple dialectic: to move forward, you first need to sit down. From stillness, through the blur, toward deliberate momentum — at your own pace." />
 
       <section className="px-6 md:px-12 max-w-[120rem] mx-auto pb-20 md:pb-32">
@@ -38,7 +38,7 @@ export default function Aanpak() {
           <div className="col-span-1 md:col-span-5 md:col-start-1 order-2 md:order-1">
             <FadeSection>
               <p className="font-display text-2xl md:text-4xl text-neutral-800 leading-tight tracking-tight">
-                Sometimes it is a clarifying conversation, sometimes practical support, sometimes simply <span className="italic font-light text-red-600/90">sitting down</span> together.
+                Sometimes it is a clarifying conversation, sometimes practical support, sometimes simply <span className="font-mono font-light text-red-600/90">sitting down</span> together.
               </p>
             </FadeSection>
           </div>
@@ -52,7 +52,7 @@ export default function Aanpak() {
         <FadeSection className="max-w-2xl mx-auto mb-16 md:mb-24 text-center">
           <span className="text-xs uppercase tracking-[0.2em] text-red-600/80 block label-line mb-4">The process</span>
           <h2 className="font-display text-3xl md:text-5xl text-neutral-800 tracking-tight">
-            How we move <span className="italic font-light text-sky-600/90">together</span>.
+            How we move <span className="font-mono font-light text-sky-600/90">together</span>.
           </h2>
           <p className="text-neutral-500 text-base md:text-lg font-light mt-4">Four unhurried steps — from sitting down to moving forward.</p>
         </FadeSection>

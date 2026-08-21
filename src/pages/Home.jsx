@@ -76,7 +76,9 @@ export default function Home() {
           </motion.div>
 
           <motion.h1 variants={heroItem} className="font-display text-5xl md:text-6xl lg:text-[5.5rem] text-neutral-800 leading-[0.98] md:leading-[0.9] tracking-tight max-w-[26ch]">
-            Sometimes, moving forward starts with <span className="italic text-red-600/90 font-light">sitting still</span>.
+            Sometimes,<br />
+            moving forward<br />
+            starts with <span className="font-mono text-red-600/90 font-light">sitting still</span>.
           </motion.h1>
 
           <motion.div variants={heroItem} className="mt-10 md:mt-12 md:max-w-[42ch] pr-[48%] md:pr-0">
@@ -110,7 +112,7 @@ export default function Home() {
             </StaggerItem>
             <StaggerItem>
               <p className="font-display text-3xl md:text-5xl text-neutral-800 tracking-tight leading-tight mb-6">
-                A considered space for <span className="italic font-light text-sky-600/90">the work of being human</span>.
+                A considered space for <span className="font-mono font-light text-sky-600/90">the work of being human</span>.
               </p>
             </StaggerItem>
             <StaggerItem>
