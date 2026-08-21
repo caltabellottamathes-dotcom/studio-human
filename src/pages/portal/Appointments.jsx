@@ -4,9 +4,32 @@ import { Calendar, Clock, MapPin, Check, X, AlertCircle } from 'lucide-react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
+import FadeSection from '@/components/FadeSection';
+import SectionShell from '@/components/admin/SectionShell';
+import PortalPageHeader from '@/components/portal/PortalPageHeader';
+import AnimatedCounter from '@/components/motion/AnimatedCounter';
 import { LoadingSkeleton, EmptyState, ErrorState } from '@/components/ListStates';
 
 const aptTypeLabel = { intake: 'Intake session', session: 'Session', online: 'Online session', physical: 'In-person session', phone: 'Phone call' };
+
+const statusMeta = {
+  scheduled: { label: 'Scheduled', cls: 'text-red-600', icon: Check },
+  completed: { label: 'Completed', cls: 'text-emerald-600', icon: Check },
+  cancelled: { label: 'Cancelled', cls: 'text-neutral-400', icon: X },
+  no_show: { label: 'Missed', cls: 'text-neutral-400', icon: X },
+};
+
+function MiniStat({ label, value, icon: Icon }) {
+  return (
+    <div className="bg-neutral-50 px-6 py-7 md:px-8 md:py-9">
+      <Icon className="w-4 h-4 text-red-600/70 mb-3" strokeWidth={1.5} />
+      <p className="font-display text-4xl md:text-5xl text-neutral-800 leading-none tabular-nums">
+        <AnimatedCounter to={value} duration={1.2} />
+      </p>
+      <p className="font-mono text-[10px] uppercase tracking-widest text-neutral-400 mt-2">{label}</p>
+    </div>
+  );
+}
 
 export default function PortalAppointments() {
   const [data, setData] = useState(null);
@@ -39,7 +62,7 @@ export default function PortalAppointments() {
       await base44.functions.invoke('clientRequestAppointmentChange', {
         appointment_id: requestDialog.id,
         request_type: requestDialog.type,
-        note: requestNote
+        note: requestNote,
       });
       setRequestDialog(null);
       setRequestNote('');
@@ -53,70 +76,62 @@ export default function PortalAppointments() {
 
   const today = new Date().toISOString().split('T')[0];
   const all = data?.appointments || [];
-  const upcoming = all.filter(a => a.status === 'scheduled' && a.date >= today).sort((a, b) => (a.date + a.start_time).localeCompare(b.date + b.start_time));
-  const past = all.filter(a => !(a.status === 'scheduled' && a.date >= today)).sort((a, b) => b.date.localeCompare(a.date));
+  const upcoming = all.filter((a) => a.status === 'scheduled' && a.date >= today).sort((a, b) => (a.date + a.start_time).localeCompare(b.date + b.start_time));
+  const past = all.filter((a) => !(a.status === 'scheduled' && a.date >= today)).sort((a, b) => b.date.localeCompare(a.date));
+  const completedCount = all.filter((a) => a.status === 'completed').length;
 
-  const AppointmentCard = ({ a }) => (
-    <div className="bg-white rounded-xl border border-neutral-200 p-5">
-      <div className="flex items-start gap-4">
-        <div className="w-12 h-12 rounded-lg bg-red-50 flex flex-col items-center justify-center flex-shrink-0">
-          <span className="text-[9px] uppercase text-red-600 leading-none">{new Date(a.date).toLocaleDateString('en-US', { month: 'short' })}</span>
-          <span className="text-base font-display text-red-700 leading-none mt-0.5">{new Date(a.date).getDate()}</span>
-        </div>
-        <div className="flex-1 min-w-0">
-          <p className="text-sm text-neutral-800 font-medium">{aptTypeLabel[a.type] || a.type}</p>
-          <div className="flex flex-wrap items-center gap-x-3 gap-y-1 mt-1">
-            <span className="text-xs text-neutral-500 flex items-center gap-1"><Clock className="w-3 h-3" /> {a.start_time} · {a.duration_minutes} min</span>
-            {a.location && <span className="text-xs text-neutral-500 flex items-center gap-1"><MapPin className="w-3 h-3" /> {a.location}</span>}
-          </div>
-          {a.client_visible_notes && <p className="text-xs text-neutral-500 mt-2 font-light bg-neutral-50 rounded-lg p-3">{a.client_visible_notes}</p>}
-          <div className="mt-2 flex flex-wrap items-center gap-2">
-            <span className={`text-[9px] uppercase tracking-widest px-2 py-0.5 rounded-full flex items-center gap-1 ${
-              a.status === 'scheduled' ? 'bg-blue-50 text-blue-600' :
-              a.status === 'completed' ? 'bg-emerald-50 text-emerald-600' :
-              'bg-neutral-100 text-neutral-400'
-            }`}>
-              {a.status === 'scheduled' && <Check className="w-3 h-3" />}
-              {a.status === 'completed' && <Check className="w-3 h-3" />}
-              {a.status === 'cancelled' && <X className="w-3 h-3" />}
-              {a.status === 'scheduled' ? 'Scheduled' : a.status === 'completed' ? 'Completed' : 'Cancelled'}
-            </span>
-            {a.client_request && a.client_request !== 'none' && (
-              <span className="text-[9px] uppercase tracking-widest px-2 py-0.5 rounded-full bg-amber-50 text-amber-600 flex items-center gap-1">
-                <AlertCircle className="w-3 h-3" />
-                {a.client_request === 'cancel' ? 'Cancel requested' : 'Reschedule requested'}
-              </span>
-            )}
-          </div>
-        </div>
+  const AppointmentRow = ({ a, isUpcoming }) => (
+    <li className="flex items-start gap-5 py-5 border-b border-neutral-100 last:border-0">
+      <div className="w-14 flex-shrink-0 text-center">
+        <span className="font-mono text-[9px] uppercase tracking-widest text-red-600/70 block">
+          {new Date(a.date).toLocaleDateString('en-US', { month: 'short' })}
+        </span>
+        <span className="font-display text-2xl text-neutral-800 leading-none tabular-nums">{new Date(a.date).getDate()}</span>
       </div>
-      {a.status === 'scheduled' && (!a.client_request || a.client_request === 'none') && (
-        <div className="mt-3 pt-3 border-t border-neutral-100 flex gap-2">
-          <button
-            onClick={() => { setRequestDialog({ id: a.id, type: 'reschedule' }); setRequestNote(''); }}
-            className="text-[10px] uppercase tracking-widest text-neutral-500 hover:text-red-600 transition-colors"
-          >
-            Request to reschedule
-          </button>
-          <span className="text-neutral-200">·</span>
-          <button
-            onClick={() => { setRequestDialog({ id: a.id, type: 'cancel' }); setRequestNote(''); }}
-            className="text-[10px] uppercase tracking-widest text-neutral-500 hover:text-red-600 transition-colors"
-          >
-            Request to cancel
-          </button>
+      <div className="flex-1 min-w-0">
+        <div className="flex items-center gap-3 flex-wrap">
+          <p className="font-display text-lg text-neutral-800">{aptTypeLabel[a.type] || a.type}</p>
+          {statusMeta[a.status] && (
+            <span className={`inline-flex items-center gap-1 font-mono text-[9px] uppercase tracking-widest ${statusMeta[a.status].cls}`}>
+              {React.createElement(statusMeta[a.status].icon, { className: 'w-3 h-3' })}
+              {statusMeta[a.status].label}
+            </span>
+          )}
         </div>
-      )}
-    </div>
+        <p className="font-mono text-[11px] uppercase tracking-widest text-neutral-400 mt-1.5 flex items-center gap-2 flex-wrap">
+          <span className="flex items-center gap-1.5"><Clock className="w-3.5 h-3.5" strokeWidth={1.5} /> {a.start_time} · {a.duration_minutes} min</span>
+          {a.location && <span className="flex items-center gap-1.5"><MapPin className="w-3.5 h-3.5" strokeWidth={1.5} /> {a.location}</span>}
+        </p>
+        {a.client_visible_notes && <p className="text-sm text-neutral-500 font-light mt-2 bg-neutral-50 rounded-xl p-3 leading-relaxed">{a.client_visible_notes}</p>}
+        {a.client_request && a.client_request !== 'none' && (
+          <span className="inline-flex items-center gap-1.5 mt-2 font-mono text-[9px] uppercase tracking-widest text-amber-700 bg-amber-50 px-2.5 py-1 rounded-full">
+            <AlertCircle className="w-3 h-3" /> {a.client_request === 'cancel' ? 'Cancel requested' : 'Reschedule requested'}
+          </span>
+        )}
+        {isUpcoming && a.status === 'scheduled' && (!a.client_request || a.client_request === 'none') && (
+          <div className="mt-3 flex items-center gap-4">
+            <button
+              onClick={() => { setRequestDialog({ id: a.id, type: 'reschedule' }); setRequestNote(''); }}
+              className="font-mono text-[10px] uppercase tracking-widest text-neutral-500 hover:text-red-600 transition-colors"
+            >
+              Request to reschedule
+            </button>
+            <span className="text-neutral-200">·</span>
+            <button
+              onClick={() => { setRequestDialog({ id: a.id, type: 'cancel' }); setRequestNote(''); }}
+              className="font-mono text-[10px] uppercase tracking-widest text-neutral-500 hover:text-red-600 transition-colors"
+            >
+              Request to cancel
+            </button>
+          </div>
+        )}
+      </div>
+    </li>
   );
 
   return (
-    <div className="p-6 md:p-10 max-w-3xl">
-      <div className="mb-8">
-        <span className="text-[10px] uppercase tracking-[0.25em] text-red-600/80 block mb-2">Client Portal</span>
-        <h1 className="font-display text-3xl md:text-4xl text-neutral-800 tracking-tight">Appointments</h1>
-        <p className="text-neutral-500 text-sm font-light mt-2">An overview of your scheduled and past appointments.</p>
-      </div>
+    <div className="px-6 md:px-10 lg:px-14 py-10 md:py-14 max-w-[60rem]">
+      <PortalPageHeader label="Client Portal" title="Appointments" sub="An overview of your scheduled and past appointments." />
 
       {loading ? (
         <LoadingSkeleton lines={2} />
@@ -124,26 +139,27 @@ export default function PortalAppointments() {
         <ErrorState onRetry={fetchData} />
       ) : (
         <>
-          <div className="mb-8">
-            <h2 className="font-display text-lg text-neutral-800 mb-4 flex items-center gap-2">
-              <Calendar className="w-4 h-4 text-red-600" strokeWidth={1.5} /> Upcoming
-            </h2>
-            {upcoming.length === 0 ? (
-              <EmptyState icon={Calendar} title="No upcoming appointments." />
-            ) : (
-              <div className="space-y-3">
-                {upcoming.map(a => <AppointmentCard key={a.id} a={a} />)}
-              </div>
-            )}
+          <div className="grid grid-cols-2 gap-px bg-neutral-200 border-y border-neutral-200 rounded-[1.5rem] overflow-hidden mb-8">
+            <MiniStat label="Upcoming" value={upcoming.length} icon={Calendar} />
+            <MiniStat label="Completed" value={completedCount} icon={Check} />
           </div>
 
+          <FadeSection className="mb-8">
+            <SectionShell title="Upcoming" label="Schedule" sub="">
+              {upcoming.length === 0 ? (
+                <p className="font-mono text-[11px] uppercase tracking-widest text-neutral-400 py-6">No upcoming appointments.</p>
+              ) : (
+                <ul>{upcoming.map((a) => <AppointmentRow key={a.id} a={a} isUpcoming />)}</ul>
+              )}
+            </SectionShell>
+          </FadeSection>
+
           {past.length > 0 && (
-            <div>
-              <h2 className="font-display text-lg text-neutral-800 mb-4">History</h2>
-              <div className="space-y-3">
-                {past.map(a => <AppointmentCard key={a.id} a={a} />)}
-              </div>
-            </div>
+            <FadeSection>
+              <SectionShell title="History" label="Past" sub="">
+                <ul>{past.map((a) => <AppointmentRow key={a.id} a={a} />)}</ul>
+              </SectionShell>
+            </FadeSection>
           )}
         </>
       )}
@@ -155,20 +171,20 @@ export default function PortalAppointments() {
               {requestDialog?.type === 'cancel' ? 'Request to cancel' : 'Request to reschedule'}
             </DialogTitle>
           </DialogHeader>
-          <p className="text-sm text-neutral-500">
+          <p className="text-sm text-neutral-500 font-light">
             {requestDialog?.type === 'cancel'
               ? 'Your counselor will be notified and will follow up to confirm the cancellation.'
               : 'Your counselor will be notified and will reach out to arrange a new time.'}
           </p>
           <Textarea
             value={requestNote}
-            onChange={e => setRequestNote(e.target.value)}
+            onChange={(e) => setRequestNote(e.target.value)}
             rows={3}
             placeholder="Add a note (optional)..."
           />
           <div className="flex gap-2">
             <Button variant="outline" onClick={() => setRequestDialog(null)} className="flex-1">Cancel</Button>
-            <Button onClick={submitRequest} disabled={submitting} className="flex-1 bg-neutral-900 hover:bg-black">
+            <Button onClick={submitRequest} disabled={submitting} className="flex-1 bg-red-600 hover:bg-red-700 text-red-50">
               {submitting ? 'Sending...' : 'Send request'}
             </Button>
           </div>
