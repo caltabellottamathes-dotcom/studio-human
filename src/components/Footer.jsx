@@ -6,6 +6,7 @@ import AssessmentLightbox from '@/components/assessment/AssessmentLightbox';
 import BrandedButton from '@/components/BrandedButton';
 import { useTier } from '@/hooks/useTier';
 import { useBrand } from '@/hooks/useBrand';
+import { useBeeldbank } from '@/lib/beeldbankContext';
 
 const ease = [0.25, 0.1, 0.25, 1];
 
@@ -21,6 +22,7 @@ const navLinks = [
 export default function Footer() {
   const { portal: hasPortal, admin: hasAdmin } = useTier();
   const { name, contact, cta, legal } = useBrand();
+  const { toggleMode, saving, dirtyCount } = useBeeldbank();
   return (
     <motion.footer
       initial={{ opacity: 0, y: 40 }}
@@ -79,9 +81,21 @@ export default function Footer() {
             <a href={`mailto:${contact.email}`} className="hover:text-red-600 transition-colors">{contact.email}</a>
           </div>
         </div>
-        <div className="mt-4 flex items-center justify-between">
+        <div className="mt-4 flex items-center justify-between gap-4">
           <span className="text-[10px] text-neutral-500 uppercase tracking-widest">© {new Date().getFullYear()} {legal.copyrightEntity}</span>
-          {hasAdmin && <Link to="/admin/dashboard" className="text-[10px] text-neutral-500 hover:text-red-600 transition-colors uppercase tracking-widest">Admin</Link>}
+          <div className="flex items-center gap-4">
+            {hasAdmin && (
+              <button
+                type="button"
+                onClick={toggleMode}
+                disabled={saving}
+                className="text-[10px] text-neutral-500 hover:text-red-600 transition-colors uppercase tracking-widest disabled:opacity-50"
+              >
+                {saving ? 'Saving…' : `Image bank${dirtyCount ? ` (${dirtyCount})` : ''}`}
+              </button>
+            )}
+            {hasAdmin && <Link to="/admin/dashboard" className="text-[10px] text-neutral-500 hover:text-red-600 transition-colors uppercase tracking-widest">Admin</Link>}
+          </div>
         </div>
       </div>
       <AssessmentLightbox />

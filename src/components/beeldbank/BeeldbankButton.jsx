@@ -21,7 +21,7 @@ export default function BeeldbankButton() {
       aria-pressed={on}
     >
       {saving ? <Loader2 className="w-4 h-4 animate-spin" /> : <Images className="w-4 h-4" />}
-      {on ? (saving ? 'Opslaan…' : `Opslaan${dirtyCount ? ` (${dirtyCount})` : ''}`) : 'Beeldbank Modus'}
+      {on ? (saving ? 'Saving…' : `Save${dirtyCount ? ` (${dirtyCount})` : ''}`) : 'Image bank'}
     </button>
   );
 }
