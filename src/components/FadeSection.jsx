@@ -13,7 +13,7 @@ const initialStyles = {
 
 export default function FadeSection({ children, className, delay = 0, variant = 'up' }) {
   const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: '-80px' });
+  const inView = useInView(ref, { once: true, margin: '-40px' });
   const initial = initialStyles[variant] || initialStyles.up;
   return (
     <motion.div

@@ -50,7 +50,7 @@ export default function Zorgvragen() {
 
       {/* Photo floating right with struggles flowing around */}
       <section className="px-6 md:px-12 max-w-[120rem] mx-auto pb-0 md:pb-16 relative z-0 flex flex-col md:block">
-        <div className="md:float-right md:ml-8 lg:ml-12 md:-mr-12 md:w-[42%] lg:w-[38%] order-2 md:order-none -mb-40 md:-mb-72 relative z-0">
+        <div className="md:float-right md:ml-8 lg:ml-12 md:-mr-12 md:w-[42%] lg:w-[38%] order-2 md:order-none md:mt-20 -mb-40 md:-mb-72 relative z-0">
           <EditableImage slotKey="concerns.index" alt="A figure sitting in quiet contemplation" height="90vh" rounded="bl" className="w-[60vw] ml-auto -mr-6 md:w-full md:ml-0 md:mx-0 mobile-h-tall" />
         </div>
         <div className="border-t border-neutral-200 order-1 md:order-none">

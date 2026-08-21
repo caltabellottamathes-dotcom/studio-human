@@ -14,7 +14,7 @@ export function StaggerGroup({ children, className, stagger = 0.1, delay = 0 }) 
       className={className}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, margin: '-60px' }}
+      viewport={{ once: true, margin: '-40px' }}
       variants={{ visible: { transition: { staggerChildren: stagger, delayChildren: delay } } }}
     >
       {children}

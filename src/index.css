@@ -56,11 +56,11 @@
 
 @layer base {
   :root {
-    --background: 197 17% 84%;
+    --background: 56 12% 96%;
     --foreground: 59 86% 14%;
-    --card: 197 22% 88%;
+    --card: 56 16% 93%;
     --card-foreground: 59 86% 14%;
-    --popover: 197 22% 88%;
+    --popover: 56 16% 93%;
     --popover-foreground: 59 86% 14%;
     --primary: 56 52% 44%;
     --primary-foreground: 197 30% 94%;
@@ -85,7 +85,7 @@
     --font-body: 'Lekton', ui-monospace, monospace;
     --font-display: 'FONTSPRING DEMO - The Seasons Light', 'Cormorant Garamond', Georgia, serif;
     --font-mono: 'Lekton', ui-monospace, monospace;
-    --sidebar-background: 197 17% 84%;
+    --sidebar-background: 56 12% 94%;
     --sidebar-foreground: 59 86% 14%;
     --sidebar-primary: 56 52% 44%;
     --sidebar-primary-foreground: 197 30% 94%;

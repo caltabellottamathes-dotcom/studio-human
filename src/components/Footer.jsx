@@ -33,8 +33,10 @@ export default function Footer() {
       <div className="max-w-[120rem] mx-auto px-6 md:px-12 py-6 md:py-14">
         <div className="mb-6 md:mb-10">
           <span className="text-xs uppercase tracking-[0.25em] text-red-600/80 block label-line mb-4 font-medium">{name}</span>
-          <p className="font-display text-xl md:text-2xl text-neutral-800 leading-[1.1] tracking-tight max-w-[24ch]">
-            A considered space for <span className="font-mono font-light text-red-600/90">the work of being human</span>.
+          <p className="font-display text-xl md:text-2xl text-neutral-800 leading-[1.15] tracking-tight max-w-[28ch]">
+            Sometimes,<br />
+            moving forward<br />
+            <span className="font-mono font-light text-red-600/90">starts with sitting still</span>.
           </p>
           <div className="mt-3 md:mt-4 flex flex-col gap-1 md:gap-2">
             <button

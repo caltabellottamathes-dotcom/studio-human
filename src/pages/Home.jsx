@@ -111,8 +111,9 @@ export default function Home() {
               <span className="text-xs uppercase tracking-[0.2em] text-red-600/80 block label-line mb-6 font-medium">studioHuman</span>
             </StaggerItem>
             <StaggerItem>
-              <p className="font-display text-3xl md:text-5xl text-neutral-800 tracking-tight leading-tight mb-6">
-                A considered space for <span className="font-mono font-light text-sky-600/90">the work of being human</span>.
+              <p className="font-display text-3xl md:text-5xl text-neutral-800 tracking-tight leading-[1.08] mb-6">
+                A considered space for<br />
+                <span className="font-mono font-light text-sky-600/90">the work of being human</span>.
               </p>
             </StaggerItem>
             <StaggerItem>
