@@ -26,7 +26,7 @@ const panelRounded = {
 };
 
 export default function EditableImage({ slotKey, alt = '', height = '70vh', rounded = 'bl', className = '' }) {
-  const { mode, getSlot, openGallery } = useBeeldbank();
+  const { mode, getSlot, openSlot } = useBeeldbank();
   const slot = getSlot(slotKey);
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] });
@@ -68,7 +68,7 @@ export default function EditableImage({ slotKey, alt = '', height = '70vh', roun
       {isImage ? renderImage('100%', 'w-full h-full') : renderPanel('100%', 'w-full h-full')}
       <button
         type="button"
-        onClick={() => openGallery()}
+        onClick={() => openSlot(slotKey)}
         className={`absolute inset-0 z-20 flex items-center justify-center bg-black/0 hover:bg-black/25 transition-colors group ${r}`}
         aria-label={`Edit image: ${slot.label}`}
       >
