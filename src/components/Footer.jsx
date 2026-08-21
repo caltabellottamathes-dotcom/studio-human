@@ -23,59 +23,63 @@ export default function Footer() {
   const { name, contact, cta, legal } = useBrand();
   return (
     <motion.footer
-      initial={{ opacity: 0, y: 60 }}
+      initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-40px' }}
-      transition={{ duration: 0.8, ease }}
-      className="relative z-20 bg-white/5 backdrop-blur-md text-neutral-800 mx-4 md:mx-8 mb-4 md:mb-8 rounded-[2rem] md:rounded-[3rem] shadow-xl shadow-neutral-900/10 border border-red-600/20"
+      transition={{ duration: 0.7, ease }}
+      className="relative z-20 bg-white/5 backdrop-blur-md text-neutral-800 mx-4 md:mx-8 mb-4 md:mb-8 rounded-[1.5rem] md:rounded-[2rem] shadow-lg shadow-neutral-900/10 border border-red-600/20"
       role="contentinfo"
     >
-      <div className="max-w-[120rem] mx-auto px-6 md:px-12 py-6 md:py-14">
-        <div className="mb-6 md:mb-10">
-          <span className="text-xs uppercase tracking-[0.25em] text-red-600/80 block label-line mb-4 font-medium">{name}</span>
-          <p className="font-display text-xl md:text-2xl text-neutral-800 leading-[1.15] tracking-tight max-w-[28ch]">
-            Sometimes,<br />
-            moving forward<br />
-            <span className="font-mono font-light text-red-600/90">starts with sitting still</span>.
-          </p>
-          <div className="mt-3 md:mt-4 flex flex-col gap-1 md:gap-2">
-            <button
-              onClick={() => window.dispatchEvent(new CustomEvent('open-zelfreflectie'))}
-              className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-neutral-500 hover:text-red-600 transition-colors group w-fit py-1.5"
-            >
-              {cta.reflect}
-              <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" strokeWidth={1.5} />
-            </button>
-            {hasPortal && (
-              <Link
-                to="/portal/dashboard"
-                className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-neutral-500 hover:text-red-600 transition-colors group w-fit py-1.5"
+      <div className="max-w-[120rem] mx-auto px-6 md:px-12 py-6 md:py-9">
+        {/* Main composition */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-start">
+          {/* Left: CTA top-left, portal links placed lower */}
+          <div className="md:col-span-5 flex flex-col gap-5">
+            <BrandedButton to="/contact" compact>{cta.primary}</BrandedButton>
+            <div className="flex flex-col gap-1.5">
+              <button
+                onClick={() => window.dispatchEvent(new CustomEvent('open-zelfreflectie'))}
+                className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-neutral-500 hover:text-red-600 transition-colors group w-fit py-1"
               >
-                Client portal
+                {cta.reflect}
                 <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" strokeWidth={1.5} />
-              </Link>
-            )}
+              </button>
+              {hasPortal && (
+                <Link
+                  to="/portal/dashboard"
+                  className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-neutral-500 hover:text-red-600 transition-colors group w-fit py-1"
+                >
+                  Client portal
+                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" strokeWidth={1.5} />
+                </Link>
+              )}
+            </div>
           </div>
-          <div className="mt-4 md:mt-6">
-                        <BrandedButton to="/contact" compact>{cta.primary}</BrandedButton>
+
+          {/* Right: wordmark + catchphrase, tight composition */}
+          <div className="md:col-span-7 md:text-right">
+            <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-red-600/80 block mb-3">{name}</span>
+            <p className="font-display text-2xl md:text-[2rem] leading-[1.04] tracking-tight text-neutral-800">
+              Sometimes,<br />
+              moving forward<br />
+              <span className="font-mono font-light text-red-600/90">starts with sitting still</span>.
+            </p>
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-3 md:gap-6">
-          <nav className="flex flex-col gap-1 text-sm text-neutral-500 font-light w-fit" aria-label="Footer navigation">
-            {navLinks.map(link => (
-              <Link key={link.label} to={link.to} className="hover:text-red-600 transition-colors w-fit py-1">
-                {link.label}
-              </Link>
+        {/* Bottom strip */}
+        <div className="mt-6 md:mt-8 pt-5 border-t border-neutral-200/60 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+          <nav className="flex flex-wrap gap-x-5 gap-y-1 text-sm text-neutral-500 font-light" aria-label="Footer navigation">
+            {navLinks.map((link) => (
+              <Link key={link.label} to={link.to} className="hover:text-red-600 transition-colors">{link.label}</Link>
             ))}
           </nav>
-          <div className="flex flex-col gap-1 text-sm text-neutral-500 font-light md:text-right">
-            <p className="text-neutral-700">In person &amp; online</p>
-            <a href={`mailto:${contact.email}`} className="hover:text-red-600 transition-colors py-1">{contact.email}</a>
+          <div className="flex flex-col gap-0.5 text-sm text-neutral-500 font-light md:text-right">
+            <span className="text-neutral-700">In person &amp; online</span>
+            <a href={`mailto:${contact.email}`} className="hover:text-red-600 transition-colors">{contact.email}</a>
           </div>
         </div>
-
-        <div className="mt-6 pt-4 md:mt-8 border-t border-neutral-200/60 flex items-center justify-between">
+        <div className="mt-4 flex items-center justify-between">
           <span className="text-[10px] text-neutral-400 uppercase tracking-widest">© {new Date().getFullYear()} {legal.copyrightEntity}</span>
           {hasAdmin && <Link to="/admin/dashboard" className="text-[10px] text-neutral-400 hover:text-red-600 transition-colors uppercase tracking-widest">Admin</Link>}
         </div>
