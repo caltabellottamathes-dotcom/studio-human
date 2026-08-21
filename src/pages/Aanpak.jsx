@@ -24,7 +24,7 @@ export default function Aanpak() {
           {principles.map((p) => (
             <StaggerItem key={p.num}>
               <div className="group bg-neutral-50 hover:bg-white py-10 md:py-14 px-6 md:px-10 h-full transition-colors duration-300">
-                <span className="font-display text-4xl md:text-6xl text-ember-500 leading-none block mb-6">{p.num}</span>
+                <span className="font-mono text-4xl md:text-6xl text-ember-500 leading-none block mb-6">{p.num}</span>
                 <h3 className="font-display text-2xl md:text-3xl text-neutral-800 mb-3 md:mb-4">{p.title}</h3>
                 <p className="text-neutral-500 text-base md:text-lg font-light leading-relaxed">{p.desc}</p>
               </div>
@@ -93,7 +93,7 @@ export default function Aanpak() {
             <FadeSection>
               <span className="text-xs uppercase tracking-[0.2em] text-red-600/80 block label-line mb-4">Momentum</span>
               <p className="font-display text-2xl md:text-4xl text-neutral-800 leading-snug">
-                Momentum cannot be forced from exhaustion. We gather the strength and clarity in the pause — so that when you stand back up, you move with <span className="font-light text-red-600/90">deliberate, sustainable pace</span>.
+                Momentum cannot be forced from exhaustion. We gather the strength and clarity in the pause — so that when you stand back up, you move with <span className="font-mono font-light text-red-600/90">deliberate, sustainable pace</span>.
               </p>
             </FadeSection>
           </div>

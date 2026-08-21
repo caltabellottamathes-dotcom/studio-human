@@ -86,7 +86,7 @@ export default function Pricing() {
                     <div key={ii} className={`flex justify-between items-baseline py-3 ${ii < tier.items.length - 1 ? 'border-b border-neutral-100' : ''}`}>
                       <span className="text-neutral-700 text-sm md:text-base font-light pr-6">{item.label}</span>
                       {item.price && (
-                        <span className="text-red-600 font-display text-sm md:text-base flex-shrink-0">{item.price}</span>
+                        <span className="text-red-600 font-mono text-sm md:text-base flex-shrink-0">{item.price}</span>
                       )}
                     </div>
                   ))}
@@ -104,7 +104,7 @@ export default function Pricing() {
             <FadeSection>
               <span className="text-xs uppercase tracking-[0.2em] text-red-600/80 block label-line mb-4">Transparency</span>
               <p className="font-display text-2xl md:text-4xl text-neutral-800 leading-snug">
-                <span className="font-light text-red-600/90">Care should be clear</span> — including when it's about cost.
+                <span className="font-mono font-light text-red-600/90">Care should be clear</span> — including when it's about cost.
               </p>
             </FadeSection>
           </div>

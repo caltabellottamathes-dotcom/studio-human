@@ -17,7 +17,7 @@ export default function Over() {
 
       <PageHeader
         label="The practice"
-        title={<>A considered space for <span className="font-light text-sky-600/90">the work of being human</span>.</>}
+        title={<>A considered space for <span className="font-mono font-light text-sky-600/90">the work of being human</span>.</>}
         intro="studioHuman is a collective of qualified psychologists offering a contemporary approach to mental wellbeing — a deliberate departure from clinical language and sterile spaces."
         hideIntroMobile />
 
@@ -45,7 +45,7 @@ export default function Over() {
                 <p>
                   <span className="font-display text-neutral-800">Human</span> keeps that process grounded in the person. Before anything else, there is someone with a history, a particular way of experiencing the world, and the capacity to change.
                 </p>
-                <p className="font-display text-red-600 text-lg md:text-xl my-8 leading-normal">
+                <p className="font-mono text-red-600 text-lg md:text-xl my-8 leading-normal">
                   &ldquo;To move forward, you first need to sit down. Genuine momentum cannot be forced from a place of exhaustion.&rdquo;
                 </p>
                 <p>
@@ -57,7 +57,7 @@ export default function Over() {
             <StaggerGroup className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-12 mt-12 border-t border-neutral-200" stagger={0.12}>
               {principles.map((p) => (
                 <StaggerItem key={p.num}>
-                  <span className="font-display text-2xl md:text-3xl text-ember-500 block mb-2">{p.title}</span>
+                  <span className="font-mono text-2xl md:text-3xl text-ember-500 block mb-2">{p.title}</span>
                   <p className="text-neutral-500 text-sm font-light leading-relaxed">{p.desc}</p>
                 </StaggerItem>
               ))}
@@ -71,7 +71,7 @@ export default function Over() {
           <div className="col-span-1 md:col-span-4 md:col-start-1 order-2 md:order-1">
             <FadeSection>
               <p className="font-display text-2xl md:text-4xl text-neutral-800 leading-tight tracking-tight">
-                Curious how it works in practice? <span className="font-light text-red-600/90">Read more about our approach.</span>
+                Curious how it works in practice? <span className="font-mono font-light text-red-600/90">Read more about our approach.</span>
               </p>
               <Link to="/approach" className="group inline-flex items-center gap-2 text-xs uppercase tracking-widest text-neutral-800 border-b border-neutral-400 py-2 mt-8 hover:gap-3 hover:border-red-600 hover:text-red-600 transition-all duration-300">
                 Explore the approach
@@ -94,7 +94,7 @@ export default function Over() {
             <FadeSection>
               <span className="text-xs uppercase tracking-[0.2em] text-red-600/80 block label-line mb-4">Our vision</span>
               <p className="font-display text-2xl md:text-4xl text-neutral-800 leading-snug max-w-[48ch]">
-                Muted tones, soft architecture and generous whitespace — a space that feels <span className="font-light text-red-600/90">safe, intelligent and human</span>, without the visual language of clinical healthcare.
+                Muted tones, soft architecture and generous whitespace — a space that feels <span className="font-mono font-light text-red-600/90">safe, intelligent and human</span>, without the visual language of clinical healthcare.
               </p>
             </FadeSection>
           </div>

@@ -20,7 +20,7 @@ export default function StruggleCard({ item, index }) {
         to={`/concerns/${item.slug}`}
         className="group flex items-start gap-5 md:gap-8 py-7 md:py-8 border-b border-neutral-200 transition-colors duration-300 hover:border-neutral-300"
       >
-        <span className="font-display italic text-red-600/30 text-xl md:text-2xl pt-1 tabular-nums group-hover:text-red-600/60 transition-colors duration-300 flex-shrink-0">
+        <span className="font-mono text-red-600/30 text-xl md:text-2xl pt-1 tabular-nums group-hover:text-red-600/60 transition-colors duration-300 flex-shrink-0">
           {String(index + 1).padStart(2, '0')}
         </span>
 

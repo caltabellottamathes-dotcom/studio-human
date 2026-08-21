@@ -160,7 +160,7 @@ export default function Contact() {
         </div>
       </section>
 
-      <section className="py-16 px-6 md:px-12 bg-glacier-50/70 rounded-[2rem] md:rounded-[4rem] mx-4 md:mx-8 mb-12">
+      <section className="py-16 px-6 md:px-12 mx-4 md:mx-8 mb-12">
         <div className="max-w-[112rem] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12">
           <FadeSection className="col-span-1 lg:col-span-4">
             <span className="text-xs uppercase tracking-[0.2em] text-red-600/80 block label-line mb-4">Answers to your questions</span>
@@ -188,7 +188,7 @@ export default function Contact() {
             <FadeSection>
               <span className="text-xs uppercase tracking-[0.2em] text-red-600/80 block label-line mb-4">Contact</span>
               <p className="font-display text-2xl md:text-4xl text-neutral-800 leading-snug">
-                <span className="font-light text-red-600/90">You don't need to know what you'll say.</span> You only need to sit down.
+                <span className="font-mono font-light text-red-600/90">You don't need to know what you'll say.</span> You only need to sit down.
               </p>
             </FadeSection>
           </div>

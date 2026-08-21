@@ -23,11 +23,11 @@ export default function Footer() {
   const { name, contact, cta, legal } = useBrand();
   return (
     <motion.footer
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
+      initial={{ opacity: 0, y: 60 }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-40px' }}
-      transition={{ duration: 0.7, ease }}
-      className="relative z-20 bg-white/15 backdrop-blur-2xl text-neutral-800 mx-4 md:mx-8 mb-4 md:mb-8 rounded-[2rem] md:rounded-[3rem] shadow-2xl shadow-neutral-900/20 border border-red-600/25"
+      transition={{ duration: 0.8, ease }}
+      className="relative z-20 bg-white/5 backdrop-blur-md text-neutral-800 mx-4 md:mx-8 mb-4 md:mb-8 rounded-[2rem] md:rounded-[3rem] shadow-xl shadow-neutral-900/10 border border-red-600/20"
       role="contentinfo"
     >
       <div className="max-w-[120rem] mx-auto px-6 md:px-12 py-6 md:py-14">

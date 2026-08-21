@@ -139,7 +139,7 @@ export default function StrugglePage() {
             <FadeSection key={i} delay={i * 0.05}>
               <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start">
                 <div className={`col-span-1 md:col-span-4 ${i % 2 === 1 ? 'md:order-2 md:col-start-9' : 'md:order-1'}`}>
-                  <span className={`font-display italic text-5xl md:text-6xl block leading-none mb-4 ${i % 2 === 0 ? 'text-cliff-400' : 'text-glacier-400'}`}>{String(i + 1).padStart(2, '0')}</span>
+                  <span className={`font-mono text-5xl md:text-6xl block leading-none mb-4 ${i % 2 === 0 ? 'text-cliff-400' : 'text-glacier-400'}`}>{String(i + 1).padStart(2, '0')}</span>
                   <h3 className="font-display text-xl md:text-2xl text-neutral-800">{block.heading}</h3>
                 </div>
                 <div className={`col-span-1 md:col-span-7 ${i % 2 === 1 ? 'md:order-1 md:col-start-1' : 'md:order-2 md:col-start-6'}`}>

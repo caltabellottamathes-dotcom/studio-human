@@ -134,13 +134,13 @@ export default function Home() {
         <div className="max-w-[112rem] mx-auto">
           <FadeSection className="max-w-2xl mb-12 md:mb-16">
             <span className="text-xs uppercase tracking-[0.2em] text-red-600/80 block label-line mb-4">The method</span>
-            <h2 className="font-display text-3xl md:text-5xl text-neutral-800 tracking-tight">Sit down to <span className="italic font-light text-red-600/90">move forward</span>.</h2>
+            <h2 className="font-display text-3xl md:text-5xl text-neutral-800 tracking-tight">Sit down to <span className="font-mono font-light text-red-600/90">move forward</span>.</h2>
           </FadeSection>
           <StaggerGroup className="grid grid-cols-1 md:grid-cols-3 gap-px bg-neutral-200" stagger={0.12}>
             {principles.map((p) => (
               <StaggerItem key={p.num}>
                 <div className="group bg-neutral-50 hover:bg-white h-full p-8 md:p-10 transition-colors duration-300">
-                  <span className="font-display text-3xl md:text-4xl text-ember-500 leading-none block mb-4">{p.num}</span>
+                  <span className="font-mono text-3xl md:text-4xl text-ember-500 leading-none block mb-4">{p.num}</span>
                   <h3 className="font-display text-2xl text-neutral-800 mb-3">{p.title}</h3>
                   <p className="text-neutral-500 text-base font-light leading-relaxed">{p.desc}</p>
                 </div>
@@ -157,7 +157,7 @@ export default function Home() {
             <FadeSection>
               <span className="text-xs uppercase tracking-[0.2em] text-red-600/80 block label-line mb-4">The practice</span>
               <p className="font-display text-2xl md:text-4xl text-neutral-800 leading-snug mb-8">
-                A quiet architecture for the mind — where you arrive as you are, and the <span className="font-light text-sky-600/90">dust is allowed to settle</span>.
+                A quiet architecture for the mind — where you arrive as you are, and the <span className="font-mono font-light text-sky-600/90">dust is allowed to settle</span>.
               </p>
               <Link to="/about" className="group inline-flex items-center gap-2 text-xs uppercase tracking-widest text-neutral-800 border-b border-neutral-400 py-2 hover:gap-3 hover:border-red-600 hover:text-red-600 transition-all duration-300">
                 About the studio
@@ -181,7 +181,7 @@ export default function Home() {
             <FadeSection>
               <span className="text-xs uppercase tracking-[0.2em] text-red-600/80 block label-line mb-4">Our approach</span>
               <p className="font-display text-2xl md:text-4xl text-neutral-800 leading-snug mb-8">
-                We do not push; we <span className="font-light text-red-600/90">invite</span>. We help you map what feels heavy — without rushing toward an artificial finish line.
+                We do not push; we <span className="font-mono font-light text-red-600/90">invite</span>. We help you map what feels heavy — without rushing toward an artificial finish line.
               </p>
               <Link to="/approach" className="group inline-flex items-center gap-2 text-xs uppercase tracking-widest text-neutral-800 border-b border-neutral-400 py-2 hover:gap-3 hover:border-red-600 hover:text-red-600 transition-all duration-300">
                 Explore the approach

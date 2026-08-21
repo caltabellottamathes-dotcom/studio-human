@@ -47,8 +47,8 @@ export default function CustomCursor() {
         <motion.div
           animate={{ scale: isPointer ? 1.6 : 1, opacity: isPointer ? 0.7 : 0.35 }}
           transition={{ duration: 0.25 }}
-          className="-translate-x-1/2 -translate-y-1/2 w-9 h-9 rounded-full border border-red-600"
-          style={{ boxShadow: '0 0 20px rgba(193, 6, 0, 0.12), inset 0 0 12px rgba(193, 6, 0, 0.06)' }}
+          className="-translate-x-1/2 -translate-y-1/2 w-9 h-9 rounded-full border border-ember-500"
+          style={{ boxShadow: '0 0 20px rgba(169, 161, 53, 0.12), inset 0 0 12px rgba(169, 161, 53, 0.06)' }}
         />
       </motion.div>
       <motion.div
@@ -60,10 +60,10 @@ export default function CustomCursor() {
           transition={{ duration: 0.25 }}
           className="-translate-x-1/2 -translate-y-1/2 w-3 h-3 rounded-full"
           style={{
-            background: 'linear-gradient(135deg, #ff4438, #c10600, #870400, #ff4438)',
+            background: 'linear-gradient(135deg, #cab85b, #a9a135, #6b6820, #cab85b)',
             backgroundSize: '300% 300%',
             animation: 'cursor-gradient 2s ease infinite',
-            boxShadow: '0 0 14px rgba(193, 6, 0, 0.55)',
+            boxShadow: '0 0 14px rgba(169, 161, 53, 0.55)',
           }}
         />
       </motion.div>
