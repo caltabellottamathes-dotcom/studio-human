@@ -71,6 +71,7 @@ export default function SecureLayout({ variant = 'portal' }) {
   const isActive = (path) => location.pathname === path;
 
   const handleLogout = () => {
+    sessionStorage.removeItem('portal-session-active');
     logout(false);
     navigate('/');
   };

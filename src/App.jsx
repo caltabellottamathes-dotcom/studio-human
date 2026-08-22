@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Toaster } from "@/components/ui/toaster"
 import { QueryClientProvider } from '@tanstack/react-query'
 import { queryClientInstance } from '@/lib/query-client'
@@ -6,6 +7,7 @@ import PageNotFound from './lib/PageNotFound';
 import { AuthProvider, useAuth } from '@/lib/AuthContext';
 import UserNotRegisteredError from '@/components/UserNotRegisteredError';
 import ScrollToTop from './components/ScrollToTop';
+import PortalSessionGuard from '@/components/PortalSessionGuard';
 import OpeningLoader from '@/components/OpeningLoader';
 import { AnimatePresence } from 'framer-motion';
 import PageTransition from '@/components/PageTransition';
@@ -49,6 +51,12 @@ import BeeldbankModal from '@/components/beeldbank/BeeldbankModal';
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
   const { portal: hasPortal, admin: hasAdmin } = useTier();
+
+  useEffect(() => {
+    if (!isLoadingPublicSettings && !isLoadingAuth) {
+      window.dispatchEvent(new CustomEvent('app-ready'));
+    }
+  }, [isLoadingPublicSettings, isLoadingAuth]);
 
   if (isLoadingPublicSettings || isLoadingAuth) {
     return (
@@ -133,6 +141,7 @@ function App() {
       <QueryClientProvider client={queryClientInstance}>
         <Router>
           <ScrollToTop />
+          <PortalSessionGuard />
           <BeeldbankProvider>
             <AuthenticatedApp />
           </BeeldbankProvider>

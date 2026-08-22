@@ -20,6 +20,7 @@ export default function Login() {
     try {
       await base44.auth.loginViaEmailPassword(email, password);
       const me = await base44.auth.me();
+      sessionStorage.setItem('portal-session-active', 'true');
       if (me.role === 'admin') {
         window.location.href = '/admin/dashboard';
       } else {
