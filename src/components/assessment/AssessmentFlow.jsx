@@ -153,11 +153,17 @@ export default function AssessmentFlow({ title, description }) {
         </motion.div>
       </AnimatePresence>
 
-      {isMultiple && selected.length > 0 &&
+      {isMultiple &&
       <div className="text-center mt-8">
           <button
+          type="button"
           onClick={advance}
-          className="inline-flex items-center gap-2 px-8 py-4 bg-neutral-900 hover:bg-black text-white rounded-full text-xs uppercase tracking-widest font-body transition-colors">
+          disabled={selected.length === 0}
+          className={`inline-flex items-center gap-2 px-8 py-4 rounded-full text-xs uppercase tracking-widest font-body transition-colors ${
+            selected.length === 0
+              ? 'bg-neutral-200 text-neutral-400 cursor-not-allowed'
+              : 'bg-neutral-900 hover:bg-black text-white'
+          }`}>
           
             {currentIndex < questions.length - 1 ? 'Next' : 'See my reflection'} <ArrowRight className="w-4 h-4" strokeWidth={1.5} />
           </button>
