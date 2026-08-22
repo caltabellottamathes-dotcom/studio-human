@@ -10,7 +10,16 @@ export default function PortalAuthLayout({ variant = 'client', children }) {
       {/* Image side — hidden on mobile */}
       <div className="hidden lg:flex lg:w-1/2 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-red-800 via-red-700 to-neutral-900" aria-hidden />
-        <div className="absolute inset-0 flex flex-col justify-end p-12">
+        <video
+          src="https://media.base44.com/videos/public/6a863d1d060de4a10b195ae3/e63d59b26_8_studioHuman.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+          className="absolute top-0 right-0 h-full w-[62%] object-cover rounded-tl-[3rem] md:rounded-bl-[12rem] shadow-2xl shadow-neutral-900/20"
+        />
+        <div className="absolute inset-0 flex flex-col justify-end p-12 z-10">
           <span className="font-serif text-2xl tracking-tight text-white mb-6 block">studioHuman</span>
           <p className="text-white/90 text-sm font-light max-w-md leading-relaxed">
             {isClient
